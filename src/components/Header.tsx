@@ -1,7 +1,19 @@
-import { Github, Menu, Twitter } from "lucide-react";
+import { Instagram, Mail, Menu, Twitter, Youtube } from "lucide-react";
 import { useState } from "react";
 
-const navigation = ["About", "Blog", "Publish"];
+const navigation = [
+  { label: "About us", href: "about-us" },
+  { label: "Activities", href: "about-us" },
+  { label: "Outputs (scientific production)", href: "about-us" },
+  { label: "Contacts", href: "about-us" },
+];
+
+const contacts = [
+  { Icon: Mail, href: "mailto:ipsi@novalaw.unl.pt" },
+  { Icon: Twitter, href: "https://twitter.com/novaipsi" },
+  { Icon: Instagram, href: "https://www.instagram.com/novaipsi/" },
+  { Icon: Youtube, href: "https://www.youtube.com/@novaipsi" },
+];
 
 export function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -27,33 +39,29 @@ export function Header() {
             navbarOpen ? " flex" : " hidden"
           }`}
         >
-          <div className="ml-auto md:mr-auto flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start gap-5">
+          <nav className="ml-auto md:mr-auto flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start gap-5">
             {navigation.map((item) => (
               <a
-                key={item}
-                href={`/${item.toLowerCase()}`}
+                key={item.href}
+                href={`/${item.href}`}
                 className="cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition"
               >
-                {item}
+                {item.label}
               </a>
             ))}
-          </div>
-          <a
-            href="https://twitter.com/" //TODO: Add link
-            rel="noopener noreferrer"
-            target="_blank"
-            className="hidden md:inline-block"
-          >
-            <Twitter />
-          </a>
-          <a
-            href="https://github.com/LucasDibz/IPSI"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="pl-7 hidden md:inline-block"
-          >
-            <Github />
-          </a>
+          </nav>
+
+          {/* Contact links */}
+          {contacts.map(({ href, Icon }) => (
+            <a
+              href={href}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="hidden md:inline-block"
+            >
+              <Icon />
+            </a>
+          ))}
         </div>
       </div>
     </header>
