@@ -1,4 +1,4 @@
-import { Instagram, Mail, Menu, Twitter, Youtube } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
 const navigation = [
@@ -8,30 +8,11 @@ const navigation = [
   { label: 'Contacts', href: 'contacts' },
 ];
 
-const contacts = [
-  { Icon: Mail, href: 'mailto:ipsi@novalaw.unl.pt' },
-  { Icon: Twitter, href: 'https://twitter.com/novaipsi' },
-  { Icon: Instagram, href: 'https://www.instagram.com/novaipsi/' },
-  { Icon: Youtube, href: 'https://www.youtube.com/@novaipsi' },
-];
-
-/* Contact links */
-/* {contacts.map(({ href, Icon }) => (
-            <a
-              href={href}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="hidden md:inline-block"
-            >
-              <Icon />
-            </a>
-          ))} */
-
 export function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <header className='fixed top-0 w-full z-50 flex items-center'>
+    <header className='sticky top-0 w-full z-50 flex items-center'>
       {/* Desktop */}
       <nav className='hidden md:flex w-full items-center justify-center p-5 gap-7 border-b border-b-slate-400'>
         {navigation.slice(0, navigation.length / 2).map((item) => (
