@@ -26,9 +26,9 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className='w-full flex items-center pb-4 text-slate-800'>
-      <ul className='max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-sm font-medium sm:pb-20 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10'>
-        <li className='row-span-2 flex flex-col gap-3 items-center'>
+    <footer className='mt-10 border-t border-gray-100 dark:border-gray-800'>
+      <ul className='max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-sm font-medium sm:pb-20 gap-y-10'>
+        <li className='flex flex-col gap-3 items-center'>
           <h2 className='text-xl tracking-wide'>Socials</h2>
           <ul className='flex gap-2'>
             {socials.map(({ href, Icon, color }) => (
@@ -47,6 +47,16 @@ export function Footer() {
           </ul>
         </li>
       </ul>
+
+      <div className='text-center text-sm'>
+        Copyright © {new Date().getFullYear()}. All rights reserved.
+      </div>
+      <div className='mt-1 flex justify-center gap-1 text-center text-sm text-gray-500 dark:text-gray-600'>
+        <a href='https://github.com/LucasDibz' target='_blank' rel='noreferrer'>
+          <span>Made by Lucas Dib </span>
+          <span>&middot;</span> Github
+        </a>
+      </div>
     </footer>
   );
 }
