@@ -7,7 +7,7 @@ export function Main() {
         <h2 className='text-xl leading-5 text-red-600 font-semibold'>
           Knowledge Center
         </h2>
-        <h1 className='mt-3 text-justify text-3xl leading-6 text-slate-400 '>
+        <h1 className='mt-3 md:text-justify text-3xl leading-6 text-slate-400 '>
           NOVA Knowledge Centre on Intellectual Property & Sustainable
           Innovation (IPSI)
         </h1>
@@ -33,7 +33,9 @@ export function Main() {
         </p>
 
         <article>
-          <span>O NOVA IPSI tem como objetivos:</span>
+          <span>
+            O <strong>NOVA IPSI</strong> tem como objetivos:
+          </span>
           <ul className='list-disc list-inside grid gap-3'>
             <li>
               Colocar estudantes e investigadores em início de carreira em

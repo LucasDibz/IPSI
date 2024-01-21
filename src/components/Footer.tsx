@@ -26,9 +26,9 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className='mt-10 border-t border-gray-100 dark:border-gray-800'>
-      <ul className='max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-sm font-medium sm:pb-20 gap-y-10'>
-        <li className='flex flex-col gap-3 items-center'>
+    <footer className='mt-10 border-t border-gray-100 dark:border-gray-800 pb-5 md:pb-0'>
+      <ul className='max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-sm font-medium'>
+        <li className='mt-5 flex flex-col gap-3 items-center'>
           <h2 className='text-xl tracking-wide'>Socials</h2>
           <ul className='flex gap-2'>
             {socials.map(({ href, Icon, color }) => (
