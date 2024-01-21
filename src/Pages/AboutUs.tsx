@@ -1,3 +1,5 @@
+import { IPSIDraw } from '../components/IPSIDraw';
+
 const ipsers = {
   coordination: {
     title: 'Coordenação',
@@ -243,12 +245,7 @@ export function AboutUs() {
           About us
         </h2>
 
-        <img
-          className='absolute right-5 z-0 w-28 h-28 top-0 mt-2 lg:top-auto lg:w-64 lg:h-64 xl:h-96 xl:w-96'
-          src={new URL('/images/ipsi-draw-fluid.jpg', import.meta.url).href}
-          alt='IPSI Logo'
-          loading='lazy'
-        />
+        <IPSIDraw />
       </div>
 
       <section className='z-10 grid gap-10 max-w-3xl xl:max-w-4xl md:text-justify'>
