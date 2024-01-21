@@ -13,14 +13,14 @@ export function Main() {
         </h1>
 
         <img
-          className='w-28 h-28 top-0 lg:top-auto lg:w-64 lg:h-64 absolute right-0 z-0'
+          className='w-28 h-28 top-0 lg:top-auto lg:w-64 lg:h-64 xl:h-96 xl:w-96 absolute right-0 z-0'
           src='https://novalaw.unl.pt/wp-content/uploads/2022/09/IPSI_Imagem_Site_Forma_Fluida.jpg'
           alt='IPSI Logo'
           loading='lazy'
         />
       </div>
 
-      <section className='z-10 grid gap-5 max-w-3xl xl:max-w-5xl md:text-justify'>
+      <section className='z-10 grid gap-5 max-w-3xl xl:max-w-4xl md:text-justify'>
         <p>
           O{' '}
           <strong>
