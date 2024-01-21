@@ -32,7 +32,7 @@ export function Footer() {
           <h2 className='text-xl tracking-wide'>Socials</h2>
           <ul className='flex gap-2'>
             {socials.map(({ href, Icon, color }) => (
-              <li>
+              <li key={href}>
                 <a
                   key={href}
                   href={href}

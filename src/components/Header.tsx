@@ -1,5 +1,6 @@
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const navigation = [
   { label: 'About us', href: 'about-us' },
@@ -16,36 +17,36 @@ export function Header() {
       {/* Desktop */}
       <nav className='hidden md:flex shadow w-full items-center justify-center p-5 gap-7 border-b border-b-slate-400'>
         {navigation.slice(0, navigation.length / 2).map((item) => (
-          <a
+          <Link
             key={item.href}
-            href={`/${item.href}`}
+            to={`${item.href}`}
             className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
           >
             {item.label}
-          </a>
+          </Link>
         ))}
 
-        <a href='/' className='text-3xl text-slate-600 font-bold'>
+        <Link to='/' className='text-3xl text-slate-600 font-bold'>
           IPSI
-        </a>
+        </Link>
 
         {navigation.slice(navigation.length / 2).map((item) => (
-          <a
+          <Link
             key={item.href}
-            href={`/${item.href}`}
+            to={`/${item.href}`}
             className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
           >
             {item.label}
-          </a>
+          </Link>
         ))}
       </nav>
 
       {/* Mobile */}
       <nav className='md:hidden w-full shadow'>
         <div className='flex items-center w-full justify-between p-5 flex-wrap gap-5'>
-          <a href='/' className='text-3xl text-slate-600 font-bold'>
+          <Link to='/' className='text-3xl text-slate-600 font-bold'>
             IPSI
-          </a>
+          </Link>
 
           <button
             className='text-slate-600'
@@ -62,13 +63,13 @@ export function Header() {
           data-show={navbarOpen}
         >
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
-              href={`/${item.href}`}
+              to={`${item.href}`}
               className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
