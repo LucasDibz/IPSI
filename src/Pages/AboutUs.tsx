@@ -244,8 +244,8 @@ export function AboutUs() {
         </h2>
 
         <img
-          className='w-28 h-28 top-0 lg:top-auto lg:w-64 lg:h-64 xl:h-96 xl:w-96 absolute right-0 z-0'
-          src='https://novalaw.unl.pt/wp-content/uploads/2022/09/IPSI_Imagem_Site_Forma_Fluida.jpg'
+          className='absolute right-5 z-0 w-28 h-28 top-0 mt-2 lg:top-auto lg:w-64 lg:h-64 xl:h-96 xl:w-96'
+          src={new URL('/images/ipsi-draw-fluid.jpg', import.meta.url).href}
           alt='IPSI Logo'
           loading='lazy'
         />
@@ -254,7 +254,7 @@ export function AboutUs() {
       <section className='z-10 grid gap-10 max-w-3xl xl:max-w-4xl md:text-justify'>
         {Object.values(ipsers).map((category) => (
           <article key={category.title}>
-            <h1 className='px-2 py-4 text-justify text-3xl leading-6 text-slate-400'>
+            <h1 className='mt-3 px-2 pb-6 text-justify text-3xl leading-6 text-slate-400'>
               {category.title}
             </h1>
 
@@ -265,15 +265,17 @@ export function AboutUs() {
                   href={member.url}
                   target='_blank'
                   rel='noreferrer'
-                  className='flex flex-col gap-3 items-center p-1 rounded-md border border-slate-200 hover:scale-105 transition hover:shadow-md'
+                  className='group flex flex-col gap-3 items-center w-32'
                 >
                   <img
                     src={member.imgSrc}
                     alt={member.name}
                     loading='lazy'
-                    className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow'
+                    className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
                   />
-                  <span className='font-semibold text-lg'>{member.name}</span>
+                  <span className='font-semibold text-lg text-center'>
+                    {member.name}
+                  </span>
                 </a>
               ))}
             </div>

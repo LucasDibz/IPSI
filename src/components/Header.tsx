@@ -1,6 +1,7 @@
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { IPSILogo } from './IPSILogo';
 
 const navigation = [
   { label: 'About us', href: 'about-us' },
@@ -15,38 +16,30 @@ export function Header() {
   return (
     <header className='sticky top-0 w-full z-50 flex items-center bg-white'>
       {/* Desktop */}
-      <nav className='hidden md:flex shadow w-full items-center justify-center p-5 gap-7 border-b border-b-slate-400'>
-        {navigation.slice(0, navigation.length / 2).map((item) => (
-          <Link
-            key={item.href}
-            to={`${item.href}`}
-            className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
-          >
-            {item.label}
-          </Link>
-        ))}
+      <nav className='hidden md:flex shadow w-full items-center justify-around p-5 gap-7 border-b border-b-slate-400'>
+        <IPSILogo />
 
-        <Link to='/' className='text-3xl text-slate-600 font-bold'>
-          IPSI
-        </Link>
-
-        {navigation.slice(navigation.length / 2).map((item) => (
-          <Link
-            key={item.href}
-            to={`/${item.href}`}
-            className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
-          >
-            {item.label}
-          </Link>
+        {navigation.map((item) => (
+          <div className='h-20 flex items-center'>
+            <NavLink
+              key={item.href}
+              to={`${item.href}`}
+              className={({ isActive }) =>
+                `cursor-pointer font-semibold text-slate-900 hover:text-slate-500 transition relative after:bg-slate-500 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 underline-offset-4${
+                  isActive ? ' underline' : ''
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          </div>
         ))}
       </nav>
 
       {/* Mobile */}
       <nav className='md:hidden w-full shadow'>
         <div className='flex items-center w-full justify-between p-5 flex-wrap gap-5'>
-          <Link to='/' className='text-3xl text-slate-600 font-bold'>
-            IPSI
-          </Link>
+          <IPSILogo />
 
           <button
             className='text-slate-600'
@@ -59,7 +52,7 @@ export function Header() {
         </div>
 
         <div
-          className='p-2 flex flex-wrap justify-end gap-3 invisible data-[show=true]:visible'
+          className='py-2 px-5 flex-col items-end gap-3 hidden data-[show=true]:flex'
           data-show={navbarOpen}
         >
           {navigation.map((item) => (
