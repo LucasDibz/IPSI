@@ -7,7 +7,7 @@ export function Main() {
         <h2 className='text-xl leading-5 text-red-600 font-semibold'>
           Knowledge Center
         </h2>
-        <h1 className='mt-3 md:text-justify text-3xl leading-6 text-slate-400 '>
+        <h1 className='mt-3 md:text-justify text-3xl leading-8 text-slate-400 '>
           NOVA Knowledge Centre on Intellectual Property & Sustainable
           Innovation (IPSI)
         </h1>
@@ -66,15 +66,16 @@ export function Main() {
       </section>
 
       <article className='z-10 flex items-center gap-5 max-w-xs'>
-        <BookText size={48} color='darkgray' />
+        <BookText size={50} color='gray' />
 
         <div className='flex flex-col gap-2'>
           <h2 className='text-lg leading-5 font-semibold'>
             NOVA IPSI Booklet 2023
           </h2>
           <a
-            href='/'
-            className='text-xl text-red-600 underline leading-6 font-semibold w-fit hover:brightness-75 hover:scale-105 transition'
+            href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+            download
+            className='text-xl text-red-500 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
           >
             Download
           </a>
