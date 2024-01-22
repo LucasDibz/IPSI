@@ -20,7 +20,7 @@ export function Header() {
         <IPSILogo />
 
         {navigation.map((item) => (
-          <div className='h-20 flex items-center'>
+          <div key={item.href} className='h-20 flex items-center'>
             <NavLink
               key={item.href}
               to={`${item.href}`}

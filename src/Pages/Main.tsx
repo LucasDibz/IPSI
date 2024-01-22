@@ -18,47 +18,43 @@ export function Main() {
 
       <section className='z-10 grid gap-5 max-w-3xl xl:max-w-4xl md:text-justify'>
         <p>
-          O{' '}
-          <strong>
+          The
+          <strong className='px-1'>
             NOVA Knowledge Centre on Intellectual Property & Sustainable
-            Innovation (IPSI){' '}
+            Innovation (IPSI)
           </strong>
-          dedica-se ao estudo e à investigação do conceito jurídico,
-          regulamentação e evolução da Propriedade Intelectual, numa sociedade
-          que visa atingir a sustentabilidade.
+          is dedicated to the study and research on the legal concept,
+          regulation, and evolution of intellectual property in a society
+          seeking sustainability. NOVA IPSI has as its aims:
         </p>
 
-        <article>
-          <span>
-            O <strong>NOVA IPSI</strong> tem como objetivos:
-          </span>
-          <ul className='list-disc list-inside grid gap-3'>
-            <li>
-              Colocar estudantes e investigadores em início de carreira em
-              contacto com as questões jurídicas relacionadas com{' '}
-              <strong>
-                incentivos sustentáveis e proporcionar-lhes acesso a
-                Conhecimento, Tecnologia e Cultura;
-              </strong>
-            </li>
+        <ul className='list-disc list-inside grid gap-3'>
+          <li>
+            Engaging students and early-career researchers with legal questions
+            on
+            <strong className='px-1'>
+              sustainable incentives and access to Knowledge, Technology, and
+              Culture;
+            </strong>
+          </li>
 
-            <li>
-              Permitir aos/às investigadores/as seniores e membros do corpo
-              docente da NOVA e de outras instituições avançar com a sua
-              investigação e transformá-la em{' '}
-              <strong>
-                educação e consultadoria jurídica, aconselhamento político e
-                contencioso estratégico
-              </strong>
-            </li>
+          <li>
+            Enabling senior researchers and faculty members from NOVA and other
+            universities to advance their research and transform it into
+            <strong className='px-1'>
+              policy advice, legal consultancy, legal education, and strategic
+              litigation;
+            </strong>
+          </li>
 
-            <li>
-              Criar oportunidades de diálogo e de desenvolvimento conjunto de
-              projetos{' '}
-              <strong>entre os investigadores e os stakeholders.</strong>
-            </li>
-          </ul>
-        </article>
+          <li>
+            Establishing opportunities for dialogue and collaborative project
+            development
+            <strong className='px-1'>
+              between researchers and key stakeholders
+            </strong>
+          </li>
+        </ul>
       </section>
 
       <article className='z-10 flex items-center gap-5 max-w-xs'>
