@@ -1,23 +1,41 @@
-import { IPSIDraw } from '../components/IPSIDraw';
+import { Body } from '../components';
 import { ipsers } from '../config/ipsers';
 
 export function AboutUs() {
   return (
-    <main className='relative container mx-auto px-4 md:px-0 pt-20 grid gap-10'>
-      <div className='max-w-3xl xl:max-w-5xl'>
+    <Body>
+      <div className='z-10 max-w-xl xl:max-w-3xl'>
         <h2 className='text-xl leading-5 text-red-600 font-semibold'>
           About us
         </h2>
 
-        <IPSIDraw />
+        <Body.H1>
+          Founded in September 2022, NOVA IPSI is a knowledge Centre part of
+          <a
+            href='https://novalaw.unl.pt/en/cedis'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='px-3 underline font-bold'
+          >
+            CEDIS (Centre for Research on Law and Society)
+          </a>
+          of
+          <a
+            href='https://novalaw.unl.pt'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='px-3 underline font-bold'
+          >
+            NOVA School of Law
+          </a>
+          Lisbon
+        </Body.H1>
       </div>
 
-      <section className='z-10 grid gap-10 max-w-3xl xl:max-w-4xl md:text-justify'>
+      <Body.Section>
         {Object.values(ipsers).map((category) => (
-          <article key={category.title}>
-            <h1 className='mt-3 px-2 pb-6 text-justify text-3xl leading-6 text-slate-400'>
-              {category.title}
-            </h1>
+          <Body.Article key={category.title}>
+            <Body.H1>{category.title}</Body.H1>
 
             <div className='flex flex-wrap gap-8 justify-center lg:justify-normal'>
               {category.members.map((member) => (
@@ -40,9 +58,9 @@ export function AboutUs() {
                 </a>
               ))}
             </div>
-          </article>
+          </Body.Article>
         ))}
-      </section>
-    </main>
+      </Body.Section>
+    </Body>
   );
 }
