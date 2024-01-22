@@ -173,6 +173,12 @@ export const ipsers = {
         url: 'https://www.linkedin.com/in/pedro-soares-2a2b95246',
       },
       {
+        name: 'Raquel Cunha',
+        imgSrc: new URL('/images/members/raquel_cunha.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/raquel-castro-cunha-0047a1211',
+      },
+      {
         name: 'Raquel Escada Carvalho',
         imgSrc: new URL(
           '/images/members/raquel_escada_carvalho.jpg',
