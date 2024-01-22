@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import { Link as _Link, LinkProps } from 'react-router-dom';
 
+// #F9EBD1
+
 type Props = {
   children: ReactNode;
 };
@@ -62,7 +64,7 @@ Body.PageTitle = PageTitle;
 
 function H1({ children }: Props) {
   return (
-    <h1 className='mt-3 md:text-justify text-3xl leading-10 text-slate-400'>
+    <h1 className='mt-3 md:text-justify text-3xl leading-10 text-amber-600'>
       {children}
     </h1>
   );

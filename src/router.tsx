@@ -1,7 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from './Layout';
-import { AboutUs, Activities, Contacts, ErrorPage, Home } from './pages';
+import {
+  AboutUs,
+  Activities,
+  Contacts,
+  ErrorPage,
+  Home,
+  Outputs,
+} from './pages';
 
 export const router = createBrowserRouter(
   [
@@ -21,6 +28,10 @@ export const router = createBrowserRouter(
         {
           path: 'activities',
           element: <Activities />,
+        },
+        {
+          path: 'scientific-outputs',
+          element: <Outputs />,
         },
         {
           path: 'contacts',

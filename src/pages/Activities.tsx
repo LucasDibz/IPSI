@@ -15,15 +15,15 @@ export function Activities() {
             </Card.Header>
             <Card.Content>{activity.content}</Card.Content>
             {activity.links && (
-              <>
-                <span className='inline-block mt-2'>Discover more at</span>
-                {activity.links.map(({ title, to }, index) => (
+              <div className='mt-auto ml-auto text-end italic'>
+                <span>Discover more at</span>
+                {activity.links.map(({ title, ...props }, index) => (
                   <>
-                    <Card.Link to={to}>{title}</Card.Link>
+                    <Card.Link {...props}>{title}</Card.Link>
                     {index + 1 !== activity.links.length && ' and '}
                   </>
                 ))}
-              </>
+              </div>
             )}
           </Card>
         ))}
@@ -31,7 +31,3 @@ export function Activities() {
     </Body>
   );
 }
-
-// activity.links.map(({ title, to }) => (
-//   <Card.Link to={to}>{title}</Card.Link>
-// ))
