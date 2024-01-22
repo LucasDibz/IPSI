@@ -1,12 +1,13 @@
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+
 import { IPSILogo } from './IPSILogo';
 
 const navigation = [
   { label: 'About us', href: 'about-us' },
-  { label: 'Activities', href: 'activities' },
-  { label: 'Outputs', href: 'outputs' },
+  { label: 'Events', href: 'events' },
+  { label: 'Scientific Outputs', href: 'scientific-outputs' },
   { label: 'Contacts', href: 'contacts' },
 ];
 
@@ -26,7 +27,7 @@ export function Header() {
               to={`${item.href}`}
               className={({ isActive }) =>
                 `cursor-pointer font-semibold text-slate-900 hover:text-slate-500 transition relative after:bg-slate-500 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 underline-offset-4${
-                  isActive ? ' underline' : ''
+                  isActive ? ' underline text-slate-500' : ''
                 }`
               }
             >
@@ -55,11 +56,20 @@ export function Header() {
           className='py-2 px-5 flex-col items-end gap-3 hidden data-[show=true]:flex'
           data-show={navbarOpen}
         >
+          <Link
+            to={'/'}
+            className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
+            onClick={() => setNavbarOpen(false)}
+          >
+            Home
+          </Link>
+
           {navigation.map((item) => (
             <Link
               key={item.href}
               to={`${item.href}`}
               className='cursor-pointer text-slate-900 hover:text-slate-500 font-semibold transition'
+              onClick={() => setNavbarOpen(false)}
             >
               {item.label}
             </Link>
