@@ -46,7 +46,7 @@ Body.Article = Article;
 function Link(props: LinkProps) {
   return (
     <_Link
-      className='text-xl text-rose-500 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
+      className='text-xl text-rose-400 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
       {...props}
     />
   );
@@ -55,7 +55,7 @@ Body.Link = Link;
 
 function PageTitle({ children }: Props) {
   return (
-    <h2 className='text-xl leading-5 text-rose-600 font-semibold'>
+    <h2 className='text-xl leading-5 text-rose-500 font-semibold'>
       {children}
     </h2>
   );
@@ -64,7 +64,7 @@ Body.PageTitle = PageTitle;
 
 function H1({ children }: Props) {
   return (
-    <h1 className='mt-3 md:text-justify text-3xl leading-10 text-amber-600'>
+    <h1 className='mt-3 md:text-justify text-3xl leading-10 text-slate-600'>
       {children}
     </h1>
   );

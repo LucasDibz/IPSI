@@ -19,13 +19,13 @@ export const outputs: Outputs = {
     title: 'Edited books and journal issues',
     books: [
       {
-        title:
-          'Direitos de Autor: As recentes alterações legislativas (UMinho Editora 2023) (with MM Carvalho)',
+        title: 'Direitos de Autor: As recentes alterações legislativas',
+        subtitle: '(UMinho Editora 2023) (with MM Carvalho)',
         authors: ['Giulia Priora'],
       },
       {
-        title:
-          'The Law and the Digital Classroom, JIPITEC 14(2) 2023 (with R Ducato)',
+        title: 'The Law and the Digital Classroom',
+        subtitle: 'JIPITEC 14(2) 2023 (with R Ducato)',
         authors: ['Giulia Priora'],
       },
     ],

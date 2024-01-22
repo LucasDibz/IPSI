@@ -23,7 +23,7 @@ export function Home() {
       <Body.H1>Our latest scientific output:</Body.H1>
       <Body.Article>
         <div className='flex gap-3'>
-          <BookText size={50} color='gray' fill='antiquewhite' />
+          <BookText size={50} color='gray' />
           <div className='flex flex-col gap-2'>
             <Body.H2>NOVA IPSI Booklet 2023</Body.H2>
 
