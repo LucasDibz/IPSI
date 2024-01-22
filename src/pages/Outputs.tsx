@@ -1,4 +1,4 @@
-import { Body, Card } from '../components';
+import { Body, Book, Card } from '../components';
 import { outputs } from '../config/outputs';
 
 export function Outputs() {
@@ -6,14 +6,17 @@ export function Outputs() {
     <Body>
       <Body.PageTitle>Scientific Outputs</Body.PageTitle>
 
-      <Body.Section className='gap-3 md:grid-cols-2'>
+      <Body.Section>
         {outputs.map((output) => (
-          <Card>
-            <Card.Header>
-              <Card.Title>{output.title}</Card.Title>
-              <Card.Subtitle>{output.subtitle}</Card.Subtitle>
-            </Card.Header>
-            <Card.Content>{output.content}</Card.Content>
+          <Card key={output.title}>
+            <Card.Title>{output.title}</Card.Title>
+            <Card.Content>
+              <ol className='mt-3 divide-y divider-slate-200'>
+                {output.books.map((book) => (
+                  <Book key={book.title} book={book} />
+                ))}
+              </ol>
+            </Card.Content>
           </Card>
         ))}
       </Body.Section>

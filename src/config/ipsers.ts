@@ -99,6 +99,13 @@ export const ipsers = {
         url: 'https://www.linkedin.com/in/amanda-costa-novaes-75bab6191',
       },
       {
+        hidden: true,
+        name: 'Dimitrius Costa',
+        imgSrc: new URL('/images/members/dimitrius_costa.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/dimitrius-costa-780307256',
+      },
+      {
         name: 'Diogo Brandão',
         imgSrc: new URL('/images/members/diogo_brandao.jpg', import.meta.url)
           .href,

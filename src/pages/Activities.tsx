@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Body, Card } from '../components';
 import { activities } from '../config/activities';
 
@@ -8,7 +9,7 @@ export function Activities() {
 
       <Body.Section className='gap-3 md:grid-cols-2'>
         {activities.map((activity) => (
-          <Card>
+          <Card key={activity.title}>
             <Card.Header>
               <Card.Title>{activity.title}</Card.Title>
               <Card.Subtitle>{activity.subtitle}</Card.Subtitle>
@@ -18,10 +19,10 @@ export function Activities() {
               <div className='mt-auto ml-auto text-end italic'>
                 <span>Discover more at</span>
                 {activity.links.map(({ title, ...props }, index) => (
-                  <>
+                  <Fragment key={title}>
                     <Card.Link {...props}>{title}</Card.Link>
                     {index + 1 !== activity.links.length && ' and '}
-                  </>
+                  </Fragment>
                 ))}
               </div>
             )}

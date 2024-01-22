@@ -23,13 +23,14 @@ export function Home() {
       <Body.H1>Our latest scientific output:</Body.H1>
       <Body.Article>
         <div className='flex gap-3'>
-          <BookText size={50} color='gray' />
+          <BookText size={50} color='gray' fill='antiquewhite' />
           <div className='flex flex-col gap-2'>
             <Body.H2>NOVA IPSI Booklet 2023</Body.H2>
 
             <a
-              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
               download
+              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+              className='text-xl text-rose-500 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
             >
               Download
             </a>

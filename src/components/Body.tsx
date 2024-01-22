@@ -36,7 +36,7 @@ Body.Section = Section;
 
 function Article({ children }: Props) {
   return (
-    <article className='z-10 grid gap-8 md:text-justify max-w-xl xl:max-w-3xl'>
+    <article className='z-10 grid gap-6 md:text-justify max-w-xl xl:max-w-3xl'>
       {children}
     </article>
   );
@@ -77,6 +77,6 @@ function H2({ children }: Props) {
 Body.H2 = H2;
 
 function List({ children }: Props) {
-  return <ul className='mt-5 list-disc list-inside grid gap-3'>{children}</ul>;
+  return <ul className='list-disc list-inside grid gap-3'>{children}</ul>;
 }
 Body.List = List;

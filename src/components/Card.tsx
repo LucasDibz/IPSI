@@ -4,9 +4,13 @@ import { Link as _Link } from 'react-router-dom';
 type Props = {
   children: ReactNode;
 };
-export function Card({ children }: Props) {
+export function Card({ children, className }: Props & { className?: string }) {
   return (
-    <article className='max-w-lg p-6 border border-slate-200 rounded-lg shadow flex flex-col gap-3'>
+    <article
+      className={`p-6 border border-slate-200 rounded-lg shadow flex flex-col gap-3${
+        className ? className : 'max-w-lg'
+      }`}
+    >
       {children}
     </article>
   );
@@ -41,9 +45,9 @@ Card.Subtitle = Subtitle;
 
 function Content({ children }: Props) {
   return (
-    <p className='font-normal text-slate-800 py-4 border-t border-t-slate-400'>
+    <div className='font-normal text-slate-800 py-4 border-t border-t-slate-400'>
       {children}
-    </p>
+    </div>
   );
 }
 Card.Content = Content;

@@ -41,23 +41,24 @@ export function AboutUs() {
             </strong>
             While committing to the study and advancement of the legal concepts,
             regulations, and impacts of IP, we aim at:
-            <Body.List>
-              <li>
-                Engaging students and early-career researchers with IP legal
-                questions on protection, incentives, and access to knowledge,
-                technology, and culture;
-              </li>
-              <li>
-                Enabling senior researchers and faculty members to advance their
-                research and transform it into policy advice, legal consultancy,
-                legal education, and strategic litigation;
-              </li>
-              <li>
-                Establishing opportunities for dialogue and collaborations
-                between academic researchers and key stakeholders.
-              </li>
-            </Body.List>
           </p>
+
+          <Body.List>
+            <li>
+              Engaging students and early-career researchers with IP legal
+              questions on protection, incentives, and access to knowledge,
+              technology, and culture;
+            </li>
+            <li>
+              Enabling senior researchers and faculty members to advance their
+              research and transform it into policy advice, legal consultancy,
+              legal education, and strategic litigation;
+            </li>
+            <li>
+              Establishing opportunities for dialogue and collaborations between
+              academic researchers and key stakeholders.
+            </li>
+          </Body.List>
         </Body.Article>
 
         {Object.values(ipsers).map((category) => (
@@ -65,25 +66,27 @@ export function AboutUs() {
             <Body.H1>{category.title}</Body.H1>
 
             <div className='flex flex-wrap gap-8 justify-center lg:justify-normal'>
-              {category.members.map((member) => (
-                <a
-                  key={member.name}
-                  href={member.url}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='group flex flex-col gap-3 items-center w-32'
-                >
-                  <img
-                    src={member.imgSrc}
-                    alt={member.name}
-                    loading='lazy'
-                    className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
-                  />
-                  <span className='font-semibold text-lg text-center'>
-                    {member.name}
-                  </span>
-                </a>
-              ))}
+              {category.members
+                .filter((member) => !member?.hidden)
+                .map((member) => (
+                  <a
+                    key={member.name}
+                    href={member.url}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='group flex flex-col gap-3 items-center w-32'
+                  >
+                    <img
+                      src={member.imgSrc}
+                      alt={member.name}
+                      loading='lazy'
+                      className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
+                    />
+                    <span className='font-semibold text-lg text-center'>
+                      {member.name}
+                    </span>
+                  </a>
+                ))}
             </div>
           </Body.Article>
         ))}
