@@ -5,12 +5,12 @@ import { Body } from '../components';
 export function Home() {
   return (
     <Body>
-      <Body.H1>
-        NOVA School of Law Knowledge Centre on Intellectual Property and
-        Sustainable Innovation (NOVA IPSI)
-      </Body.H1>
-
       <Body.Section>
+        <Body.H1>
+          NOVA School of Law Knowledge Centre on Intellectual Property and
+          Sustainable Innovation (NOVA IPSI)
+        </Body.H1>
+
         <p>
           Founded in September 2022 at the NOVA School of Law in Lisbon, NOVA
           IPSI is a Knowledge Centre dedicated to the academic research on

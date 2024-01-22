@@ -28,7 +28,7 @@ export function Footer() {
         </ul>
       </div>
 
-      <div className='mt-5 text-center text-sm text-gray-500'>
+      <div className='mt-5 mb-2 text-center text-xs text-gray-500'>
         Copyright © {new Date().getFullYear()}. All rights reserved.
         <div className='mt-1 flex justify-center gap-1'>
           <a
