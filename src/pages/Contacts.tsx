@@ -21,7 +21,7 @@ export function Contacts() {
               Send your application via email to
               <strong className='px-1'>ipsi@novalaw.unl.pt</strong>
               making sure it includes:
-              <ul className='mt-5 list-disc list-inside grid gap-3'>
+              <Body.List>
                 <li>
                   Title of the research project you would like to develop in
                   IPSI;
@@ -31,7 +31,7 @@ export function Contacts() {
                   1 or 2 suggestions of meaningful readings relevant to the
                   topic IP law and sustainability.
                 </li>
-              </ul>
+              </Body.List>
             </p>
           </Body.Article>
         </Body.Section>

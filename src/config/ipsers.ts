@@ -11,7 +11,7 @@ export const ipsers = {
     ],
   },
   team: {
-    title: 'Team',
+    title: 'Faculty members',
     members: [
       {
         name: 'Athina Sachoulidou',
@@ -203,7 +203,7 @@ export const ipsers = {
     ],
   },
   consultor: {
-    title: 'Advisory members',
+    title: 'Advisory board members',
     members: [
       {
         name: 'Carys Craig',

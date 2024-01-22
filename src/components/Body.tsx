@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { LinkProps, Link as _Link } from 'react-router-dom';
+import { Link as _Link, LinkProps } from 'react-router-dom';
 
 import { IPSIDraw } from './IPSIDraw';
 
@@ -64,3 +64,8 @@ function H2({ children }: Props) {
   return <h2 className='text-lg leading-5 font-semibold'>{children}</h2>;
 }
 Body.H2 = H2;
+
+function List({ children }: Props) {
+  return <ul className='mt-5 list-disc list-inside grid gap-3'>{children}</ul>;
+}
+Body.List = List;

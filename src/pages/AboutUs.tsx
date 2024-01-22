@@ -33,6 +33,33 @@ export function AboutUs() {
       </div>
 
       <Body.Section>
+        <Body.Article>
+          <p>
+            At NOVA IPSI we are dedicated to the academic research on
+            <strong className='px-1'>
+              Intellectual Property Law in a society seeking Sustainability.
+            </strong>
+            While committing to the study and advancement of the legal concepts,
+            regulations, and impacts of IP, we aim at:
+            <Body.List>
+              <li>
+                Engaging students and early-career researchers with IP legal
+                questions on protection, incentives, and access to knowledge,
+                technology, and culture;
+              </li>
+              <li>
+                Enabling senior researchers and faculty members to advance their
+                research and transform it into policy advice, legal consultancy,
+                legal education, and strategic litigation;
+              </li>
+              <li>
+                Establishing opportunities for dialogue and collaborations
+                between academic researchers and key stakeholders.
+              </li>
+            </Body.List>
+          </p>
+        </Body.Article>
+
         {Object.values(ipsers).map((category) => (
           <Body.Article key={category.title}>
             <Body.H1>{category.title}</Body.H1>
