@@ -1,6 +1,6 @@
 export const ipsers = {
   coordination: {
-    title: 'Coordenação',
+    title: 'Coordination',
     members: [
       {
         name: 'Giulia Priora',
@@ -11,7 +11,7 @@ export const ipsers = {
     ],
   },
   team: {
-    title: 'Equipa',
+    title: 'Team',
     members: [
       {
         name: 'Athina Sachoulidou',
@@ -70,7 +70,7 @@ export const ipsers = {
     ],
   },
   investigators: {
-    title: 'Investigadores/as IPSI',
+    title: 'IPSI Researchers',
     members: [
       {
         name: 'Aleksandra Iugunian',
@@ -97,12 +97,6 @@ export const ipsers = {
         imgSrc: new URL('/images/members/amanda_novaes.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/amanda-costa-novaes-75bab6191',
-      },
-      {
-        name: 'Dimitrius Costa',
-        imgSrc: new URL('/images/members/dimitrius_costa.jpg', import.meta.url)
-          .href,
-        url: 'https://www.linkedin.com/in/dimitrius-costa-780307256',
       },
       {
         name: 'Diogo Brandão',
@@ -203,7 +197,7 @@ export const ipsers = {
     ],
   },
   consultor: {
-    title: 'Membros consultivos',
+    title: 'Advisory members',
     members: [
       {
         name: 'Carys Craig',
