@@ -1,4 +1,50 @@
-export const ipsers = {
+export type Authors =
+  | 'Giulia Priora'
+  | 'Athina Sachoulidou'
+  | 'Claire Bright'
+  | 'Cristina Nogueira da Silva'
+  | 'Francisco Pereira Coutinho'
+  | 'João Zenha Martins'
+  | 'Jorge Morais Carvalho'
+  | 'Miguel de Azevedo Moura'
+  | 'Aleksandra Iugunian'
+  | 'Aline Arenque'
+  | 'Aline Bratti'
+  | 'Amanda Novaes'
+  | 'Dimitrius Costa'
+  | 'Diogo Brandão'
+  | 'Eduardo Santos'
+  | 'Hande Özkayagan'
+  | 'Inês Miguel'
+  | 'Júlia Schütz Veiga'
+  | 'Justyna Pałczyńska'
+  | 'Margarida Mingote'
+  | 'Margarida Morgado'
+  | 'Monyca Motta'
+  | 'Oumaima Derfoufi'
+  | 'Pedro Soares'
+  | 'Raquel Escada Carvalho'
+  | 'Rúben Ferreira'
+  | 'Teresa Brito e Faro'
+  | 'Carys Craig'
+  | 'João Pedro Quintais'
+  | 'Marco Scialdone'
+  | 'Pilar Montero'
+  | 'Raquel Cunha';
+
+type Ipsers = {
+  [key: string]: {
+    title: string;
+    members: {
+      name: Authors;
+      imgSrc: string;
+      url: string;
+      hidden?: boolean;
+    }[];
+  };
+};
+
+export const ipsers: Ipsers = {
   coordination: {
     title: 'Coordination',
     members: [

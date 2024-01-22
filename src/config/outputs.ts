@@ -1,5 +1,21 @@
-export const outputs = [
-  {
+import { Authors } from './ipsers';
+
+export type Book = {
+  title: string;
+  subtitle?: string;
+  link?: string;
+  authors: Authors[];
+};
+
+type Outputs = {
+  [key: string]: {
+    title: string;
+    books: Book[];
+  };
+};
+
+export const outputs: Outputs = {
+  editedBooks: {
     title: 'Edited books and journal issues',
     books: [
       {
@@ -14,7 +30,7 @@ export const outputs = [
       },
     ],
   },
-  {
+  chapters: {
     title: 'Book chapters',
     books: [
       {
@@ -35,7 +51,7 @@ export const outputs = [
         title:
           'An International Instrument on Copyright and Educational Uses: Regulatory Models and Lessons',
         subtitle:
-          'in J Schovsbo (ed) Intellectual Property Rights in Times of Crisis (Edward Elgar 2024) pp (with F Majekolagbe) Preprint available at',
+          'in J Schovsbo (ed) Intellectual Property Rights in Times of Crisis (Edward Elgar 2024) pp (with F Majekolagbe)',
         authors: ['Giulia Priora'],
       },
       {
@@ -63,7 +79,7 @@ export const outputs = [
       },
     ],
   },
-  {
+  peerReviewed: {
     title: 'Peer-reviewed journal articles',
     books: [
       {
@@ -89,24 +105,143 @@ export const outputs = [
       },
     ],
   },
-  {
-    title:
-      'CJEU grapples with the intertwined nature of private copies and retransmission of online television broadcasts',
+  caseComments: {
+    title: 'Case Comments',
     books: [
       {
         title:
-          'Open Educational Resources through the European lens: Pedagogical opportunities and copyright constraints',
+          'CJEU grapples with the intertwined nature of private copies and retransmission of online television broadcasts',
         subtitle: '(2023) JIPLP 18(10) 709-713',
         link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4551810',
         authors: ['Giulia Priora', 'Amanda Novaes'],
       },
+      {
+        title:
+          "CJEU rejects Poland's challenge to preventive upload filtering to combat copyright infringement on online platforms",
+        subtitle: '(2022) EIPR (with BJ Jütte)',
+        link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4233278',
+        authors: ['Giulia Priora', 'Amanda Novaes'],
+      },
     ],
   },
-];
-
-// {
-//   title: 'Title',
-//   subtitle: 'Subtitle',
-//   link: undefined,
-//   authors: ['A'],
-// },
+  bookReviews: {
+    title: 'Book Reviews',
+    books: [
+      {
+        title:
+          'The moral boundaries of Intellectual Property from a US perspective',
+        subtitle: '(JLPIP, forthcoming)',
+        authors: ['Amanda Novaes'],
+      },
+    ],
+  },
+  encyclopedia: {
+    title: 'Encyclopedia Entries',
+    books: [
+      {
+        title: 'IP Negative Spaces',
+        subtitle:
+          'in P Torremans/I Stamatoudi/BJ Jütte/P Yu (eds), Elgar Encyclopedia of Intellectual Property Law (Edward Elgar, forthcoming)',
+        authors: ['Giulia Priora'],
+      },
+    ],
+  },
+  legalOpinions: {
+    title: 'Expert legal opinions',
+    books: [
+      {
+        title:
+          'Copyright limitations and exceptions for the use of digital materials in teaching and learning environments',
+        subtitle: 'Education International Policy brief, October 2023',
+        authors: ['Giulia Priora'],
+      },
+    ],
+  },
+  academicBlogPosts: {
+    title: 'Academic Blog Posts',
+    books: [
+      {
+        title:
+          'Learn more about the Policy office hours on non-copyright limitations on public domain',
+        subtitle: '11 December 2023',
+        authors: ['Hande Özkayagan'],
+        link: 'https://pro.europeana.eu/post/learn-more-about-the-policy-office-hours-on-non-copyright-limitations-on-public-domain',
+      },
+      {
+        title:
+          'Genome Editing Technologies and Patent Rights: An Old Story for a New (More Sustainable) Future?',
+        subtitle: '5 December 2023',
+        authors: ['Aline Bratti'],
+        link: 'https://whatnext.law/2023/12/05/genome-editing-technologies-and-patent-rights-an-old-story-for-a-new-more-sustainable-future',
+      },
+      {
+        title: 'O caso Emicida v. Bauducco e o que é Trade Dress',
+        subtitle: '19 October 2023',
+        authors: ['Monyca Motta'],
+        link: 'https://www.linkedin.com/pulse/o-caso-emicida-v-bauducco-e-que-%2525C3%2525A9-trade-dress-monyca-motta%3FtrackingId=ekcMDGX8zJ573DWwXmWj7w%253D%253D/?trackingId=ekcMDGX8zJ573DWwXmWj7w%3D%3D',
+      },
+      {
+        title:
+          'Internet TV services under the scrutiny of EU copyright law: CJEU ruling in Ocilion” Kluwer Copyright Blog,',
+        subtitle: 'Kluwer Copyright Blog, 19 September 2023',
+        authors: ['Giulia Priora', 'Amanda Novaes'],
+        link: 'https://copyrightblog.kluweriplaw.com/2023/09/19/internet-tv-services-under-the-scrutiny-of-eu-copyright-law-cjeu-ruling-in-ocilion',
+      },
+      {
+        title:
+          'Privacy vs. publicity: Balancing the legal protection of trade secrets and whistleblowing',
+        subtitle: '31 July 2023',
+        authors: ['Aleksandra Iugunian'],
+        link: 'https://whatnext.law/2023/07/31/privacy-vs-publicity-balancing-the-legal-protection-of-trade-secrets-and-whistleblowing',
+      },
+      {
+        title: 'A legal field trip to the post-pandemic digital classroom',
+        subtitle: '24 July 2023.',
+        authors: ['Eduardo Santos'],
+        link: 'https://copyrightblog.kluweriplaw.com/2023/07/24/a-legal-field-trip-to-the-post-pandemic-digital-classroom',
+      },
+      {
+        title:
+          'A summary look at the Portuguese transposition of the CDSM Directive',
+        subtitle: 'Kluwer Copyright Blog, 27 June 2023 (with N Sousa e Silva)',
+        authors: ['Giulia Priora'],
+        link: 'https://copyrightblog.kluweriplaw.com/2023/06/27/a-summary-look-at-the-portuguese-transposition-of-the-cdsm-directive',
+      },
+      {
+        title:
+          'Tackling climate change: a story (also) about intellectual property rights and technology transfers',
+        subtitle: '23 May 2023',
+        authors: ['Júlia Schütz Veiga'],
+        link: 'https://whatnext.law/2023/05/23/tackling-climate-change-a-story-also-about-intellectual-property-rights-and-technology-transfers',
+      },
+      {
+        title:
+          'The Rising Importance of Snippets in Our Daily News Consumption',
+        subtitle: '23 December 2022',
+        authors: ['Inês Miguel'],
+        link: 'https://whatnext.law/en/2022/12/23/the-rising-importance-of-snippets-in-our-daily-news-consumption-2',
+      },
+      {
+        title:
+          "Law ain't Code: Upload filtering technologies and the CDSM Directive",
+        subtitle: '20 December 2022',
+        authors: ['Eduardo Santos'],
+        link: 'https://whatnext.law/en/2022/12/20/law-aint-code-upload-filtering-technologies-and-the-cdsm-directive-2',
+      },
+      {
+        title:
+          "Violazioni dei diritti d'autore online e legittimità del filtraggio in upload: la Corte di Giustizia si esprime sull'Articolo 17 della Direttiva CDSM",
+        subtitle: 'Diritti Comparati, 6 September 2022',
+        authors: ['Giulia Priora'],
+        link: 'https://www.diritticomparati.it/violazioni-dei-diritti-dautore-online-e-legittimita-del-filtraggio-in-upload-la-corte-di-giustizia-si-esprime-sullarticolo-17-della-direttiva-cdsm',
+      },
+      {
+        title:
+          "Empowered to negotiate or obliged to contract? Lessons from the Italian implementation of the press publishers' right",
+        subtitle: 'Kluwer Copyright Blog, 14 April 2022 (with U Furgal)',
+        authors: ['Giulia Priora'],
+        link: 'http://copyrightblog.kluweriplaw.com/2022/04/14/empowered-to-negotiate-or-obliged-to-contract-lessons-from-the-italian-implementation-of-the-press-publishers-right',
+      },
+    ],
+  },
+};

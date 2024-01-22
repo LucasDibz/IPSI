@@ -1,4 +1,5 @@
 import { ipsers } from '../config/ipsers';
+import type { Book } from '../config/outputs';
 
 //@ts-expect-error: it exists...
 const formatter = new Intl.ListFormat('en', {
@@ -6,13 +7,7 @@ const formatter = new Intl.ListFormat('en', {
   type: 'conjunction',
 });
 
-type Book = {
-  title: string;
-  subtitle?: string;
-  link?: string;
-  authors: string[];
-};
-export function Book({ book }: { book: Book }) {
+export function Books({ book }: { book: Book }) {
   const Tag = book?.link ? 'a' : 'div';
   const TagProps = book?.link && {
     href: book.link,
@@ -35,7 +30,7 @@ export function Book({ book }: { book: Book }) {
           {book.authors.map((author, index) => (
             <img
               key={author}
-              className={'w-10 h-10 border-2 rounded-full'}
+              className={'w-12 h-12 border-2 rounded-full'}
               style={{ zIndex: 10 - index }}
               src={getImgSrcFromName(author)}
               alt={author}
@@ -43,14 +38,14 @@ export function Book({ book }: { book: Book }) {
           ))}
         </div>
 
-        <div className='flex flex-col gap-1'>
-          <p className='font-semibold text-slate-900'>{book.title}</p>
+        <div className='flex flex-col gap-1 flex-1'>
+          <p className='font-bold text-slate-900'>{book.title}</p>
           {book?.subtitle && (
-            <p className='text-sm text-end font-normal text-slate-700'>
+            <p className='italic text-xs text-end text-slate-500'>
               {book.subtitle}
             </p>
           )}
-          <span className='text-sm font-normal italic text-slate-500'>
+          <span className=' font-semibold text-slate-600'>
             {formatter.format(book.authors)}
           </span>
         </div>
