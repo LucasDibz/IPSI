@@ -6,6 +6,7 @@ import {
   Activities,
   Contacts,
   ErrorPage,
+  Events,
   Home,
   Outputs,
 } from './pages';
@@ -24,6 +25,10 @@ export const router = createBrowserRouter(
         {
           path: 'about-us',
           element: <AboutUs />,
+        },
+        {
+          path: 'events',
+          element: <Events />,
         },
         {
           path: 'activities',

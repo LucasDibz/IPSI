@@ -1,10 +1,10 @@
-import { Authors } from './ipsers';
+import { Author } from './ipsers';
 
 export type Book = {
   title: string;
   subtitle?: string;
   link?: string;
-  authors: Authors[];
+  authors: Author[];
 };
 
 type Outputs = {

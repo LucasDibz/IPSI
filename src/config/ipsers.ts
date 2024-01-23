@@ -1,4 +1,4 @@
-export type Authors =
+export type Author =
   | 'Giulia Priora'
   | 'Athina Sachoulidou'
   | 'Claire Bright'
@@ -36,7 +36,7 @@ type Ipsers = {
   [key: string]: {
     title: string;
     members: {
-      name: Authors;
+      name: Author;
       imgSrc: string;
       url: string;
       hidden?: boolean;

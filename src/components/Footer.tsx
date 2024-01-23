@@ -22,7 +22,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <ul className='grid grid-cols-2 gap-8 py-3 sm:grid-cols-3 text-slate-500 font-medium'>
+            <ul className='flex gap-8 py-3 justify-between md:justify-end text-slate-500 font-medium'>
               <li>
                 <a
                   href='https://novalaw.unl.pt/en/privacy-policy'
@@ -53,6 +53,7 @@ export function Footer() {
           <div className='flex gap-2 mt-4 justify-center sm:mt-0'>
             {socials.map(({ href, Icon, color, title }) => (
               <a
+                key={href}
                 href={href}
                 rel='noopener noreferrer'
                 target='_blank'
