@@ -13,10 +13,9 @@ export function Outputs() {
             <img
               src={new URL('/images/booklet.jpg', import.meta.url).href}
               alt={'IPSI Booklet'}
-              className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-96 md:rounded-none md:rounded-s-lg shadow-lg'
-              loading='lazy'
+              className='object-cover w-full rounded-t-lg min-h-96 md:h-auto md:min-w-96 md:rounded-none md:rounded-s-lg shadow-lg'
             />
-            <div className='flex flex-col gap-5 justify-between text-slate-600 leading-8'>
+            <div className='flex flex-col gap-5 mt-2 md:mt-0 justify-between text-slate-600 leading-8 text-left'>
               <p>
                 The
                 <strong className='px-1 font-bold'>NOVA IPSI Booklet</strong>

@@ -52,7 +52,7 @@ export function Header() {
         >
           <Link
             to={'/'}
-            className='cursor-pointer text-slate-600 font-semibold transition'
+            className='text-slate-600 font-semibold'
             onClick={() => setNavbarOpen(false)}
           >
             Home
@@ -62,7 +62,7 @@ export function Header() {
             <Link
               key={item.href}
               to={`${item.href}`}
-              className='cursor-pointer text-slate-600 font-semibold transition'
+              className='text-slate-600 font-semibold'
               onClick={() => setNavbarOpen(false)}
             >
               {item.label}
