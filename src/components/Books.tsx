@@ -17,14 +17,12 @@ export function Books({ book }: { book: Book }) {
 
   return (
     <li>
-      <Tag
-        href={book?.link}
+      <div
         className={`items-center flex flex-col md:flex-row gap-3 p-3 rounded-lg sm:flex${
           book?.link
             ? ' hover:shadow transition bg-ipsi/20 border border-ipsi mb-2'
             : ''
         }`}
-        {...TagProps}
       >
         <div className='flex flex-shrink-0 w-fit -space-x-4 rtl:space-x-reverse sm:pr-3'>
           {book.authors.map((author, index) => (
@@ -47,18 +45,20 @@ export function Books({ book }: { book: Book }) {
           ))}
         </div>
 
-        <div className='flex flex-col gap-3 flex-1'>
-          <p className='font-bold text-slate-900'>{book.title}</p>
-          {book?.subtitle && (
-            <p className='italic text-xs text-end text-slate-500'>
-              {book.subtitle}
-            </p>
-          )}
+        <Tag className='w-full flex flex-col gap-3 flex-1' {...TagProps}>
+          <div className='text-left'>
+            <span className='font-bold text-slate-800'>{book.title}</span>
+            {book?.subtitle && (
+              <span className='block md:inline-block mt-2 md:mt-0 md:ml-5 italic text-xs text-slate-400'>
+                {book.subtitle}
+              </span>
+            )}
+          </div>
           <span className=' font-semibold text-slate-600'>
             {formatter.format(book.authors)}
           </span>
-        </div>
-      </Tag>
+        </Tag>
+      </div>
     </li>
   );
 }

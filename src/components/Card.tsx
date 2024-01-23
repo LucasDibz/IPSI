@@ -18,9 +18,7 @@ export function Card({ children, className }: Props & { className?: string }) {
 
 function Header({ children }: Props) {
   return (
-    <article className='min-h-28 flex flex-col justify-around'>
-      {children}
-    </article>
+    <div className='min-h-28 flex flex-col justify-around'>{children}</div>
   );
 }
 Card.Header = Header;
@@ -43,9 +41,13 @@ function Subtitle({ children }: Props) {
 }
 Card.Subtitle = Subtitle;
 
-function Content({ children }: Props) {
+function Content({ children, className }: Props & { className?: string }) {
   return (
-    <div className='font-normal text-slate-800 py-4 border-t border-t-slate-400'>
+    <div
+      className={`font-normal text-slate-800 py-4 border-t border-t-slate-400 ${
+        className ? className : ''
+      }`}
+    >
       {children}
     </div>
   );
