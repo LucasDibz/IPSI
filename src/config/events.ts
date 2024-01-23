@@ -11,7 +11,7 @@ type Schedule = {
   }[];
 };
 
-type Event = {
+export type Event = {
   title: string;
   imgSrc: string;
   date: Date | { from: Date; to: Date };
@@ -40,16 +40,19 @@ export const events: Event[] = [
             hour: '16:00',
             event:
               'Welcome greetings - Margarida Lima Rego, Dean and Associate Professor, NOVA School of Law Presentation of NOVA IPSI - Giulia Priora, Director NOVA IPSI, Assistant Professor, NOVA School of Law',
+            authors: ['Giulia Priora'],
           },
           {
             hour: '16:30',
             event:
               'IP and Sustainability? A Relational Paradigm for Intellectual Property” - Keynote lecture by Carys Craig, Associate Professor, Osgoode Hall Law School Q&A discussion - moderated by Oumaima Derfoufi, PhD Candidate, NOVA School of Law',
+            authors: ['Oumaima Derfoufi'],
           },
           {
             hour: '17:30',
             event:
               'Presentation of the NOVA Starters Academy partnership - Hélder Lopes, Head of Research and Innovation NOVA University, Carla Portela, Entrepreneurship and Innovation Office NOVA University, and Diogo Brandão, PhD Candidate, NOVA School of Law',
+            authors: ['Diogo Brandão'],
           },
           {
             hour: '18:00',
@@ -221,6 +224,7 @@ export const events: Event[] = [
             hour: '14:00',
             event:
               'Welcome greetings - Margarida Lima Rego and Jorge Morais Carvalho, Dean and Vice-Dean NOVA School of Law.\n One year of NOVA IPSI - Giulia Priora, Assistant Professor and Director NOVA IPSI',
+            authors: ['Giulia Priora'],
           },
           {
             hour: '14:30',
@@ -231,11 +235,13 @@ export const events: Event[] = [
             hour: '15:00',
             event:
               'Reaction and moderated open discussion - João Pedro Quintais, Assistant Professor IViR Amsterdam/NOVA IPSI Advisory Board with the moderation of Júlia Veiga, Aline Bratti, Rúben Ferreira Researchers NOVA IPSI',
+            authors: ['Aline Bratti', 'Rúben Ferreira', 'Júlia Schütz Veiga'],
           },
           {
             hour: '15:45',
             event:
               'Closing remarques - Claire Bright, Associate Professor and Director NOVA BHRE',
+            authors: ['Claire Bright'],
           },
           {
             hour: '16:00',

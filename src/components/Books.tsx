@@ -1,5 +1,5 @@
-import { ipsers } from '../config/ipsers';
 import type { Book } from '../config/outputs';
+import { getAuthorProps } from '../utils/getAuthorProps';
 
 //@ts-expect-error: it exists...
 const formatter = new Intl.ListFormat('en', {
@@ -38,7 +38,7 @@ export function Books({ book }: { book: Book }) {
                 src={getAuthorProps(author)?.imgSrc}
                 alt={author}
                 className={
-                  'w-10 h-10 md:w-12 md:h-12 border-2 rounded-full shadow hover:scale-125 transition'
+                  'w-10 h-10 md:w-12 md:h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
                 }
               />
             </a>
@@ -61,11 +61,4 @@ export function Books({ book }: { book: Book }) {
       </div>
     </li>
   );
-}
-
-function getAuthorProps(name: string) {
-  const members = Object.values(ipsers).flatMap((category) => category.members);
-  const author = members.find((member) => member.name === name);
-
-  return author;
 }

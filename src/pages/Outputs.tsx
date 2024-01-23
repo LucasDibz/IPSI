@@ -10,11 +10,17 @@ export function Outputs() {
         <Card className='max-w-2xl mx-auto'>
           <Card.Title>NOVA IPSI Booklet</Card.Title>
           <Card.Content className='md:flex gap-4'>
-            <img
-              src={new URL('/images/booklet.jpg', import.meta.url).href}
-              alt={'IPSI Booklet'}
-              className='object-cover w-full rounded-t-lg min-h-96 md:h-auto md:min-w-96 md:rounded-none md:rounded-s-lg shadow-lg'
-            />
+            <a
+              download
+              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+              className='min-h-96 md:h-auto md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
+            >
+              <img
+                src={new URL('/images/booklet.jpg', import.meta.url).href}
+                alt={'IPSI Booklet'}
+                className='object-cover w-full rounded-t-lg'
+              />
+            </a>
             <div className='flex flex-col gap-5 mt-2 md:mt-0 justify-between text-slate-600 leading-8 text-left'>
               <p>
                 The
@@ -25,13 +31,16 @@ export function Outputs() {
                 booklet is available for <strong>free</strong>, and if
                 preferred, you can request a printed version from us.
               </p>
-              <a
-                download
-                href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
-                className='w-fit inline-flex items-center px-3 py-2 text-center text-white border border-slate-400 bg-slate-600 rounded-lg hover:brightness-90 hover:shadow transition focus:ring-4 focus:outline-none focus:ring-slate-200'
-              >
-                Download here
-              </a>
+
+              <div className='h-full w-full flex items-center justify-center'>
+                <a
+                  download
+                  href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+                  className='w-fit px-3 py-2 text-center text-white border border-slate-400 bg-slate-600 rounded-lg hover:brightness-90 hover:shadow transition focus:ring-4 focus:outline-none focus:ring-slate-200'
+                >
+                  Download here
+                </a>
+              </div>
             </div>
           </Card.Content>
         </Card>

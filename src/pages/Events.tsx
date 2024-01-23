@@ -1,6 +1,6 @@
 import { ArrowBigRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Body } from '../components';
+import { Body, EventDate, EventSpeakers } from '../components';
 import { events } from '../config/events';
 
 export function Events() {
@@ -48,10 +48,12 @@ export function Events() {
                 <EventDate date={event.date} />
               </div>
 
-              <div className='flex justify-between'>
+              <div className='flex items-center justify-between'>
+                <EventSpeakers event={event} />
+
                 <Link
                   to='#'
-                  className='w-fit flex gap-2 items-center px-3 py-2 font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
+                  className='w-fit flex gap-1 items-center px-3 py-2 font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
                 >
                   Read more
                   <ArrowBigRight size={15} />
@@ -62,42 +64,5 @@ export function Events() {
         ))}
       </Body.Section>
     </Body>
-  );
-}
-
-type EventDateProps = {
-  date: Date | { from: Date; to: Date };
-};
-function EventDate({ date }: EventDateProps) {
-  if (date instanceof Date) {
-    return (
-      <time className='ml-auto'>
-        {date.toLocaleString('pt-PT', {
-          day: 'numeric',
-          month: 'short',
-          year: '2-digit',
-        })}
-      </time>
-    );
-  }
-
-  return (
-    <span className='ml-auto'>
-      <time className='px-1'>
-        {date.from.toLocaleString('pt-PT', {
-          day: 'numeric',
-          month: 'short',
-          year: '2-digit',
-        })}
-      </time>
-      -
-      <time className='px-1'>
-        {date.to.toLocaleString('pt-PT', {
-          day: 'numeric',
-          month: 'short',
-          year: '2-digit',
-        })}
-      </time>
-    </span>
   );
 }
