@@ -12,6 +12,13 @@ export function Footer() {
           <IPSILogo />
           <div>
             <ul className='pt-6 pb-3 flex flex-col items-end md:items-start md:flex-row gap-2 md:gap-8 text-slate-700 font-semibold'>
+              <Link
+                to={'/'}
+                className='cursor-pointer text-slate-600 font-semibold transition'
+              >
+                Home
+              </Link>
+
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link to={`${item.href}`} className='hover:underline'>
