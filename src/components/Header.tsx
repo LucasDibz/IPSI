@@ -2,15 +2,8 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import { navigation } from '../config/navigation';
 import { IPSILogo } from './IPSILogo';
-
-const navigation = [
-  { label: 'About us', href: 'about-us' },
-  { label: 'Events', href: 'events' },
-  { label: 'Activities', href: 'activities' },
-  { label: 'Scientific Outputs', href: 'scientific-outputs' },
-  { label: 'Contacts', href: 'contacts' },
-];
 
 export function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
