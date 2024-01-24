@@ -8,7 +8,7 @@ export function Home() {
       <Body.Section>
         <Body.H1>
           NOVA School of Law Knowledge Centre on Intellectual Property and
-          Sustainable Innovation (NOVA IPSI)
+          Sustainable Innovation <strong>(NOVA IPSI)</strong>
         </Body.H1>
 
         <p>

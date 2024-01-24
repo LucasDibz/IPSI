@@ -17,7 +17,7 @@ export function Outputs() {
             >
               <img
                 src={new URL('/images/booklet.jpg', import.meta.url).href}
-                alt={'IPSI Booklet'}
+                alt={'NOVA IPSI Booklet'}
                 className='object-cover w-full rounded-t-lg'
               />
             </a>
@@ -47,18 +47,23 @@ export function Outputs() {
       </Body.Section>
 
       <Body.Section>
-        {Object.values(outputs).map((output) => (
-          <Card key={output.title} className='max-w-5xl'>
-            <Card.Title>{output.title}</Card.Title>
-            <Card.Content>
-              <ul className='divide-y divider-slate-200'>
-                {output.books.map((book) => (
-                  <Books key={book.title} book={book} />
-                ))}
-              </ul>
-            </Card.Content>
-          </Card>
-        ))}
+        {/* Display only outputs that have URL's */}
+        {Object.values(outputs)
+          .filter((output) => output.books.some((book) => book.link))
+          .map((output) => (
+            <Card key={output.title} className='max-w-5xl'>
+              <Card.Title>{output.title}</Card.Title>
+              <Card.Content>
+                <ul className='divide-y divider-slate-200'>
+                  {output.books
+                    .filter((book) => book.link)
+                    .map((book) => (
+                      <Books key={book.title} book={book} />
+                    ))}
+                </ul>
+              </Card.Content>
+            </Card>
+          ))}
       </Body.Section>
     </Body>
   );

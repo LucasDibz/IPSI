@@ -14,7 +14,7 @@ export function Contacts() {
         </Body.Article>
 
         <Body.Section>
-          <Body.H1>Want to become part of IPSI?</Body.H1>
+          <Body.H1>Want to become part of NOVA IPSI?</Body.H1>
 
           <Body.Article>
             <p>
@@ -25,7 +25,8 @@ export function Contacts() {
 
             <Body.List>
               <li>
-                Title of the research project you would like to develop in IPSI;
+                Title of the research project you would like to develop in NOVA
+                IPSI;
               </li>
               <li>Short explanation of your research interest in IP law;</li>
               <li>

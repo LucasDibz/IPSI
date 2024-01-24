@@ -56,67 +56,8 @@ export const ipsers: Ipsers = {
       },
     ],
   },
-  team: {
-    title: 'Faculty members',
-    members: [
-      {
-        name: 'Athina Sachoulidou',
-        imgSrc: new URL(
-          '/images/members/athina_sachoulidou.jpg',
-          import.meta.url,
-        ).href,
-        url: 'https://novalaw.unl.pt/athina-sachoulidou',
-      },
-      {
-        name: 'Claire Bright',
-        imgSrc: new URL('/images/members/claire_bright.jpg', import.meta.url)
-          .href,
-        url: 'https://novalaw.unl.pt/claire-bright',
-      },
-      {
-        name: 'Cristina Nogueira da Silva',
-        imgSrc: new URL(
-          '/images/members/cristina_nogueira_da_silva.jpg',
-          import.meta.url,
-        ).href,
-        url: 'https://novalaw.unl.pt/cristina-nogueira-da-silva',
-      },
-      {
-        name: 'Francisco Pereira Coutinho',
-        imgSrc: new URL(
-          '/images/members/francisco_pereira_coutinho.jpg',
-          import.meta.url,
-        ).href,
-        url: 'https://novalaw.unl.pt/francisco-pereira-coutinho',
-      },
-      {
-        name: 'João Zenha Martins',
-        imgSrc: new URL(
-          '/images/members/joao_zenha_martins.jpg',
-          import.meta.url,
-        ).href,
-        url: 'https://novalaw.unl.pt/joao-zenha-martins',
-      },
-      {
-        name: 'Jorge Morais Carvalho',
-        imgSrc: new URL(
-          '/images/members/jorge_morais_carvalho.jpg',
-          import.meta.url,
-        ).href,
-        url: 'https://novalaw.unl.pt/jorge-morais-carvalho',
-      },
-      {
-        name: 'Miguel de Azevedo Moura',
-        imgSrc: new URL(
-          '/images/members/miguel_de_azevedo_moura.jpg',
-          import.meta.url,
-        ).href,
-        url: 'https://novalaw.unl.pt/miguel-de-azevedo-moura',
-      },
-    ],
-  },
   investigators: {
-    title: 'IPSI Researchers',
+    title: 'NOVA IPSI Research Team',
     members: [
       {
         name: 'Aleksandra Iugunian',
@@ -251,6 +192,65 @@ export const ipsers: Ipsers = {
           import.meta.url,
         ).href,
         url: 'https://www.linkedin.com/in/teresabritoefaro',
+      },
+    ],
+  },
+  team: {
+    title: 'Faculty members',
+    members: [
+      {
+        name: 'Athina Sachoulidou',
+        imgSrc: new URL(
+          '/images/members/athina_sachoulidou.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://novalaw.unl.pt/athina-sachoulidou',
+      },
+      {
+        name: 'Claire Bright',
+        imgSrc: new URL('/images/members/claire_bright.jpg', import.meta.url)
+          .href,
+        url: 'https://novalaw.unl.pt/claire-bright',
+      },
+      {
+        name: 'Cristina Nogueira da Silva',
+        imgSrc: new URL(
+          '/images/members/cristina_nogueira_da_silva.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://novalaw.unl.pt/cristina-nogueira-da-silva',
+      },
+      {
+        name: 'Francisco Pereira Coutinho',
+        imgSrc: new URL(
+          '/images/members/francisco_pereira_coutinho.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://novalaw.unl.pt/francisco-pereira-coutinho',
+      },
+      {
+        name: 'João Zenha Martins',
+        imgSrc: new URL(
+          '/images/members/joao_zenha_martins.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://novalaw.unl.pt/joao-zenha-martins',
+      },
+      {
+        name: 'Jorge Morais Carvalho',
+        imgSrc: new URL(
+          '/images/members/jorge_morais_carvalho.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://novalaw.unl.pt/jorge-morais-carvalho',
+      },
+      {
+        name: 'Miguel de Azevedo Moura',
+        imgSrc: new URL(
+          '/images/members/miguel_de_azevedo_moura.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://novalaw.unl.pt/miguel-de-azevedo-moura',
       },
     ],
   },

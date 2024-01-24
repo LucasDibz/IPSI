@@ -5,7 +5,7 @@ export function IPSILogo() {
     <Link to='/'>
       <img
         src={new URL('/images/logo.jpg', import.meta.url).href}
-        alt='IPSI Logo'
+        alt='NOVA IPSI Logo'
         loading='lazy'
         className='object-cover h-20 w-56'
       />
