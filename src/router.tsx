@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 
 import { Layout } from './Layout';
 import {
@@ -11,41 +11,36 @@ import {
   Outputs,
 } from './pages';
 
-export const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <Layout />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          index: true,
-          element: <Home />,
-        },
-        {
-          path: 'about-us',
-          element: <AboutUs />,
-        },
-        {
-          path: 'events',
-          element: <Events />,
-        },
-        {
-          path: 'activities',
-          element: <Activities />,
-        },
-        {
-          path: 'scientific-outputs',
-          element: <Outputs />,
-        },
-        {
-          path: 'contacts',
-          element: <Contacts />,
-        },
-      ],
-    },
-  ],
+export const router = createHashRouter([
   {
-    basename: '/IPSI',
+    path: '/',
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'about-us',
+        element: <AboutUs />,
+      },
+      {
+        path: 'events',
+        element: <Events />,
+      },
+      {
+        path: 'activities',
+        element: <Activities />,
+      },
+      {
+        path: 'scientific-outputs',
+        element: <Outputs />,
+      },
+      {
+        path: 'contacts',
+        element: <Contacts />,
+      },
+    ],
   },
-);
+]);
