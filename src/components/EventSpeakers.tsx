@@ -4,8 +4,9 @@ import { getAuthorProps } from '../utils/getAuthorProps';
 
 type EventSpeakersProps = {
   event: Event;
+  all?: boolean;
 };
-export function EventSpeakers({ event }: EventSpeakersProps) {
+export function EventSpeakers({ event, all }: EventSpeakersProps) {
   const authors = new Set<Author>();
 
   for (const events of event.agenda) {
@@ -16,6 +17,33 @@ export function EventSpeakers({ event }: EventSpeakersProps) {
         }
       }
     }
+  }
+
+  if (all) {
+    return (
+      <div className='p-5 flex flex-wrap gap-5'>
+        {Array.from(authors).map((author) => (
+          <a
+            key={author}
+            href={getAuthorProps(author)?.url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex flex-col items-center'
+          >
+            <img
+              src={getAuthorProps(author)?.imgSrc}
+              alt={author}
+              className={
+                'w-16 h-16 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
+              }
+            />
+            <span className='font-semibold text-center'>
+              {author.split(' ')[0]}
+            </span>
+          </a>
+        ))}
+      </div>
+    );
   }
 
   return (
