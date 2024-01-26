@@ -4,6 +4,12 @@ import { useSearchParams } from 'react-router-dom';
 import { EventDate, EventSpeakers } from '.';
 import { events } from '../config/events';
 
+//@ts-expect-error: it exists...
+const formatter = new Intl.ListFormat('en', {
+  style: 'long',
+  type: 'conjunction',
+});
+
 export function Drawer() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -93,19 +99,20 @@ export function Drawer() {
                     {schedule.hour}
                   </time>
 
-                  <span>{schedule.event}</span>
+                  <span className='font-bold text-slate-600 leading-6 tracking-wider'>
+                    {schedule.event}
+                  </span>
 
-                  <div className='text-slate-500 font-semibold flex gap-2 items-center'>
-                    {schedule.authors?.map((author) => (
-                      <span key={author} className='font-bold'>
-                        {author}
-                      </span>
-                    ))}
-                  </div>
+                  <span className='text-slate-500 font-semibold flex gap-2 items-center'>
+                    {formatter.format(schedule.authors)}
+                  </span>
 
                   {schedule.guests && (
                     <div className='space-x-1 text-slate-600'>
-                      <span className='font-bold'>{schedule.guests}</span>
+                      Guest:
+                      <span className='px-1 font-semibold'>
+                        {formatter.format(schedule.guests)}
+                      </span>
                     </div>
                   )}
                 </div>
