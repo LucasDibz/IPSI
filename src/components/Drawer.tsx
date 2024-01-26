@@ -10,6 +10,10 @@ export function Drawer() {
 
   const eventQuery = searchParams.get('event');
 
+  if (!eventQuery) {
+    dialogRef?.current?.close();
+  }
+
   const event = events.find(
     (event) => event?.title.toLowerCase().split(' ').join('-') === eventQuery,
   );
@@ -32,10 +36,9 @@ export function Drawer() {
       }`}
     >
       <div className='flex flex-col gap-5'>
-        <XCircle
-          className='absolute left-2.5 bg-slate-200 rounded-full flex-shrink-0 text-slate-400 cursor-pointer hover:text-slate-500'
-          onClick={() => dialogRef.current?.close()}
-        />
+        <button type='button' onClick={() => dialogRef.current?.close()}>
+          <XCircle className='absolute left-2.5 bg-slate-200 rounded-full flex-shrink-0 text-slate-400 cursor-pointer hover:text-slate-500' />
+        </button>
         <div>
           <h5
             id='drawer-label'
