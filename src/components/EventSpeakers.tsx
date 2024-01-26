@@ -3,10 +3,12 @@ import { Author } from '../config/ipsers';
 import { getAuthorProps } from '../utils/getAuthorProps';
 
 type EventSpeakersProps = {
-  event: Event;
+  event: Event | undefined;
   all?: boolean;
 };
 export function EventSpeakers({ event, all }: EventSpeakersProps) {
+  if (!event) return null;
+
   const authors = new Set<Author>();
 
   for (const events of event.agenda) {

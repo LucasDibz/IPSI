@@ -1,14 +1,11 @@
 import { MapPin } from 'lucide-react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Body, EventDate, EventSpeakers } from '../components';
 import { Drawer } from '../components/Drawer';
 import { events } from '../config/events';
 
 export function Events() {
-  const { event } = useParams();
-  console.log({ event });
-
   return (
     <>
       <Drawer />
@@ -19,7 +16,7 @@ export function Events() {
           {events.map((event) => (
             <article
               key={event.title}
-              className='flex flex-col max-w-xs border border-slate-200 rounded-lg shadow'
+              className='flex flex-col max-w-xs border border-slate-200 rounded-lg shadow pb-2'
             >
               <Link to={'#'}>
                 <img
@@ -43,7 +40,7 @@ export function Events() {
 
                 <div className='flex flex-col md:flex-row md:justify-between md:items-center text-slate-400 italic text-xs'>
                   <div className='flex gap-1'>
-                    <MapPin size={15} />
+                    <MapPin size={15} className='flex-shrink-0' />
                     <span
                       className='truncate md:max-w-32 xl:max-w-28'
                       title={event.location}
@@ -59,7 +56,10 @@ export function Events() {
                   <EventSpeakers event={event} />
 
                   <Link
-                    to='#'
+                    to={`?event=${event.title
+                      .toLowerCase()
+                      .split(' ')
+                      .join('-')}`}
                     className='w-fit px-3 py-2 font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
                   >
                     Read more
