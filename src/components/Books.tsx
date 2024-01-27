@@ -38,7 +38,7 @@ export function Books({ book }: { book: Book }) {
                 src={getAuthorProps(author)?.imgSrc}
                 alt={author}
                 className={
-                  'w-10 h-10 md:w-12 md:h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
+                  'w-12 h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
                 }
               />
             </a>

@@ -13,7 +13,7 @@ export function Outputs() {
             <a
               download
               href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
-              className='min-h-96 md:h-auto md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
+              className='min-h-[420px] md:h-auto md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
             >
               <img
                 src={new URL('/images/booklet.jpg', import.meta.url).href}
