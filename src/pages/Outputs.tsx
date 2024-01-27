@@ -9,11 +9,11 @@ export function Outputs() {
       <Body.Section>
         <Card className='max-w-2xl mx-auto'>
           <Card.Title>NOVA IPSI Booklet</Card.Title>
-          <Card.Content className='md:flex gap-4'>
+          <Card.Content className='xl:flex gap-4'>
             <a
               download
               href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
-              className='min-h-[420px] md:h-auto md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
+              className='min-h-[420px] md:min-h-96 md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
             >
               <img
                 src={new URL('/images/booklet.jpg', import.meta.url).href}
@@ -21,7 +21,7 @@ export function Outputs() {
                 className='object-cover w-full rounded-t-lg'
               />
             </a>
-            <div className='flex flex-col gap-5 mt-2 md:mt-0 justify-between text-slate-600 leading-8 text-left'>
+            <div className='flex flex-col gap-5 mt-2 xl:mt-0 justify-between text-slate-600 leading-8 text-left'>
               <p>
                 The
                 <strong className='px-1 font-bold'>NOVA IPSI Booklet</strong>
