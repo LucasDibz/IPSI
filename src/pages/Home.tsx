@@ -8,7 +8,7 @@ export function Home() {
       <Body.Section>
         <Body.H1>
           <strong className='pr-1'>NOVA IPSI</strong>
-          Centre on Intellectual Property and Sustainable Innovation
+          Knowledge Centre on Intellectual Property and Sustainable Innovation
         </Body.H1>
 
         <p>
