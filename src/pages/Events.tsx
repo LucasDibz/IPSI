@@ -18,7 +18,9 @@ export function Events() {
               key={event.title}
               className='flex flex-col max-w-xs border border-slate-200 rounded-lg shadow pb-2'
             >
-              <Link to={'#'}>
+              <Link
+                to={`?event=${event.title.toLowerCase().split(' ').join('-')}`}
+              >
                 <img
                   src={event.imgSrc}
                   alt={event.title}
@@ -28,13 +30,11 @@ export function Events() {
               </Link>
 
               <div className='p-2 xl:p-5 h-full w-full flex flex-col gap-3 justify-between text-left'>
-                <Link to={'#'}>
-                  <h5 className='text-lg font-bold tracking-tight text-slate-900'>
-                    {event.title}
-                  </h5>
-                </Link>
+                <h5 className='text-lg font-bold tracking-tight text-slate-900'>
+                  {event.title}
+                </h5>
 
-                <p className='line-clamp-4 overflow-hidden text-ellipsis font-normal text-slate-700'>
+                <p className='text-sm text-justify line-clamp-6 overflow-hidden text-ellipsis font-normal text-slate-700'>
                   {event.description}
                 </p>
 

@@ -14,7 +14,10 @@ export function Activities() {
               <Card.Title>{activity.title}</Card.Title>
               <Card.Subtitle>{activity.subtitle}</Card.Subtitle>
             </Card.Header>
-            <Card.Content>{activity.content}</Card.Content>
+            <Card.Content>
+              {/* biome-ignore lint/security/noDangerouslySetInnerHtml: trusted */}
+              <p dangerouslySetInnerHTML={{ __html: activity.content }} />
+            </Card.Content>
             {activity.links && (
               <div className='mt-auto ml-auto text-end italic'>
                 <span>Discover more at</span>

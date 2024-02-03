@@ -10,37 +10,37 @@ export function AboutUs() {
         </h2>
 
         <Body.H1>
-          Founded in September 2022, NOVA IPSI is a knowledge Centre part of
+          Founded in September 2022, NOVA IPSI is a Knowledge Centre part of the
+          Centre for Research on Law and Society
           <a
             href='https://novalaw.unl.pt/en/cedis'
             target='_blank'
             rel='noopener noreferrer'
-            className='px-3 underline font-bold'
+            className='px-2 underline font-bold'
           >
-            CEDIS (Centre for Research on Law and Society)
-          </a>
+            (CEDIS)
+          </a>{' '}
           of
           <a
-            href='https://novalaw.unl.pt'
+            href='https://novalaw.unl.pt/'
             target='_blank'
             rel='noopener noreferrer'
-            className='px-3 underline font-bold'
+            className='px-2 underline font-bold'
           >
-            NOVA School of Law
+            NOVA School of Law,
           </a>
-          Lisbon
+          Lisbon.
         </Body.H1>
       </div>
 
       <Body.Section>
         <Body.Article>
           <p>
-            At NOVA IPSI we are dedicated to the academic research on
+            At NOVA IPSI we are dedicated to academic research on
             <strong className='px-1'>
               Intellectual Property Law in a society seeking Sustainability.
             </strong>
-            While committing to the study and advancement of the legal concepts,
-            regulations, and impacts of IP, we aim at:
+            Intellectual Property Law in a society seeking Sustainability
           </p>
 
           <Body.List>

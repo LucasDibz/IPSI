@@ -23,46 +23,49 @@ export type Event = {
 
 export const events: Event[] = [
   {
-    title: 'Inaugural Lecture 2022',
-    imgSrc: new URL(
-      '/images/events/inaugural_lecture_2022.jpeg',
-      import.meta.url,
-    ).href,
-    date: new Date('14 December, 2022'),
+    title: 'Annual Lecture 2023',
+    imgSrc: new URL('/images/events/annual_lecture_2023.jpeg', import.meta.url)
+      .href,
+    date: new Date('14 November, 2023'),
     location: 'Hybrid event at NOVA School of Law and Online',
     description:
-      'NOVA IPSI is glad to invite you to its Inaugural Lecture 2022. Please find the registration details below. The event will be held in English.',
+      'After a year of passionate work, we are pleased to invite you to our NOVA IPSI Annual Lecture 2023! Join us for a moment of sharing and open discussion on IP & sustainability featuring a keynote lecture on Equity and International IP Law and a joyful gathering with live music and cocktail buffet.',
     agenda: [
       {
-        day: '14 December, 2022',
+        day: '14 November, 2023',
         schedule: [
           {
-            hour: '16:00',
+            hour: '14:00',
             event:
-              'Welcome greetings - Margarida Lima Rego, Dean and Associate Professor, NOVA School of Law Presentation of NOVA IPSI - Giulia Priora, Director NOVA IPSI, Assistant Professor, NOVA School of Law',
+              'Welcome greetings - Margarida Lima Rego and Jorge Morais Carvalho, Dean and Vice-Dean NOVA School of Law.\n One year of NOVA IPSI - Giulia Priora, Assistant Professor and Director NOVA IPSI',
             authors: ['Giulia Priora'],
           },
           {
-            hour: '16:30',
+            hour: '14:30',
             event:
-              'IP and Sustainability? A Relational Paradigm for Intellectual Property” - Keynote lecture by Carys Craig, Associate Professor, Osgoode Hall Law School Q&A discussion - moderated by Oumaima Derfoufi, PhD Candidate, NOVA School of Law',
-            authors: ['Oumaima Derfoufi'],
+              'Keynote Lecture “Equity and International IP Law” - Emmanuel Oke, Senior Lecturer Edinburgh Law School',
           },
           {
-            hour: '17:30',
+            hour: '15:00',
             event:
-              'Presentation of the NOVA Starters Academy partnership - Hélder Lopes, Head of Research and Innovation NOVA University, Carla Portela, Entrepreneurship and Innovation Office NOVA University, and Diogo Brandão, PhD Candidate, NOVA School of Law',
-            authors: ['Diogo Brandão'],
+              'Reaction and moderated open discussion - João Pedro Quintais, Assistant Professor IViR Amsterdam/NOVA IPSI Advisory Board with the moderation of Júlia Veiga, Aline Bratti, Rúben Ferreira Researchers NOVA IPSI',
+            authors: ['Aline Bratti', 'Rúben Ferreira', 'Júlia Schütz Veiga'],
           },
           {
-            hour: '18:00',
+            hour: '15:45',
             event:
-              'Closing remarks - Joana Farrajota, Vice-Dean and Assistant Professor, NOVA School of Law',
+              'Closing remarques - Claire Bright, Associate Professor and Director NOVA BHRE',
+            authors: ['Claire Bright'],
+          },
+          {
+            hour: '16:00',
+            event: 'Live music performance and cocktail buffet - JurisTuna',
           },
         ],
       },
     ],
   },
+
   {
     title: 'Introduction to Intellectual Property Law in the EU',
     imgSrc: new URL(
@@ -208,44 +211,43 @@ export const events: Event[] = [
       },
     ],
   },
+
   {
-    title: 'Annual Lecture 2023',
-    imgSrc: new URL('/images/events/annual_lecture_2023.jpeg', import.meta.url)
-      .href,
-    date: new Date('14 November, 2023'),
+    title: 'Inaugural Lecture 2022',
+    imgSrc: new URL(
+      '/images/events/inaugural_lecture_2022.jpeg',
+      import.meta.url,
+    ).href,
+    date: new Date('14 December, 2022'),
     location: 'Hybrid event at NOVA School of Law and Online',
     description:
-      'After a year of passionate work, we are pleased to invite you to our NOVA IPSI Annual Lecture 2023! Join us for a moment of sharing and open discussion on IP & sustainability featuring a keynote lecture on Equity and International IP Law and a joyful gathering with live music and cocktail buffet.',
+      'NOVA IPSI is glad to invite you to its Inaugural Lecture 2022. Please find the registration details below. The event will be held in English.',
     agenda: [
       {
-        day: '14 November, 2023',
+        day: '14 December, 2022',
         schedule: [
           {
-            hour: '14:00',
+            hour: '16:00',
             event:
-              'Welcome greetings - Margarida Lima Rego and Jorge Morais Carvalho, Dean and Vice-Dean NOVA School of Law.\n One year of NOVA IPSI - Giulia Priora, Assistant Professor and Director NOVA IPSI',
+              'Welcome greetings - Margarida Lima Rego, Dean and Associate Professor, NOVA School of Law Presentation of NOVA IPSI - Giulia Priora, Director NOVA IPSI, Assistant Professor, NOVA School of Law',
             authors: ['Giulia Priora'],
           },
           {
-            hour: '14:30',
+            hour: '16:30',
             event:
-              'Keynote Lecture “Equity and International IP Law” - Emmanuel Oke, Senior Lecturer Edinburgh Law School',
+              'IP and Sustainability? A Relational Paradigm for Intellectual Property” - Keynote lecture by Carys Craig, Associate Professor, Osgoode Hall Law School Q&A discussion - moderated by Oumaima Derfoufi, PhD Candidate, NOVA School of Law',
+            authors: ['Oumaima Derfoufi'],
           },
           {
-            hour: '15:00',
+            hour: '17:30',
             event:
-              'Reaction and moderated open discussion - João Pedro Quintais, Assistant Professor IViR Amsterdam/NOVA IPSI Advisory Board with the moderation of Júlia Veiga, Aline Bratti, Rúben Ferreira Researchers NOVA IPSI',
-            authors: ['Aline Bratti', 'Rúben Ferreira', 'Júlia Schütz Veiga'],
+              'Presentation of the NOVA Starters Academy partnership - Hélder Lopes, Head of Research and Innovation NOVA University, Carla Portela, Entrepreneurship and Innovation Office NOVA University, and Diogo Brandão, PhD Candidate, NOVA School of Law',
+            authors: ['Diogo Brandão'],
           },
           {
-            hour: '15:45',
+            hour: '18:00',
             event:
-              'Closing remarques - Claire Bright, Associate Professor and Director NOVA BHRE',
-            authors: ['Claire Bright'],
-          },
-          {
-            hour: '16:00',
-            event: 'Live music performance and cocktail buffet - JurisTuna',
+              'Closing remarks - Joana Farrajota, Vice-Dean and Assistant Professor, NOVA School of Law',
           },
         ],
       },

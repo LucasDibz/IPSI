@@ -7,7 +7,7 @@ import { IPSILogo } from './IPSILogo';
 export function Footer() {
   return (
     <footer className='mt-10 pb-5 md:pb-0 border-t border-t-slate-400'>
-      <div className='mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8'>
+      <div className='mx-auto w-full p-4 py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
           <IPSILogo />
           <div>

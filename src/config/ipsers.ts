@@ -1,36 +1,37 @@
 export type Author =
-  | 'Giulia Priora'
-  | 'Athina Sachoulidou'
-  | 'Claire Bright'
-  | 'Cristina Nogueira da Silva'
-  | 'Francisco Pereira Coutinho'
-  | 'João Zenha Martins'
-  | 'Jorge Morais Carvalho'
-  | 'Miguel de Azevedo Moura'
   | 'Aleksandra Iugunian'
   | 'Aline Arenque'
   | 'Aline Bratti'
   | 'Amanda Novaes'
+  | 'Athina Sachoulidou'
+  | 'Carys Craig'
+  | 'Claire Bright'
+  | 'Cristina Nogueira da Silva'
   | 'Dimitrius Costa'
   | 'Diogo Brandão'
   | 'Eduardo Santos'
+  | 'Francisco Pereira Coutinho'
+  | 'Giulia Priora'
   | 'Hande Özkayagan'
   | 'Inês Miguel'
+  | 'João Pedro Quintais'
+  | 'João Zenha Martins'
+  | 'Jorge Morais Carvalho'
   | 'Júlia Schütz Veiga'
   | 'Justyna Pałczyńska'
+  | 'Marco Scialdone'
   | 'Margarida Mingote'
   | 'Margarida Morgado'
+  | 'Marisa Frade'
+  | 'Miguel de Azevedo Moura'
   | 'Monyca Motta'
   | 'Oumaima Derfoufi'
   | 'Pedro Soares'
+  | 'Pilar Montero'
+  | 'Raquel Cunha'
   | 'Raquel Escada Carvalho'
   | 'Rúben Ferreira'
-  | 'Teresa Brito e Faro'
-  | 'Carys Craig'
-  | 'João Pedro Quintais'
-  | 'Marco Scialdone'
-  | 'Pilar Montero'
-  | 'Raquel Cunha';
+  | 'Teresa Brito e Faro';
 
 type Ipsers = {
   [key: string]: {
@@ -146,6 +147,12 @@ export const ipsers: Ipsers = {
           import.meta.url,
         ).href,
         url: 'https://www.linkedin.com/in/margarida-morgado',
+      },
+      {
+        name: 'Marisa Frade',
+        imgSrc: new URL('/images/members/marisa_frade.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/marisa-frade',
       },
       {
         name: 'Monyca Motta',

@@ -24,7 +24,7 @@ export function Body({ children }: Props) {
 function Section({ children, className }: Props & { className?: string }) {
   return (
     <section
-      className={`z-10 grid gap-6 md:text-justify max-w-xl xl:max-w-4xl ${
+      className={`z-10 grid gap-6 max-w-xl xl:max-w-4xl ${
         className ? className : ''
       }`}
     >
