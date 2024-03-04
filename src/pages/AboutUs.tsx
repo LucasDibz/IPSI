@@ -68,6 +68,7 @@ export function AboutUs() {
             <div className='flex flex-wrap gap-8 justify-center lg:justify-normal'>
               {category.members
                 .filter((member) => !member?.hidden)
+                .sort((a, b) => (a.name > b.name ? 1 : -1))
                 .map((member) => (
                   <a
                     key={member.name}

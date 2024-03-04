@@ -9,7 +9,9 @@ export type Author =
   | 'Cristina Nogueira da Silva'
   | 'Dimitrius Costa'
   | 'Diogo Brandão'
+  | 'Duarte Manso'
   | 'Eduardo Santos'
+  | 'Francisco Lobão Alonso'
   | 'Francisco Pereira Coutinho'
   | 'Giulia Priora'
   | 'Hande Özkayagan'
@@ -23,6 +25,7 @@ export type Author =
   | 'Margarida Mingote'
   | 'Margarida Morgado'
   | 'Marisa Frade'
+  | 'Marta Beleza'
   | 'Miguel de Azevedo Moura'
   | 'Monyca Motta'
   | 'Oumaima Derfoufi'
@@ -202,6 +205,26 @@ export const ipsers: Ipsers = {
           import.meta.url,
         ).href,
         url: 'https://www.linkedin.com/in/teresabritoefaro',
+      },
+      {
+        name: 'Marta Beleza',
+        imgSrc: new URL('/images/members/marta_beleza.jpg', import.meta.url)
+          .href,
+        url: 'http://linkedin.com/in/marta-beleza-costa-4bb7a61b7',
+      },
+      {
+        name: 'Francisco Lobão Alonso',
+        imgSrc: new URL(
+          '/images/members/francisco_lobao_alonso.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://www.linkedin.com/in/francisco-lob%C3%A3o-alonso-20672b244',
+      },
+      {
+        name: 'Duarte Manso',
+        imgSrc: new URL('/images/members/duarte_manso.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/duarte-manso-4b599a231',
       },
     ],
   },
