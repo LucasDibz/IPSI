@@ -88,6 +88,7 @@ export const ipsers: Ipsers = {
       },
       {
         name: 'Dimitrius Costa',
+        hidden: true,
         imgSrc: new URL('/images/members/dimitrius_costa.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/dimitrius-costa-780307256',
@@ -156,6 +157,7 @@ export const ipsers: Ipsers = {
       },
       {
         name: 'Monyca Motta',
+        hidden: true,
         imgSrc: new URL('/images/members/monyca_motta.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/monycamotta',
@@ -180,6 +182,7 @@ export const ipsers: Ipsers = {
       },
       {
         name: 'Raquel Escada Carvalho',
+        hidden: true,
         imgSrc: new URL(
           '/images/members/raquel_escada_carvalho.jpg',
           import.meta.url,
