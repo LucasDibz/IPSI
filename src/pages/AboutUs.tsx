@@ -8,33 +8,33 @@ export function AboutUs() {
         <h2 className='text-xl leading-5 text-red-600 font-semibold'>
           About us
         </h2>
-
-        <Body.H1>
-          Founded in September 2022, NOVA IPSI is a Knowledge Centre part of the
-          Centre for Research on Law and Society
-          <a
-            href='https://novalaw.unl.pt/en/cedis'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='px-2 underline font-bold'
-          >
-            (CEDIS)
-          </a>{' '}
-          of
-          <a
-            href='https://novalaw.unl.pt/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='px-2 underline font-bold'
-          >
-            NOVA School of Law,
-          </a>
-          Lisbon.
-        </Body.H1>
       </div>
 
       <Body.Section>
         <Body.Article>
+          <p>
+            NOVA IPSI is a Knowledge Centre part of the Centre for Research on
+            Law and Society
+            <a
+              href='https://novalaw.unl.pt/en/cedis'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='px-2 underline font-bold'
+            >
+              (CEDIS)
+            </a>{' '}
+            of
+            <a
+              href='https://novalaw.unl.pt/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='px-2 underline font-bold'
+            >
+              NOVA School of Law,
+            </a>
+            Lisbon.
+          </p>
+
           <p>
             At NOVA IPSI we are dedicated to academic research on
             <strong className='px-1'>
