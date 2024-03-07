@@ -26,6 +26,7 @@ export type Author =
   | 'Margarida Morgado'
   | 'Marisa Frade'
   | 'Marta Beleza'
+  | 'Marta Diniz'
   | 'Miguel de Azevedo Moura'
   | 'Monyca Motta'
   | 'Oumaima Derfoufi'
@@ -61,7 +62,7 @@ export const ipsers: Ipsers = {
     ],
   },
   investigators: {
-    title: 'NOVA IPSI Research Team',
+    title: 'NOVA IPSI Researchers',
     members: [
       {
         name: 'Aleksandra Iugunian',
@@ -219,6 +220,12 @@ export const ipsers: Ipsers = {
           import.meta.url,
         ).href,
         url: 'https://www.linkedin.com/in/francisco-lob%C3%A3o-alonso-20672b244',
+      },
+      {
+        name: 'Marta Diniz',
+        imgSrc: new URL('/images/members/marta_diniz.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/a-marta-diniz',
       },
       {
         name: 'Duarte Manso',
