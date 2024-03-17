@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from './Layout';
 import {
@@ -11,7 +11,7 @@ import {
   Outputs,
 } from './pages';
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
