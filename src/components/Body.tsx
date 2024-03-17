@@ -10,7 +10,7 @@ export function Body({ children }: Props) {
   return (
     <main className='relative container mx-auto px-4 md:px-0 pt-20 grid gap-8 justify-center md:justify-normal'>
       <img
-        className='md:mt-2 w-28 h-28 top-0 lg:top-auto lg:w-96 lg:h-96 absolute right-0 z-0'
+        className='md:mt-2 w-28 md:h-24 top-0 lg:top-auto lg:w-80 lg:h-80 xl:w-96 xl:h-96 absolute right-0 z-0'
         src={new URL('/images/ipsi-draw-fluid.jpg', import.meta.url).href}
         alt='NOVA IPSI Logo'
         loading='lazy'
@@ -24,7 +24,7 @@ export function Body({ children }: Props) {
 function Section({ children, className }: Props & { className?: string }) {
   return (
     <section
-      className={`z-10 grid gap-6 max-w-xl xl:max-w-4xl ${
+      className={`z-10 grid gap-6 max-w-2xl xl:max-w-4xl ${
         className ? className : ''
       }`}
     >
@@ -36,9 +36,7 @@ Body.Section = Section;
 
 function Article({ children }: Props) {
   return (
-    <article className='z-10 grid gap-6 md:text-justify max-w-xl xl:max-w-3xl'>
-      {children}
-    </article>
+    <article className='z-10 grid gap-6 md:text-justify'>{children}</article>
   );
 }
 Body.Article = Article;

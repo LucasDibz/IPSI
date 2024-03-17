@@ -45,24 +45,37 @@ export function Drawer() {
         <button type='button' onClick={() => dialogRef.current?.close()}>
           <XCircle className='absolute left-2.5 bg-slate-200 rounded-full flex-shrink-0 text-slate-400 cursor-pointer hover:text-slate-500' />
         </button>
-        <div>
+
+        <div className='flex flex-col gap-3'>
           <h5
             id='drawer-label'
             className='text-lg font-bold tracking-tight text-slate-900'
           >
             {event?.title}
           </h5>
-          <time className='text-sm text-slate-500 italic'>
-            <EventDate date={event?.date ?? new Date()} />
-          </time>
+
+          <span className='text-xs text-slate-500 italic flex flex-wrap gap-2 items-center justify-between'>
+            <time className='inline-block'>
+              <EventDate date={event?.date ?? new Date()} />
+            </time>
+
+            <div className='flex gap-1'>
+              <MapPin size={15} className='flex-shrink-0' />
+              <span title={event?.location}>{event?.location}</span>
+            </div>
+          </span>
         </div>
 
-        <div className='flex gap-1 text-slate-500 italic text-xs'>
-          <MapPin size={15} className='flex-shrink-0' />
-          <span title={event?.location}>{event?.location}</span>
-        </div>
-
-        <span className='text-slate-600 text-md'>{event?.description}</span>
+        {event?.link && (
+          <a
+            href={event.link}
+            target='_blank'
+            rel='noreferrer'
+            className='text-lg text-rose-400 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
+          >
+            Register here
+          </a>
+        )}
 
         {event?.workload && (
           <p className='text-slate-600 text-md font-semibold tracking-tight'>

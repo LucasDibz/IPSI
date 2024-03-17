@@ -1,8 +1,18 @@
 import { BookText } from 'lucide-react';
 
 import { Body } from '../components';
+import { EventCard } from '../components/EventCard';
+import { events } from '../config/events';
 
 export function Home() {
+  const upcomingEvents = events.filter(({ date }) => {
+    if (date instanceof Date) {
+      return date > new Date();
+    }
+
+    return date.from > new Date();
+  });
+
   return (
     <Body>
       <Body.Section>
@@ -20,7 +30,14 @@ export function Home() {
         <Body.Link to={'about-us'}>Learn more about us</Body.Link>
       </Body.Section>
 
-      <Body.H1>Our latest scientific output:</Body.H1>
+      <Body.H1>Upcoming events</Body.H1>
+      <Body.Article>
+        {upcomingEvents.map((event) => (
+          <EventCard key={event.title} event={event} direction='horizontal' />
+        ))}
+      </Body.Article>
+
+      <Body.H1>Our latest scientific output</Body.H1>
       <Body.Article>
         <div className='flex gap-3'>
           <BookText size={50} color='gray' />

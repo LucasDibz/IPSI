@@ -13,6 +13,7 @@ type Schedule = {
 
 export type Event = {
   title: string;
+  link?: string;
   imgSrc: string;
   date: Date | { from: Date; to: Date };
   location: string;
@@ -253,6 +254,7 @@ export const events: Event[] = [
   },
   {
     title: 'E-Course Intellectual Property for Sustainable Innovations',
+    link: 'https://novalaw.unl.pt/en/e-course-intellectual-property-for-sustainable-innovations',
     imgSrc: new URL('/images/events/e-course_2024.jpg', import.meta.url).href,
     date: {
       from: new Date('16 September, 2024'),

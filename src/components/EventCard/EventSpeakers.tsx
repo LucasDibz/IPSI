@@ -1,12 +1,17 @@
-import { Event } from '../config/events';
-import { Author } from '../config/ipsers';
-import { getAuthorProps } from '../utils/getAuthorProps';
+import { Event } from '../../config/events';
+import { Author } from '../../config/ipsers';
+import { getAuthorProps } from '../../utils/getAuthorProps';
 
 type EventSpeakersProps = {
   event: Event | undefined;
+  speakersNumber?: number;
   all?: boolean;
 };
-export function EventSpeakers({ event, all }: EventSpeakersProps) {
+export function EventSpeakers({
+  event,
+  all,
+  speakersNumber = 3,
+}: EventSpeakersProps) {
   if (!event) return null;
 
   const authors = new Set<Author>();
@@ -51,7 +56,7 @@ export function EventSpeakers({ event, all }: EventSpeakersProps) {
   return (
     <div className='flex flex-shrink-0 -space-x-4 rtl:space-x-reverse'>
       {Array.from(authors)
-        .slice(0, 3)
+        .slice(0, speakersNumber)
         .map((author) => (
           <a
             key={author}
@@ -68,12 +73,12 @@ export function EventSpeakers({ event, all }: EventSpeakersProps) {
             />
           </a>
         ))}
-      {authors.size > 3 && (
+      {authors.size > speakersNumber && (
         <button
           type='button'
           className='w-10 h-10 border-2 rounded-full shadow transition border-slate-300 bg-slate-700 text-white text-sm font-semibold'
         >
-          +{Array.from(authors).slice(3).length}
+          +{Array.from(authors).slice(speakersNumber).length}
         </button>
       )}
     </div>
