@@ -4,7 +4,7 @@ type Schedule = {
   day?: string;
   title?: string;
   schedule: {
-    hour: string;
+    hour?: string;
     event: string;
     authors?: Author[];
     guests?: string[];
@@ -65,7 +65,6 @@ export const events: Event[] = [
       },
     ],
   },
-
   {
     title: 'Introduction to Intellectual Property Law in the EU',
     imgSrc: new URL(
@@ -211,7 +210,6 @@ export const events: Event[] = [
       },
     ],
   },
-
   {
     title: 'Inaugural Lecture 2022',
     imgSrc: new URL(
@@ -248,6 +246,131 @@ export const events: Event[] = [
             hour: '18:00',
             event:
               'Closing remarks - Joana Farrajota, Vice-Dean and Assistant Professor, NOVA School of Law',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'E-Course Intellectual Property for Sustainable Innovations',
+    imgSrc: new URL('/images/events/e-course_2024.jpg', import.meta.url).href,
+    date: {
+      from: new Date('16 September, 2024'),
+      to: new Date('27 September, 2024'),
+    },
+    location: 'NOVA School of Law',
+    description:
+      'This course is a dive into the world of intellectual property (IP) law. IP is becoming a must-know topic, debated and applied across all professional sectors in society, from big companies to start-ups to individual citizens. We will be looking at it from two specific angles: what is IP and how can it help sustainable innovators, those helping the planet and those advancing our societies? Studying IP law means, for us, learning about its regulation and practical applications. We bring law professors, researchers and practitioners together to explain and discuss with you along this enriching training. The course provides you with a comprehensive introduction to all main IP law branches: copyrights, patents, trademarks, designs, geographical indications and trade secrets explaining their key features and impacts on sustainable innovations, looking at international, EU, and selected national legal systems.',
+    agenda: [
+      {
+        day: '16 September 2024',
+        title: 'Welcome to the IP world',
+        schedule: [
+          {
+            event: 'Lecture: «What, Why, How Intellectual Property?»',
+            authors: ['Giulia Priora'],
+          },
+          {
+            event: 'Lecture: «The Daily Life of an IP lawyer»',
+            guests: ['Sónia Queiroz'],
+          },
+        ],
+      },
+      {
+        day: '17 September 2024',
+        title: 'Copyright Law',
+        schedule: [
+          {
+            event: 'Lecture: «Understanding Copyright»',
+            authors: ['Monyca Motta'],
+          },
+          {
+            event: 'Lecture: «Copyright Boundaries»',
+            authors: ['Hande Özkayagan'],
+          },
+        ],
+      },
+      {
+        day: '18 September 2024',
+        title: 'Inclusive Creativity',
+        schedule: [
+          {
+            event: 'Lecture: «Non-Conventional Copyright»',
+            guests: ['Enrico Bonadio'],
+          },
+          {
+            event: 'Lecture: «AI Creativity»',
+            guests: ['Peter Mezei'],
+          },
+        ],
+      },
+      {
+        day: '19 September 2024',
+        title: 'Patent Law',
+        schedule: [
+          {
+            event: 'Lecture: «Understanding Patents»',
+            guests: ['Pedro Batista'],
+          },
+          {
+            event: 'Lecture: «Applying for a Patent»',
+            guests: ["Vasco Stillwell D'Andrade"],
+          },
+        ],
+      },
+      {
+        day: '20 September 2024',
+        title: 'Green Technologies',
+        schedule: [
+          {
+            event: 'Lecture: «Introduction to Tech Transfer»',
+            authors: ['Júlia Schütz Veiga'],
+          },
+          {
+            event: "Lecture: «Trade Secrets in Today's World»",
+            guests: ['Luc Desaunettes Barbero'],
+          },
+        ],
+      },
+      {
+        day: '21 September 2024',
+        title: 'Trademark Law',
+        schedule: [
+          {
+            event: 'Lecture: «Understanding Trademarks»',
+            guests: ['Maria Miguel Carvalho'],
+          },
+          {
+            event: 'Lecture: «Non-traditional Trademarks»',
+            guests: ['Simon Geiregat'],
+          },
+        ],
+      },
+      {
+        day: '22 September 2024',
+        title: 'Green Branding and Green Claiming',
+        schedule: [
+          {
+            event: 'Lecture: «Trademarks and GIs for the Land»',
+            guests: ['Pilar Montero', 'Vicente Gimeno'],
+          },
+          {
+            event: 'Lecture: «The EU Policies Against Green Washin»',
+            guests: ['Pedro Soares'],
+          },
+        ],
+      },
+      {
+        day: '23 September 2024',
+        title: 'Design Law and Morality',
+        schedule: [
+          {
+            event: 'Lecture: «Understanding Industrial Designs»',
+            guests: ['Cláudia Tomás Pedro'],
+          },
+          {
+            event: 'Lecture: «Morality in IP industries»',
+            authors: ['Amanda Novaes'],
           },
         ],
       },
