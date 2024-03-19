@@ -55,8 +55,6 @@ const HorizontalEvent = (props: EventProps) => {
 
           <EventDate date={event.date} />
         </div>
-
-        <EventSpeakers event={event} speakersNumber={5} />
       </div>
     </a>
   );
