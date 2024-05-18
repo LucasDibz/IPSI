@@ -19,6 +19,12 @@ export const outputs: Outputs = {
     title: 'Selected scientific articles',
     books: [
       {
+        title: 'IP Negative Spaces in Today’s Evolving Video Game Industry',
+        subtitle: '27 March 2024',
+        link: 'https://www.4ipcouncil.com/research/ip-negative-spaces-todays-evolving-video-game-industry',
+        authors: ['Aline Arenque', 'Amanda Novaes'],
+      },
+      {
         title:
           'Hostile design protection: Could design law help promote inclusivity in European cities?',
         subtitle: 'in Cristiana Sappa (ed.) IP and inclusivity (forthcoming)',

@@ -8,7 +8,7 @@ type Props = {
 };
 export function Body({ children }: Props) {
   return (
-    <main className='relative container mx-auto px-4 md:px-0 pt-20 grid gap-8 justify-center md:justify-normal'>
+    <main className='relative container mx-auto px-4 xl:px-16 pt-20 grid gap-8 justify-center md:justify-normal'>
       <img
         className='md:mt-2 w-28 md:h-24 top-0 lg:top-auto lg:w-80 lg:h-80 xl:w-96 xl:h-96 absolute right-0 z-0'
         src={new URL('/images/ipsi-draw-fluid.jpg', import.meta.url).href}

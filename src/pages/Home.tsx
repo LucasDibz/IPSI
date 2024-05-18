@@ -30,12 +30,20 @@ export function Home() {
         <Body.Link to={'about-us'}>Learn more about us</Body.Link>
       </Body.Section>
 
-      <Body.H1>Upcoming events</Body.H1>
-      <Body.Article>
-        {upcomingEvents.map((event) => (
-          <EventCard key={event.title} event={event} direction='horizontal' />
-        ))}
-      </Body.Article>
+      {upcomingEvents.length > 0 && (
+        <>
+          <Body.H1>Upcoming events</Body.H1>
+          <Body.Article>
+            {upcomingEvents.map((event) => (
+              <EventCard
+                key={event.title}
+                event={event}
+                direction='horizontal'
+              />
+            ))}
+          </Body.Article>
+        </>
+      )}
 
       <Body.H1>Our latest scientific output</Body.H1>
       <Body.Article>
