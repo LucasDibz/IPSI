@@ -3,9 +3,9 @@ import { socials } from '../config/socials';
 export function Footer() {
   return (
     <footer className='mt-10 pb-5 md:pb-0 border-t border-t-slate-400'>
-      <div className='mx-auto w-full py-5 px-16 lg:py-8'>
-        <div className='md:flex md:justify-between'>
-          <ul className='flex gap-8 py-3 items-center justify-between md:justify-end text-slate-500 font-medium text-center'>
+      <div className='mx-auto w-full p-5 border md:px-16'>
+        <div className='flex-wrap md:flex md:justify-between'>
+          <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-3 md:gap-8 text-slate-500 font-medium'>
             <li>
               <a
                 href='https://novalaw.unl.pt/en/privacy-policy'
@@ -28,33 +28,40 @@ export function Footer() {
             </li>
           </ul>
 
-          <div>
-            <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-2 md:gap-8 text-slate-700 font-semibold'>
-              <img
-                src={new URL('/images/FCT_logo.svg', import.meta.url).href}
-                alt='FCT Logo'
-                loading='lazy'
-                className='object-contain w-24 md:w-36'
-              />
+          <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-2 md:gap-8'>
+            <img
+              src={new URL('/images/FCT_logo.svg', import.meta.url).href}
+              alt='FCT Logo'
+              loading='lazy'
+              className='object-contain w-24 md:w-36'
+            />
 
-              <img
-                src={new URL('/images/CEDIS_logo.png', import.meta.url).href}
-                alt='CEDIS Logo'
-                loading='lazy'
-                className='object-contain w-36 md:w-56'
-              />
+            <img
+              src={new URL('/images/CEDIS_logo.png', import.meta.url).href}
+              alt='CEDIS Logo'
+              loading='lazy'
+              className='object-contain w-36 md:w-56'
+            />
 
-              <img
-                src={
-                  new URL('/images/portuguese_republic.svg', import.meta.url)
-                    .href
-                }
-                alt='Portuguese Republic logo'
-                loading='lazy'
-                className='object-contain w-44 md:w-36'
-              />
-            </ul>
-          </div>
+            <img
+              src={
+                new URL('/images/portuguese_republic.svg', import.meta.url).href
+              }
+              alt='Portuguese Republic logo'
+              loading='lazy'
+              className='object-contain w-44 md:w-36'
+            />
+          </ul>
+
+          <span className='block text-justify text-slate-500 font-medium text-xs'>
+            NOVA Intellectual Property and Sustainable Innovation (NOVA IPSI) is
+            part of CEDIS - Research & Development Centre on Law and Society,
+            the Research Unit of NOVA School of Law, Universidade NOVA de
+            Lisboa. CEDIS is funded by FCT, I.P. (Foundation for Science and
+            Technology, Public Institute), through national funds from the
+            Portuguese Ministry of Science, Technology and Higher Education,
+            under projects UIDB/00714/2020 and UIDP/00714/2020
+          </span>
         </div>
 
         <hr className='my-3 md:my-6 border-slate-300 sm:mx-auto lg:my-8' />
