@@ -1,53 +1,63 @@
-import { Link } from 'react-router-dom';
-
-import { navigation } from '../config/navigation';
 import { socials } from '../config/socials';
-import { IPSILogo } from './IPSILogo';
 
 export function Footer() {
   return (
     <footer className='mt-10 pb-5 md:pb-0 border-t border-t-slate-400'>
-      <div className='mx-auto w-full p-4 py-6 lg:py-8'>
+      <div className='mx-auto w-full py-5 px-16 lg:py-8'>
         <div className='md:flex md:justify-between'>
-          <IPSILogo />
-          <div>
-            <ul className='pt-6 pb-3 flex flex-col items-end md:items-start md:flex-row gap-2 md:gap-8 text-slate-700 font-semibold'>
-              <li>
-                <Link to={'/'}>Home</Link>
-              </li>
+          <ul className='flex gap-8 py-3 items-center justify-between md:justify-end text-slate-500 font-medium text-center'>
+            <li>
+              <a
+                href='https://novalaw.unl.pt/en/privacy-policy'
+                target='_blank'
+                rel='noreferrer'
+                className='hover:underline'
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://novalaw.unl.pt/en/cookie-policy'
+                target='_blank'
+                rel='noreferrer'
+                className='hover:underline'
+              >
+                Terms &amp; Conditions
+              </a>
+            </li>
+          </ul>
 
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link to={`${item.href}`}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-            <ul className='flex gap-8 py-3 justify-between md:justify-end text-slate-500 font-medium'>
-              <li>
-                <a
-                  href='https://novalaw.unl.pt/en/privacy-policy'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='hover:underline'
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href='https://novalaw.unl.pt/en/cookie-policy'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='hover:underline'
-                >
-                  Terms &amp; Conditions
-                </a>
-              </li>
+          <div>
+            <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-2 md:gap-8 text-slate-700 font-semibold'>
+              <img
+                src={new URL('/images/FCT_logo.svg', import.meta.url).href}
+                alt='FCT Logo'
+                loading='lazy'
+                className='object-contain w-24 md:w-36'
+              />
+
+              <img
+                src={new URL('/images/CEDIS_logo.png', import.meta.url).href}
+                alt='CEDIS Logo'
+                loading='lazy'
+                className='object-contain w-36 md:w-56'
+              />
+
+              <img
+                src={
+                  new URL('/images/portuguese_republic.svg', import.meta.url)
+                    .href
+                }
+                alt='Portuguese Republic logo'
+                loading='lazy'
+                className='object-contain w-44 md:w-36'
+              />
             </ul>
           </div>
         </div>
 
-        <hr className='my-3 md:my-6 border-slate-200 sm:mx-auto lg:my-8' />
+        <hr className='my-3 md:my-6 border-slate-300 sm:mx-auto lg:my-8' />
 
         <div className='sm:flex sm:items-center sm:justify-between'>
           <div className='flex gap-2 mt-4 justify-center sm:mt-0'>
