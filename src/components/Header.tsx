@@ -1,6 +1,6 @@
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { navigation } from '../config/navigation';
 import { IPSILogo } from './IPSILogo';
@@ -50,23 +50,31 @@ export function Header() {
           className='-z-10 absolute w-full bg-white py-2 px-5 flex flex-col items-end gap-3 shadow invisible -translate-y-full data-[show=true]:visible data-[show=true]:translate-y-0 transition-all'
           data-show={navbarOpen}
         >
-          <Link
+          <NavLink
             to={'/'}
-            className='text-slate-600 font-semibold'
+            className={({ isActive }) =>
+              `text-slate-600 font-semibold${
+                isActive ? ' underline text-slate-500' : ' text-slate-600'
+              }`
+            }
             onClick={() => setNavbarOpen(false)}
           >
             Home
-          </Link>
+          </NavLink>
 
           {navigation.map((item) => (
-            <Link
+            <NavLink
               key={item.href}
               to={`${item.href}`}
-              className='text-slate-600 font-semibold'
+              className={({ isActive }) =>
+                `text-slate-600 font-semibold${
+                  isActive ? ' underline text-slate-500' : ' text-slate-600'
+                }`
+              }
               onClick={() => setNavbarOpen(false)}
             >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </nav>
