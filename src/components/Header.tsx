@@ -33,7 +33,7 @@ export function Header() {
 
       {/* Mobile */}
       <nav className='md:hidden w-full shadow'>
-        <div className='flex items-center w-full justify-between p-5 flex-wrap gap-5'>
+        <div className='bg-white flex items-center w-full justify-between p-5 flex-wrap gap-5'>
           <IPSILogo />
 
           <button
@@ -47,7 +47,7 @@ export function Header() {
         </div>
 
         <div
-          className='py-2 px-5 flex-col items-end gap-3 hidden data-[show=true]:flex'
+          className='-z-10 absolute w-full bg-white py-2 px-5 flex flex-col items-end gap-3 shadow invisible -translate-y-full data-[show=true]:visible data-[show=true]:translate-y-0 transition-all'
           data-show={navbarOpen}
         >
           <Link
