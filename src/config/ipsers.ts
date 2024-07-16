@@ -120,6 +120,7 @@ export const ipsers: Ipsers = {
         imgSrc: new URL('/images/members/ines_miguel.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/inesmiguel99',
+        hidden: true,
       },
       {
         name: 'Júlia Schütz Veiga',
@@ -152,6 +153,7 @@ export const ipsers: Ipsers = {
           import.meta.url,
         ).href,
         url: 'https://www.linkedin.com/in/margarida-morgado',
+        hidden: true,
       },
       {
         name: 'Marisa Frade',
@@ -171,6 +173,7 @@ export const ipsers: Ipsers = {
         imgSrc: new URL('/images/members/oumaima_derfoufi.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/oumaima-derfoufi-0b9417135',
+        hidden: true,
       },
       {
         name: 'Pedro Soares',
@@ -198,6 +201,7 @@ export const ipsers: Ipsers = {
         imgSrc: new URL('/images/members/ruben_ferreira.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/rvbenferreira',
+        hidden: true,
       },
       {
         name: 'Teresa Brito e Faro',
