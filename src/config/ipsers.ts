@@ -35,7 +35,8 @@ export type Author =
   | 'Raquel Cunha'
   | 'Raquel Escada Carvalho'
   | 'Rúben Ferreira'
-  | 'Teresa Brito e Faro';
+  | 'Teresa Brito e Faro'
+  | 'Diana Pryshchepova';
 
 type Ipsers = {
   [key: string]: {
@@ -230,6 +231,14 @@ export const ipsers: Ipsers = {
         imgSrc: new URL('/images/members/marta_diniz.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/a-marta-diniz',
+      },
+      {
+        name: 'Diana Pryshchepova',
+        imgSrc: new URL(
+          '/images/members/diana_pryshchepova.jpg',
+          import.meta.url,
+        ).href,
+        url: 'https://pt.linkedin.com/in/diana-pryshchepova-96b172301',
       },
       {
         name: 'Duarte Manso',
