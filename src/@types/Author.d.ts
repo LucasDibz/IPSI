@@ -9,7 +9,6 @@ export type Author = {
       url: string;
     };
     url: {
-      link_type: string;
       url: string;
       target: string;
     };

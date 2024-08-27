@@ -1,5 +1,5 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
-import { Activity } from '../@types';
+import type { Activity } from '../@types';
 import { Body } from '../components';
 import { ActivitiesCard } from '../components/ActivitiesCard';
 

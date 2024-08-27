@@ -1,6 +1,6 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import { useMemo } from 'react';
-import { Author } from '../@types';
+import type { Author } from '../@types';
 import { Body } from '../components';
 import { Ipsers } from '../components/Ipsers';
 

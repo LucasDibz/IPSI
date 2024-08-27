@@ -2,7 +2,7 @@ import { PrismicProvider } from '@prismicio/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import { client } from './prismic';
+import { client } from './config/prismic';
 import { router } from './router';
 
 import './index.css';

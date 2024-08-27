@@ -1,7 +1,7 @@
-import { Author } from '../@types';
+import type { Author } from '../@types';
 import { Body } from './Body';
-import { Card } from './Card';
 import { Spinner } from './Spinner';
+import { UIError } from './UIError';
 
 type IpsersProps = {
   title: string;
@@ -13,14 +13,7 @@ export const Ipsers = ({ title, ipsers, error, loading }: IpsersProps) => {
   if (loading || !ipsers) return <Spinner />;
 
   if (error) {
-    console.error(error);
-    return (
-      <Card className='max-w-5xl bg-red-300'>
-        <Card.Title className='text-red-700 font-bold'>
-          Something went wrong
-        </Card.Title>
-      </Card>
-    );
+    return <UIError error={error} />;
   }
 
   return (

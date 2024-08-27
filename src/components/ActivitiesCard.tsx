@@ -1,7 +1,8 @@
 import { Fragment } from 'react';
-import { Activity } from '../@types';
+import type { Activity } from '../@types';
 import { Card } from './Card';
 import { Spinner } from './Spinner';
+import { UIError } from './UIError';
 
 type ActivitiesCardProps = {
   activities: Activity[] | undefined;
@@ -16,14 +17,7 @@ export const ActivitiesCard = ({
   if (loading || !activities) return <Spinner />;
 
   if (error) {
-    console.error(error);
-    return (
-      <Card className='max-w-5xl bg-red-300'>
-        <Card.Title className='text-red-700 font-bold'>
-          Something went wrong
-        </Card.Title>
-      </Card>
-    );
+    return <UIError error={error} />;
   }
 
   return activities.map((activity) => (

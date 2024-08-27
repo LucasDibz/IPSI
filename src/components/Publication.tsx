@@ -1,4 +1,4 @@
-import { Output } from '../@types';
+import type { Output } from '../@types';
 
 //@ts-expect-error: it exists...
 const formatter = new Intl.ListFormat('en', {

@@ -1,86 +1,70 @@
-import { Event } from '../../config/events';
-import { Author } from '../../config/ipsers';
-import { getAuthorProps } from '../../utils/getAuthorProps';
+import type { Author } from '../../@types';
 
 type EventSpeakersProps = {
-  event: Event | undefined;
+  speakers: { speaker: Author }[] | undefined;
   speakersNumber?: number;
   all?: boolean;
 };
 export function EventSpeakers({
-  event,
+  speakers,
   all,
   speakersNumber = 3,
 }: EventSpeakersProps) {
-  if (!event) return null;
+  if (!speakers) return null;
 
-  const authors = new Set<Author>();
-
-  for (const events of event.agenda) {
-    for (const item of events.schedule) {
-      if (item.authors) {
-        for (const author of item.authors) {
-          authors.add(author);
-        }
-      }
-    }
-  }
-
-  if (all) {
+  if (!all)
     return (
-      <div className='p-5 flex flex-wrap gap-5'>
-        {Array.from(authors).map((author) => (
+      <div className='flex flex-shrink-0 -space-x-4 rtl:space-x-reverse'>
+        {speakers.slice(0, speakersNumber).map(({ speaker }) => (
           <a
-            key={author}
-            href={getAuthorProps(author)?.url}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex flex-col items-center'
-          >
-            <img
-              src={getAuthorProps(author)?.imgSrc}
-              alt={author}
-              className={
-                'w-16 h-16 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
-              }
-            />
-            <span className='font-semibold text-center'>
-              {author.split(' ')[0]}
-            </span>
-          </a>
-        ))}
-      </div>
-    );
-  }
-
-  return (
-    <div className='flex flex-shrink-0 -space-x-4 rtl:space-x-reverse'>
-      {Array.from(authors)
-        .slice(0, speakersNumber)
-        .map((author) => (
-          <a
-            key={author}
-            href={getAuthorProps(author)?.url}
-            target='_blank'
+            key={speaker.id}
+            href={speaker.data.url.url}
+            target={speaker.data.url.target}
             rel='noopener noreferrer'
           >
             <img
-              src={getAuthorProps(author)?.imgSrc}
-              alt={author}
+              src={speaker.data.image.url}
+              alt={speaker.data.image.alt}
               className={
                 'w-10 h-10 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
               }
             />
           </a>
         ))}
-      {authors.size > speakersNumber && (
-        <button
-          type='button'
-          className='w-10 h-10 border-2 rounded-full shadow transition border-slate-300 bg-slate-700 text-white text-sm font-semibold'
+
+        {speakers.length > speakersNumber && (
+          <button
+            type='button'
+            className='w-10 h-10 border-2 rounded-full shadow transition border-slate-300 bg-slate-700 text-white text-sm font-semibold'
+          >
+            +{speakers.length - speakersNumber}
+          </button>
+        )}
+      </div>
+    );
+
+  return (
+    <div className='p-5 flex flex-wrap gap-5'>
+      {speakers.map(({ speaker }) => (
+        <a
+          key={speaker.id}
+          href={speaker.data.url.url}
+          target={speaker.data.url.target}
+          rel='noopener noreferrer'
+          className='flex flex-col items-center'
         >
-          +{Array.from(authors).slice(speakersNumber).length}
-        </button>
-      )}
+          <img
+            src={speaker.data.image.url}
+            alt={speaker.data.image.alt}
+            className={
+              'w-16 h-16 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
+            }
+          />
+          <span className='font-semibold text-center'>
+            {speaker.data.name.split(' ')[0]}
+          </span>
+        </a>
+      ))}
     </div>
   );
 }

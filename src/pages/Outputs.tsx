@@ -1,5 +1,5 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
-import { Output } from '../@types';
+import type { Output } from '../@types';
 import { Body, Card, OutputsCard } from '../components';
 
 export function Outputs() {

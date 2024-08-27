@@ -1,36 +1,33 @@
 type EventDateProps = {
-  date: Date | { from: Date; to: Date };
+  date: { from?: string; to?: string };
 };
-export function EventDate({ date }: EventDateProps) {
-  if (date instanceof Date) {
-    return (
-      <time className='ml-auto'>
-        {date.toLocaleString('pt-PT', {
-          day: 'numeric',
-          month: 'short',
-          year: '2-digit',
-        })}
-      </time>
-    );
-  }
+export function EventDate(props: EventDateProps) {
+  const { from, to } = props.date;
+
+  if (!from) return null;
 
   return (
-    <span className='ml-auto'>
-      <time className='px-1'>
-        {date.from.toLocaleString('pt-PT', {
+    <>
+      <time className='ml-auto pr-1'>
+        {new Date(from).toLocaleString(undefined, {
           day: 'numeric',
           month: 'short',
           year: '2-digit',
         })}
       </time>
-      -
-      <time className='px-1'>
-        {date.to.toLocaleString('pt-PT', {
-          day: 'numeric',
-          month: 'short',
-          year: '2-digit',
-        })}
-      </time>
-    </span>
+
+      {to && (
+        <>
+          -
+          <time className='px-1'>
+            {new Date(to).toLocaleString(undefined, {
+              day: 'numeric',
+              month: 'short',
+              year: '2-digit',
+            })}
+          </time>
+        </>
+      )}
+    </>
   );
 }

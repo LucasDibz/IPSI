@@ -1,8 +1,9 @@
-import { Output } from '../@types';
+import type { Output } from '../@types';
 import { Body } from './Body';
 import { Card } from './Card';
 import { Publication } from './Publication';
 import { Spinner } from './Spinner';
+import { UIError } from './UIError';
 
 type OutputsProps = {
   title: string;
@@ -19,14 +20,7 @@ export const OutputsCard = ({
   if (loading || !outputs) return <Spinner />;
 
   if (error) {
-    console.error(error);
-    return (
-      <Card className='max-w-5xl bg-red-300'>
-        <Card.Title className='text-red-700 font-bold'>
-          Something went wrong
-        </Card.Title>
-      </Card>
-    );
+    return <UIError error={error} />;
   }
 
   return (
