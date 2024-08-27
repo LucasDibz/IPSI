@@ -1,17 +1,37 @@
+import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import { BookText } from 'lucide-react';
-
+import type { Event } from '../@types';
 import { Body } from '../components';
 import { EventCard } from '../components/EventCard';
-import { events } from '../config/events';
 
 export function Home() {
-  const upcomingEvents = events.filter(({ date }) => {
-    if (date instanceof Date) {
-      return date > new Date();
-    }
+  const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
+    'event',
+    {
+      graphQuery: `{
+        event {
+          ...eventFields
 
-    return date.from > new Date();
-  });
+          speakers {
+            speaker {
+              ...on ipsers {
+                name
+                image
+                url
+              }
+            }
+          }
+        }
+      }`,
+    },
+  );
+  const loading = state === 'loading';
+
+  const upcomingEvents = events
+    ?.filter(({ data }) => new Date(data?.['start-date']) > new Date())
+    .sort((a, b) =>
+      new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
+    );
 
   return (
     <Body>
@@ -30,15 +50,16 @@ export function Home() {
         <Body.Link to={'about-us'}>Learn more about us</Body.Link>
       </Body.Section>
 
-      {upcomingEvents.length > 0 && (
+      {upcomingEvents && upcomingEvents?.length > 0 && (
         <>
           <Body.H1>Upcoming events</Body.H1>
           <Body.Article>
             {upcomingEvents.map((event) => (
               <EventCard
-                key={event.title}
+                key={event.uid}
                 event={event}
-                direction='horizontal'
+                error={error}
+                loading={loading}
               />
             ))}
           </Body.Article>
