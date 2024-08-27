@@ -1,8 +1,6 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import type { Event } from '../@types';
-import { Body } from '../components';
-import { EventCard } from '../components/EventCard/EventCard';
-import { EventDrawer } from '../components/EventCard/EventDrawer';
+import { Body, EventCard, EventCardSkeleton, EventDrawer } from '../components';
 
 export function Events() {
   const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
@@ -48,6 +46,14 @@ export function Events() {
       <EventDrawer />
       <Body>
         <Body.PageTitle>Events</Body.PageTitle>
+
+        {loading && (
+          <div className='flex gap-8'>
+            <EventCardSkeleton />
+            <EventCardSkeleton />
+          </div>
+        )}
+
         {upcomingEvents && upcomingEvents.length > 0 && (
           <>
             <Body.H1>Upcoming Events</Body.H1>
