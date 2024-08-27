@@ -7,7 +7,7 @@ type Props = {
 export function Card({ children, className }: Props & { className?: string }) {
   return (
     <article
-      className={`p-6 border border-slate-200 rounded-lg shadow flex flex-col gap-3 ${
+      className={`p-6 border bg-white border-slate-200 rounded-lg shadow flex flex-col gap-3 ${
         className ? className : 'max-w-lg'
       }`}
     >
