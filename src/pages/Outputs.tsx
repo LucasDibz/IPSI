@@ -1,7 +1,39 @@
-import { Body, Books, Card } from '../components';
-import { outputs } from '../config/outputs';
+import { useAllPrismicDocumentsByType } from '@prismicio/react';
+import { Output } from '../@types';
+import { Body, Card, OutputsCard } from '../components';
 
 export function Outputs() {
+  const [outputs, { state, error }] = useAllPrismicDocumentsByType<Output>(
+    'outputs',
+    {
+      graphQuery: `{
+        outputs {
+          type
+          title
+          subtitle
+          link
+
+          authors {
+            author {
+              ...on ipsers {
+                name
+                image
+                url
+              }
+            }
+          }
+        }
+      }`,
+    },
+  );
+
+  const loading = state === 'loading';
+
+  const articles = outputs?.filter((output) => output.data.type === 'article');
+  const conferences = outputs?.filter(
+    (output) => output.data.type === 'conference',
+  );
+
   return (
     <Body>
       <Body.PageTitle>Scientific Outputs</Body.PageTitle>
@@ -46,25 +78,19 @@ export function Outputs() {
         </Card>
       </Body.Section>
 
-      <Body.Section>
-        {/* Display only outputs that have URL's */}
-        {Object.values(outputs)
-          .filter((output) => output.books.some((book) => book.link))
-          .map((output) => (
-            <Card key={output.title} className='max-w-5xl'>
-              <Card.Title>{output.title}</Card.Title>
-              <Card.Content>
-                <ul className='divide-y divider-slate-200'>
-                  {output.books
-                    .filter((book) => book.link)
-                    .map((book) => (
-                      <Books key={book.title} book={book} />
-                    ))}
-                </ul>
-              </Card.Content>
-            </Card>
-          ))}
-      </Body.Section>
+      <OutputsCard
+        title='Selected scientific articles'
+        loading={loading}
+        outputs={articles}
+        error={error}
+      />
+
+      <OutputsCard
+        title='Selected conference participation'
+        loading={loading}
+        outputs={conferences}
+        error={error}
+      />
     </Body>
   );
 }
