@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import type { Activity } from '../@types';
 import { Card } from './Card';
-import { Spinner } from './Spinner';
+import { EventCardSkeleton } from './EventCard';
 import { UIError } from './UIError';
 
 type ActivitiesCardProps = {
@@ -14,7 +14,7 @@ export const ActivitiesCard = ({
   error,
   loading,
 }: ActivitiesCardProps) => {
-  if (loading || !activities) return <Spinner />;
+  if (loading || !activities) return <EventCardSkeleton />;
 
   if (error) {
     return <UIError error={error} />;

@@ -2,7 +2,7 @@ import * as prismic from '@prismicio/client';
 
 export const client = prismic.createClient('ipsi', {
   // If your repository is private, add an access token
-  accessToken: '',
+  accessToken: import.meta.env.VITE_PRISMIC_TOKEN,
 
   // This defines how you will structure URL paths in your project.
   // Update the types to match the custom types in your project, and edit

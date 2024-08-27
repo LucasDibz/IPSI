@@ -1,6 +1,12 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import type { Event } from '../@types';
-import { Body, EventCard, EventCardSkeleton, EventDrawer } from '../components';
+import {
+  Body,
+  EventCard,
+  EventCardSkeleton,
+  EventDrawer,
+  UIError,
+} from '../components';
 
 export function Events() {
   const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
@@ -53,6 +59,7 @@ export function Events() {
             <EventCardSkeleton />
           </div>
         )}
+        {error && <UIError error={error} />}
 
         {upcomingEvents && upcomingEvents.length > 0 && (
           <>

@@ -1,7 +1,7 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import { BookText } from 'lucide-react';
 import type { Event } from '../@types';
-import { Body } from '../components';
+import { Body, UIError } from '../components';
 import { EventCard, EventCardSkeleton } from '../components/EventCard';
 
 export function Home() {
@@ -50,6 +50,7 @@ export function Home() {
         <Body.Link to={'about-us'}>Learn more about us</Body.Link>
       </Body.Section>
 
+      {error && <UIError error={error} />}
       {loading && <EventCardSkeleton />}
 
       {upcomingEvents && upcomingEvents?.length > 0 && (
