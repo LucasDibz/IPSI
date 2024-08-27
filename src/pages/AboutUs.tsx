@@ -1,7 +1,35 @@
+import { useAllPrismicDocumentsByType } from '@prismicio/react';
+import { useMemo } from 'react';
+import { Author } from '../@types';
 import { Body } from '../components';
-import { ipsers } from '../config/ipsers';
+import { Ipsers } from '../components/Ipsers';
 
 export function AboutUs() {
+  const [ipsers, { state, error }] = useAllPrismicDocumentsByType('ipsers');
+  const loading = state === 'loading';
+
+  const { coordinators, investigators, teams, consultors } = useMemo(() => {
+    return {
+      coordinators: ipsers?.filter(
+        (author) => author.data.occupation === 'coordination',
+      ) as Author[] | undefined,
+      investigators: ipsers?.filter(
+        (author) => author.data.occupation === 'investigator',
+      ) as Author[] | undefined,
+      teams: ipsers?.filter((author) => author.data.occupation === 'team') as
+        | Author[]
+        | undefined,
+      consultors: ipsers?.filter(
+        (author) => author.data.occupation === 'consultor',
+      ) as Author[] | undefined,
+    };
+  }, [ipsers]);
+
+  const ipsersProps = {
+    loading: loading,
+    error: error,
+  };
+
   return (
     <Body>
       <div className='z-10 max-w-xl xl:max-w-3xl'>
@@ -61,36 +89,18 @@ export function AboutUs() {
           </Body.List>
         </Body.Article>
 
-        {Object.values(ipsers).map((category) => (
-          <Body.Article key={category.title}>
-            <Body.H1>{category.title}</Body.H1>
-
-            <div className='flex flex-wrap gap-8 justify-center lg:justify-normal'>
-              {category.members
-                .filter((member) => !member?.hidden)
-                .sort((a, b) => (a.name > b.name ? 1 : -1))
-                .map((member) => (
-                  <a
-                    key={member.name}
-                    href={member.url}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='group flex flex-col gap-3 items-center w-32'
-                  >
-                    <img
-                      src={member.imgSrc}
-                      alt={member.name}
-                      loading='lazy'
-                      className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
-                    />
-                    <span className='font-semibold text-lg text-center'>
-                      {member.name}
-                    </span>
-                  </a>
-                ))}
-            </div>
-          </Body.Article>
-        ))}
+        <Ipsers {...ipsersProps} title='Coordination' ipsers={coordinators} />
+        <Ipsers
+          {...ipsersProps}
+          title='NOVA IPSI Researchers'
+          ipsers={investigators}
+        />
+        <Ipsers {...ipsersProps} title='Faculty members' ipsers={teams} />
+        <Ipsers
+          {...ipsersProps}
+          title='Advisory board members'
+          ipsers={consultors}
+        />
       </Body.Section>
     </Body>
   );
