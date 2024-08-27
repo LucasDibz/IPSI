@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         ipsi: '#F9EBD1',
+        background: 'var(--color-background)',
       },
     },
   },

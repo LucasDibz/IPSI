@@ -4,5 +4,15 @@
 
 html,
 body {
-  background-color: white;
+  background-color: var(--color-background)
+}
+
+@layer base {
+  html[data-theme='ipsi'] {
+    --color-background: #FFFF;
+  }
+
+  html[data-theme='sinpl'] {
+    --color-background: #e2e8f0;
+  }
 }

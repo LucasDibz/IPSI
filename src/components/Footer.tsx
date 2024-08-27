@@ -2,7 +2,7 @@ import { socials } from '../config/socials';
 
 export function Footer() {
   return (
-    <footer className='mt-10 pb-5 md:pb-0 border-t border-t-slate-400'>
+    <footer className='bg-background mt-10 pb-5 md:pb-0 border-t border-t-slate-400'>
       <div className='mx-auto w-full p-5 border md:px-16'>
         <div className='flex-wrap md:flex md:justify-between'>
           <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-3 md:gap-8 text-slate-500 font-medium'>

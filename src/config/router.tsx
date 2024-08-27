@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-
-import { Layout } from './Layout';
+import { Layout } from '../Layout';
 import {
   AboutUs,
   Activities,
@@ -9,7 +8,8 @@ import {
   Events,
   Home,
   Outputs,
-} from './pages';
+  SINPL,
+} from '../pages';
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +40,17 @@ export const router = createBrowserRouter([
       {
         path: 'contacts',
         element: <Contacts />,
+      },
+    ],
+  },
+  {
+    path: '/sinpl',
+    element: <Layout theme='sinpl' />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <SINPL />,
       },
     ],
   },
