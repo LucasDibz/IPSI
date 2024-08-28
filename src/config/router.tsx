@@ -8,7 +8,6 @@ import {
   Events,
   Home,
   Outputs,
-  SINPL,
 } from '../pages';
 
 export const router = createBrowserRouter([
@@ -50,7 +49,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <SINPL />,
+        element: <ErrorPage />,
       },
     ],
   },
