@@ -17,7 +17,7 @@ export function Body({ children, variant = 'ipsi' }: Props) {
   return (
     <main className='relative container mx-auto px-4 2xl:px-16 pt-20 grid gap-8 justify-center md:justify-normal'>
       <img
-        className={`md:mt-2 lg:mt-20 w-28 md:h-24 top-0 lg:top-auto lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 absolute right-0 z-0 ${
+        className={`md:mt-2 lg:mt-20 w-28 md:h-24 md:w-24 top-0 lg:top-auto lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 absolute right-0 z-0 ${
           variant === 'ipsi' ? 'rounded-lg' : 'rounded-full'
         }`}
         src={imgSrc}
@@ -35,7 +35,7 @@ export function Body({ children, variant = 'ipsi' }: Props) {
 function Section({ children, className }: Props & { className?: string }) {
   return (
     <section
-      className={`z-10 grid gap-6 max-w-2xl xl:max-w-4xl ${
+      className={`z-10 grid gap-6 max-w-2xl xl:max-w-4xl mt-10 md:mt-0 ${
         className ? className : ''
       }`}
     >
