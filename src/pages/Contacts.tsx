@@ -19,7 +19,9 @@ export function Contacts() {
           <Body.Article>
             <p>
               Send your application via email to
-              <strong className='px-1'>ipsi@novalaw.unl.pt</strong>
+              <a href='mailto:ipsi@novalaw.unl.pt'>
+                <strong className='px-1'>ipsi@novalaw.unl.pt</strong>
+              </a>
               making sure it includes:
             </p>
 

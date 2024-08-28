@@ -6,13 +6,17 @@ type LayoutProps = {
   theme?: SiteVariants;
 };
 export function Layout({ theme = 'ipsi' }: LayoutProps) {
-  document.querySelector('html')?.setAttribute('data-theme', theme);
+  const html = document.querySelector('html');
+
+  if (html?.getAttribute('data-them') !== theme) {
+    html?.setAttribute('data-theme', theme);
+  }
 
   return (
     <>
       <Header />
       <Outlet />
-      <Footer />
+      <Footer partners={theme === 'ipsi'} />
     </>
   );
 }

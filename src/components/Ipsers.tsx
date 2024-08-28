@@ -49,3 +49,31 @@ export const Ipsers = ({ title, ipsers, error, loading }: IpsersProps) => {
     </Body.Article>
   );
 };
+
+export const Authors = ({ authors }: { authors: Author[] }) => {
+  return (
+    <div className='flex flex-shrink-0 w-fit -space-x-4 rtl:space-x-reverse sm:pr-3'>
+      {authors?.map((author, index) => (
+        <a
+          key={author.data.name}
+          href={author.data.url.url}
+          target={author.data.url.target}
+          rel='noopener noreferrer'
+          className='hover:z-50'
+          style={{ zIndex: 5 - index }}
+        >
+          <img
+            src={author.data.image.url}
+            alt={author.data.image.alt}
+            className={
+              'w-12 h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
+            }
+            loading='lazy'
+            width={48}
+            height={48}
+          />
+        </a>
+      ))}
+    </div>
+  );
+};

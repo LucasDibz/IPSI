@@ -15,7 +15,7 @@ export function Body({ children, variant = 'ipsi' }: Props) {
   }
 
   return (
-    <main className='relative container mx-auto px-4 xl:px-16 pt-20 grid gap-8 justify-center md:justify-normal'>
+    <main className='relative container mx-auto px-4 2xl:px-16 pt-20 grid gap-8 justify-center md:justify-normal'>
       <img
         className='md:mt-2 rounded-lg w-28 md:h-24 top-0 lg:top-auto lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 absolute right-0 z-0'
         src={imgSrc}

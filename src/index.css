@@ -4,7 +4,8 @@
 
 html,
 body {
-  background-color: var(--color-background)
+  background-color: var(--color-background);
+  transition: background-color 1s ease-in-out;
 }
 
 @layer base {
