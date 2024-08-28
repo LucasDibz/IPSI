@@ -41,7 +41,8 @@ const HorizontalEvent = (props: EventProps) => {
         src={event.data.image.url}
         alt={event.data.image.alt}
         className='object-cover h-full w-full rounded-l-lg'
-        loading='lazy'
+        width={246}
+        height={178}
       />
 
       <div className='p-2 xl:p-5 h-full w-full flex flex-col gap-3 justify-between text-left'>
@@ -50,10 +51,7 @@ const HorizontalEvent = (props: EventProps) => {
         </h5>
 
         <div className='flex flex-wrap gap-2 justify-between items-center text-slate-400 italic text-xs'>
-          <EventLocation
-            text={event?.data['location-text']}
-            location={event?.data.location}
-          />
+          <EventLocation text={event?.data['location-text']} />
 
           <EventDate
             date={{
@@ -77,6 +75,8 @@ const VerticalEvent = (props: EventProps) => {
         alt={event.data.image.alt}
         className='object-cover h-48 w-full rounded-t-lg'
         loading='lazy'
+        width={320}
+        height={192}
       />
 
       <div className='p-2 xl:p-5 h-full w-full flex flex-col gap-3 justify-between text-left'>

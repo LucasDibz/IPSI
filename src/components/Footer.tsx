@@ -34,6 +34,8 @@ export function Footer() {
               alt='FCT Logo'
               loading='lazy'
               className='object-contain w-24 md:w-36'
+              width={144}
+              height={46}
             />
 
             <img
@@ -41,6 +43,8 @@ export function Footer() {
               alt='CEDIS Logo'
               loading='lazy'
               className='object-contain w-36 md:w-56'
+              width={224}
+              height={56}
             />
 
             <img
@@ -50,6 +54,8 @@ export function Footer() {
               alt='Portuguese Republic logo'
               loading='lazy'
               className='object-contain w-44 md:w-36'
+              width={144}
+              height={67}
             />
           </ul>
 

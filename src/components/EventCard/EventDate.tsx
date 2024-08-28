@@ -7,7 +7,7 @@ export function EventDate(props: EventDateProps) {
   if (!from) return null;
 
   return (
-    <>
+    <div>
       <time className='ml-auto pr-1'>
         {new Date(from).toLocaleString(undefined, {
           day: 'numeric',
@@ -28,6 +28,6 @@ export function EventDate(props: EventDateProps) {
           </time>
         </>
       )}
-    </>
+    </div>
   );
 }

@@ -37,6 +37,8 @@ export const Ipsers = ({ title, ipsers, error, loading }: IpsersProps) => {
                 alt={author.data.image.alt}
                 loading='lazy'
                 className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
+                width={128}
+                height={128}
               />
               <span className='font-semibold text-lg text-center'>
                 {author.data.name}

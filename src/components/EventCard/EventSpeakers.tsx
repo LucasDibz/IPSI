@@ -28,6 +28,9 @@ export function EventSpeakers({
               className={
                 'w-10 h-10 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
               }
+              loading='lazy'
+              width={40}
+              height={40}
             />
           </a>
         ))}
@@ -59,6 +62,8 @@ export function EventSpeakers({
             className={
               'w-16 h-16 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
             }
+            width={64}
+            height={64}
           />
           <span className='font-semibold text-center'>
             {speaker.data.name.split(' ')[0]}

@@ -39,6 +39,9 @@ export function Publication({ output }: { output: Output['data'] }) {
                 className={
                   'w-12 h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
                 }
+                loading='lazy'
+                width={48}
+                height={48}
               />
             </a>
           ))}

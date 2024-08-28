@@ -51,6 +51,8 @@ export function Outputs() {
                 src={new URL('/images/booklet.jpg', import.meta.url).href}
                 alt={'NOVA IPSI Booklet'}
                 className='object-contain w-full rounded-t-lg md:max-h-96 xl:max-h-full'
+                width={400}
+                height={555}
               />
             </a>
             <div className='flex flex-col gap-5 mt-2 xl:mt-0 justify-between text-slate-600 leading-8 text-left'>

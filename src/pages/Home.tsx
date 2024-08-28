@@ -63,6 +63,7 @@ export function Home() {
                 event={event}
                 error={error}
                 loading={loading}
+                direction='horizontal'
               />
             ))}
           </Body.Article>
