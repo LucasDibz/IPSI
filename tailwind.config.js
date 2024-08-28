@@ -9,6 +9,7 @@ export default {
       colors: {
         ipsi: '#F9EBD1',
         background: 'var(--color-background)',
+        heading: 'var(--color-heading)',
       },
       animation: {
         'slide-in': 'slide-in 0.5s ease-out',

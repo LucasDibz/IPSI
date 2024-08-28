@@ -5,15 +5,16 @@
 html,
 body {
   background-color: var(--color-background);
-  transition: background-color 1s ease-in-out;
 }
 
 @layer base {
   html[data-theme='ipsi'] {
     --color-background: #FFFF;
+    --color-heading: #f43f5e;
   }
 
   html[data-theme='sinpl'] {
-    --color-background: #e2e8f0;
+    --color-background: #C4D7F0;
+    --color-heading: #343BD4
   }
 }

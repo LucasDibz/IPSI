@@ -80,7 +80,7 @@ export function Home() {
             <a
               download
               href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
-              className='text-xl text-rose-500 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
+              className='text-xl text-heading underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
             >
               Download
             </a>

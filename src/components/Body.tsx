@@ -17,7 +17,7 @@ export function Body({ children, variant = 'ipsi' }: Props) {
   return (
     <main className='relative container mx-auto px-4 2xl:px-16 pt-20 grid gap-8 justify-center md:justify-normal'>
       <img
-        className={`md:mt-2 w-28 md:h-24 top-0 lg:top-auto lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 absolute right-0 z-0 ${
+        className={`md:mt-2 lg:mt-20 w-28 md:h-24 top-0 lg:top-auto lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 absolute right-0 z-0 ${
           variant === 'ipsi' ? 'rounded-lg' : 'rounded-full'
         }`}
         src={imgSrc}
@@ -55,7 +55,7 @@ Body.Article = Article;
 function Link(props: LinkProps) {
   return (
     <_Link
-      className='text-xl text-rose-400 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
+      className='text-xl text-heading underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
       {...props}
     />
   );
@@ -64,9 +64,7 @@ Body.Link = Link;
 
 function PageTitle({ children }: Props) {
   return (
-    <h2 className='text-xl leading-5 text-rose-500 font-semibold'>
-      {children}
-    </h2>
+    <h2 className='text-xl leading-5 text-heading font-bold'>{children}</h2>
   );
 }
 Body.PageTitle = PageTitle;

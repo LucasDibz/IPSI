@@ -63,7 +63,7 @@ export function EventDialog() {
           href={event.data.link.url}
           target={event.data.link.target}
           rel='noreferrer'
-          className='text-lg text-rose-400 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
+          className='text-lg text-heading underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
         >
           Register here
         </a>

@@ -36,21 +36,46 @@ export type Author =
   | 'Raquel Escada Carvalho'
   | 'Rúben Ferreira'
   | 'Teresa Brito e Faro'
-  | 'Diana Pryshchepova';
+  | 'Diana Pryshchepova'
+  | 'Luc Barbero'
+  | 'Pedro Batista'
+  | 'Péter Mezei'
+  | 'Vicente Beviá';
 
 type Ipsers = {
   [key: string]: {
     title: string;
-    members: {
-      name: Author;
-      imgSrc: string;
-      url: string;
-      hidden?: boolean;
-    }[];
+    members: LocalIpser[];
   };
 };
 
+export type LocalIpser = {
+  name: Author;
+  imgSrc: string;
+  url: string;
+  hidden?: boolean;
+};
+
+export const SINPL_ROLES = new Map([
+  ['Giulia Priora', 'Project coordinator'],
+  ['Amanda Novaes', 'Coordination assistant'],
+  ['Luc Barbero', 'UCLouvain'],
+  ['Pedro Batista', 'Max Planck Institute for Innovation and Competition'],
+  ['Péter Mezei', 'University of Szeged'],
+  ['Pilar Montero', 'University of Alicante'],
+  ['Vicente Beviá', 'University of Alicante'],
+]);
+
 export const ipsers: Ipsers = {
+  todo: {
+    title: 'ToDo',
+    members: [
+      { name: 'Luc Barbero', imgSrc: '', url: '' },
+      { name: 'Pedro Batista', imgSrc: '', url: '' },
+      { name: 'Péter Mezei', imgSrc: '', url: '' },
+      { name: 'Vicente Beviá', imgSrc: '', url: '' },
+    ],
+  },
   coordination: {
     title: 'Coordination',
     members: [

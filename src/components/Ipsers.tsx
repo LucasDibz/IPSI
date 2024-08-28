@@ -1,4 +1,6 @@
+import { UserCircle2 } from 'lucide-react';
 import type { Author } from '../@types';
+import { LocalIpser, SINPL_ROLES } from '../config/ipsers';
 import { Body } from './Body';
 import { Spinner } from './Spinner';
 import { UIError } from './UIError';
@@ -50,28 +52,41 @@ export const Ipsers = ({ title, ipsers, error, loading }: IpsersProps) => {
   );
 };
 
-export const Authors = ({ authors }: { authors: Author[] }) => {
+/**
+ * local image authors
+ */
+export const Authors = ({ authors }: { authors: LocalIpser[] }) => {
   return (
-    <div className='flex flex-shrink-0 w-fit -space-x-4 rtl:space-x-reverse sm:pr-3'>
-      {authors?.map((author, index) => (
+    <div className='flex flex-col justify-center gap-4 xl:gap-2 w-fit'>
+      {authors?.map((author) => (
         <a
-          key={author.data.name}
-          href={author.data.url.url}
-          target={author.data.url.target}
-          rel='noopener noreferrer'
-          className='hover:z-50'
-          style={{ zIndex: 5 - index }}
+          key={author.name}
+          href={author.url}
+          target='_blank'
+          rel='noreferrer'
+          className='group flex gap-6 items-center'
         >
-          <img
-            src={author.data.image.url}
-            alt={author.data.image.alt}
-            className={
-              'w-12 h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
-            }
-            loading='lazy'
-            width={48}
-            height={48}
-          />
+          {author.imgSrc ? (
+            <img
+              src={author.imgSrc}
+              alt={author.name}
+              loading='lazy'
+              className='object-cover rounded-full h-12 w-12 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
+              width={48}
+              height={48}
+            />
+          ) : (
+            <UserCircle2 size={48} strokeWidth={'0.5px'} strokeOpacity={0.5} />
+          )}
+
+          <div className='flex flex-col'>
+            <span className='font-semibold text-lg text-left'>
+              {author.name}
+            </span>
+            <span className='font-light text-xs text-left lg:max-w-48'>
+              {SINPL_ROLES.get(author.name)}
+            </span>
+          </div>
         </a>
       ))}
     </div>

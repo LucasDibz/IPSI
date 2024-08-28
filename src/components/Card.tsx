@@ -17,17 +17,15 @@ export function Card({ children, className }: Props & { className?: string }) {
 }
 
 function Header({ children }: Props) {
-  return (
-    <div className='min-h-28 flex flex-col justify-around'>{children}</div>
-  );
+  return <div className='flex flex-col justify-around'>{children}</div>;
 }
 Card.Header = Header;
 
 function Title({ children, className }: Props & { className?: string }) {
   return (
     <h3
-      className={`font-bold tracking-tight text-slate-600 ${
-        className ? className : 'text-2xl'
+      className={`font-bold tracking-tight text-slate-600 text-2xl ${
+        className ? className : ''
       }`}
     >
       {children}
@@ -38,7 +36,7 @@ Card.Title = Title;
 
 function Subtitle({ children }: Props) {
   return (
-    <h6 className='md:text-lg font-semibold tracking-tight text-end text-rose-600'>
+    <h6 className='md:text-lg font-semibold tracking-tight text-end text-heading'>
       {children}
     </h6>
   );
@@ -69,7 +67,7 @@ function Link({
         href={to}
         target='_blank'
         rel='noopener noreferrer'
-        className='relative inline-flex px-1 items-center text-rose-500 after:bg-rose-300 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
+        className='relative inline-flex px-1 items-center text-heading after:bg-rose-300 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
       >
         {children}
       </a>
@@ -79,7 +77,7 @@ function Link({
   return (
     <_Link
       to={to}
-      className='relative inline-flex px-1 items-center text-rose-500 after:bg-rose-300 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
+      className='relative inline-flex px-1 items-center text-heading after:bg-rose-300 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
     >
       {children}
     </_Link>
