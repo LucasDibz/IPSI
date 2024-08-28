@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Layout } from '../Layout';
 import {
   AboutUs,
@@ -39,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: 'contacts',
         element: <Contacts />,
+      },
+      {
+        path: '*',
+        element: <Navigate to='/' replace />,
       },
     ],
   },
