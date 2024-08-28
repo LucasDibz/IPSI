@@ -1,19 +1,13 @@
 import { usePrismicDocumentByUID } from '@prismicio/react';
-import { XCircle } from 'lucide-react';
-import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { EventDate, EventLocation, EventSpeakers } from '..';
 import type { Event } from '../../@types';
+import { Dialog } from '../Dialog';
 
-export function EventDrawer() {
-  const dialogRef = useRef<HTMLDialogElement>(null);
+export function EventDialog() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const eventQuery = searchParams.get('event');
-
-  if (!eventQuery) {
-    dialogRef?.current?.close();
-  }
 
   const [event] = usePrismicDocumentByUID<Event>('event', eventQuery ?? '', {
     graphQuery: `{
@@ -33,98 +27,71 @@ export function EventDrawer() {
       }`,
   });
 
-  useEffect(() => {
-    if (event) {
-      if (!dialogRef?.current?.open) {
-        dialogRef?.current?.showModal();
-      }
-    }
-  }, [event]);
-
   const handleCloseModal = () => {
     setSearchParams();
   };
 
   return (
-    // biome-ignore lint/a11y/useKeyWithClickEvents: modal...
-    <dialog
-      aria-labelledby='drawer-label'
-      ref={dialogRef}
-      onClose={handleCloseModal}
-      onClick={(event) =>
-        event.currentTarget === event.target && handleCloseModal()
-      }
-      className={`p-6 pl-10 z-50 h-full w-full md:w-2/3 overflow-y-auto transition-transform bg-slate-200 shadow border border-slate-300 rounded-xl overscroll-contain mr-0 backdrop:bg-slate-900/50 ${
-        event ? '' : 'translate-x-full'
-      }`}
-    >
-      <div className='flex flex-col gap-5'>
-        <button
-          type='button'
-          className='outline-none'
-          onClick={() => dialogRef.current?.close()}
+    <Dialog open={!!eventQuery} onClose={handleCloseModal}>
+      <div className='flex flex-col gap-3'>
+        <h5
+          id='drawer-label'
+          className='text-lg font-bold tracking-tight text-slate-900'
         >
-          <XCircle className='absolute left-2.5 bg-slate-200 rounded-full flex-shrink-0 text-slate-400 cursor-pointer hover:text-slate-500' />
-        </button>
+          {event?.data['event-title'][0].text}
+        </h5>
 
-        <div className='flex flex-col gap-3'>
-          <h5
-            id='drawer-label'
-            className='text-lg font-bold tracking-tight text-slate-900'
-          >
-            {event?.data['event-title'][0].text}
-          </h5>
-
-          <span className='text-xs text-slate-500 italic flex flex-wrap gap-2 items-center justify-between'>
-            <time className='inline-block'>
-              <EventDate
-                date={{
-                  from: event?.data['start-date'],
-                  to: event?.data['end-date'],
-                }}
-              />
-            </time>
-
-            <EventLocation
-              text={event?.data['location-text']}
-              location={event?.data.location}
+        <span className='text-xs text-slate-500 italic flex flex-wrap gap-2 items-center justify-between'>
+          <time className='inline-block'>
+            <EventDate
+              date={{
+                from: event?.data['start-date'],
+                to: event?.data['end-date'],
+              }}
             />
-          </span>
-        </div>
+          </time>
 
-        {event?.data.link.target && (
-          <a
-            href={event.data.link.url}
-            target={event.data.link.target}
-            rel='noreferrer'
-            className='text-lg text-rose-400 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
-          >
-            Register here
-          </a>
-        )}
+          <EventLocation
+            text={event?.data['location-text']}
+            location={event?.data.location}
+          />
+        </span>
+      </div>
 
-        {event?.data.workload && (
-          <p className='text-slate-600 text-md font-semibold tracking-tight'>
-            Workload: {event.data.workload}h
-          </p>
-        )}
+      {event?.data.link.target && (
+        <a
+          href={event.data.link.url}
+          target={event.data.link.target}
+          rel='noreferrer'
+          className='text-lg text-rose-400 underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
+        >
+          Register here
+        </a>
+      )}
 
+      {event?.data.workload && (
+        <p className='text-slate-600 text-md font-semibold tracking-tight'>
+          Workload: {event.data.workload}h
+        </p>
+      )}
+
+      {event?.data.speakers && (
         <div>
           <h4 className='text-lg font-bold tracking-tight text-slate-600'>
             Speakers:
           </h4>
           <EventSpeakers all speakers={event?.data.speakers} />
         </div>
-      </div>
+      )}
 
       <Agenda agenda={event?.data.agenda} />
-    </dialog>
+    </Dialog>
   );
 }
 
 const Agenda = ({ agenda }: { agenda?: Event['data']['agenda'] }) => {
   return (
-    <section className='mt-5'>
+    <section>
       <ol className='relative border-s border-slate-400'>
         {agenda?.map((agenda, index) => {
           return (

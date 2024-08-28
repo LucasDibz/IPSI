@@ -1,5 +1,6 @@
 export * from './Body';
 export * from './Card';
+export * from './Dialog';
 export * from './EventCard';
 export * from './Footer';
 export * from './Header';

@@ -4,7 +4,7 @@ import {
   Body,
   EventCard,
   EventCardSkeleton,
-  EventDrawer,
+  EventDialog,
   UIError,
 } from '../components';
 
@@ -49,7 +49,7 @@ export function Events() {
 
   return (
     <>
-      <EventDrawer />
+      <EventDialog />
       <Body>
         <Body.PageTitle>Events</Body.PageTitle>
 
