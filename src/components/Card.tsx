@@ -24,8 +24,8 @@ Card.Header = Header;
 function Title({ children, className }: Props & { className?: string }) {
   return (
     <h3
-      className={`font-bold tracking-tight text-slate-600 text-2xl ${
-        className ? className : ''
+      className={`font-bold tracking-tight text-2xl ${
+        className ? className : 'text-slate-600'
       }`}
     >
       {children}
