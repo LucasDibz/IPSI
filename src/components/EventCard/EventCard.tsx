@@ -35,12 +35,12 @@ const HorizontalEvent = (props: EventProps) => {
       href={event.data.link.url}
       target={event.data.link.target}
       rel='noreferrer'
-      className='flex max-w-lg border border-slate-200 rounded-lg shadow hover:scale-105 hover:shadow-lg transition'
+      className='flex flex-col md:flex-row max-w-lg border border-slate-200 rounded-lg shadow hover:scale-105 hover:shadow-lg transition'
     >
       <img
         src={event.data.image.url}
         alt={event.data.image.alt}
-        className='object-cover h-full w-full rounded-l-lg'
+        className='object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg w-full md:w-1/2'
         width={246}
         height={178}
       />
