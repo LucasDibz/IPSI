@@ -9,7 +9,9 @@ export function Header() {
 
   return (
     <header
-      className={'sticky top-0 w-full z-50 flex items-center bg-background'}
+      className={
+        'sticky top-0 w-full z-50 flex items-center bg-background bg-white'
+      }
     >
       {/* Desktop */}
       <nav className='hidden md:flex shadow w-full items-center justify-between py-5 px-16 gap-7 border-b border-b-slate-400'>

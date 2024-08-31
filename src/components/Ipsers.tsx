@@ -25,7 +25,7 @@ export const Ipsers = ({ title, ipsers, error, loading }: IpsersProps) => {
       <div className='flex flex-wrap gap-8 justify-center lg:justify-normal'>
         {ipsers
           .filter((author) => !author.data.invisible)
-          .sort((a, b) => (a.data.name > b.data.name ? 1 : -1))
+          .sort((a, b) => a.data.name.localeCompare(b.data.name))
           .map((author) => (
             <a
               key={author.id}

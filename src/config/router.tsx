@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/sinpl',
+    path: '/sinpl-eu',
     element: <Layout theme='sinpl' />,
     errorElement: <ErrorPage />,
     children: [
