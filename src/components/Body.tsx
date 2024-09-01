@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { Link as _Link, LinkProps } from 'react-router-dom';
+import type { ReactNode } from 'react';
+import { type LinkProps, Link as _Link } from 'react-router-dom';
 import type { SiteVariants } from '../@types/variants';
 
 // #F9EBD1

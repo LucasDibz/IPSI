@@ -1,4 +1,4 @@
-import { Author } from './ipsers';
+import type { Author } from './ipsers';
 
 type Schedule = {
   day?: string;

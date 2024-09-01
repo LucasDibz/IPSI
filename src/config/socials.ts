@@ -18,7 +18,7 @@ export const socials = [
   {
     title: 'Instagram',
     Icon: Instagram,
-    href: 'https://www.instagram.com/novaipsi/',
+    href: 'https://www.instagram.com/novaipsi',
     color: 'coral',
     fill: 'coral',
   },
@@ -32,7 +32,7 @@ export const socials = [
   {
     title: 'Linkedin',
     Icon: Linkedin,
-    href: 'https://www.linkedin.com/in/nova-ipsi-911838252/',
+    href: 'https://www.linkedin.com/in/nova-ipsi-911838252',
     color: 'cornflowerblue',
     fill: 'white',
   },

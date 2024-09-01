@@ -1,5 +1,5 @@
 import { XCircle } from 'lucide-react';
-import { ReactNode, useEffect, useRef } from 'react';
+import { type ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 type ModalProps = {

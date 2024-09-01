@@ -1,6 +1,6 @@
 import { UserCircle2 } from 'lucide-react';
 import type { Author } from '../@types';
-import { LocalIpser, SINPL_ROLES } from '../config/ipsers';
+import { type LocalIpser, SINPL_ROLES } from '../config/ipsers';
 import { Body } from './Body';
 import { Spinner } from './Spinner';
 import { UIError } from './UIError';
