@@ -76,7 +76,12 @@ export const Authors = ({ authors }: { authors: LocalIpser[] }) => {
               height={48}
             />
           ) : (
-            <UserCircle2 size={48} strokeWidth={'0.5px'} strokeOpacity={0.5} />
+            <UserCircle2
+              size={48}
+              strokeWidth={'0.5px'}
+              strokeOpacity={0.5}
+              className='min-w-12'
+            />
           )}
 
           <div className='flex flex-col'>

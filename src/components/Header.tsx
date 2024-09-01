@@ -8,11 +8,7 @@ export function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <header
-      className={
-        'sticky top-0 w-full z-50 flex items-center bg-background bg-white'
-      }
-    >
+    <header className={'sticky top-0 w-full z-50 flex items-center bg-white'}>
       {/* Desktop */}
       <nav className='hidden md:flex shadow w-full items-center justify-between py-5 px-16 gap-7 border-b border-b-slate-400'>
         <IPSILogo />
@@ -35,8 +31,8 @@ export function Header() {
       </nav>
 
       {/* Mobile */}
-      <nav className='md:hidden w-full shadow'>
-        <div className='bg-background flex items-center w-full justify-between p-5 flex-wrap gap-5'>
+      <nav className='bg-white md:hidden w-full shadow'>
+        <div className='bg-white flex items-center w-full justify-between p-5 flex-wrap gap-5'>
           <IPSILogo />
 
           <button
@@ -50,7 +46,7 @@ export function Header() {
         </div>
 
         <div
-          className='-z-10 absolute w-full bg-background py-2 px-5 flex flex-col items-end gap-3 shadow invisible -translate-y-full data-[show=true]:visible data-[show=true]:translate-y-0 transition-all'
+          className='bg-inherit -z-10 absolute w-full py-2 px-5 flex flex-col items-end rounded-b-lg gap-3 shadow invisible -translate-y-full data-[show=true]:visible data-[show=true]:translate-y-0 transition-all'
           data-show={navbarOpen}
         >
           <NavLink
