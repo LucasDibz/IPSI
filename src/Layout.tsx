@@ -16,7 +16,7 @@ export function Layout({ theme = 'ipsi' }: LayoutProps) {
     <>
       <Header />
       <Outlet />
-      <Footer partners={theme === 'ipsi'} />
+      <Footer variant={theme} />
     </>
   );
 }

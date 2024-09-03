@@ -34,9 +34,13 @@ function Title({ children, className }: Props & { className?: string }) {
 }
 Card.Title = Title;
 
-function Subtitle({ children }: Props) {
+function Subtitle({ children, className }: Props & { className?: string }) {
   return (
-    <h6 className='md:text-lg font-semibold tracking-tight text-end text-heading'>
+    <h6
+      className={`font-semibold tracking-tight text-end text-heading ${
+        className ? className : 'md:text-lg'
+      }`}
+    >
       {children}
     </h6>
   );

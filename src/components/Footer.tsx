@@ -1,13 +1,14 @@
+import { SiteVariants } from '../@types/variants';
 import { socials } from '../config/socials';
 
 type FooterProps = {
-  partners?: boolean;
+  variant?: SiteVariants;
 };
-export function Footer({ partners }: FooterProps) {
+export function Footer({ variant }: FooterProps) {
   return (
     <footer className='bg-white mt-10 pb-5 md:pb-0 border-t border-t-slate-400'>
       <div className='mx-auto w-full p-5 md:px-16'>
-        <div className='flex-wrap md:flex md:justify-between'>
+        <div className='flex-wrap md:flex md:justify-between space-y-5'>
           <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-3 md:gap-8 text-slate-500 font-medium'>
             <li>
               <a
@@ -31,7 +32,8 @@ export function Footer({ partners }: FooterProps) {
             </li>
           </ul>
 
-          {partners && <Partners />}
+          {variant === 'ipsi' && <Partners />}
+          {variant === 'sinpl' && <FundedByEU />}
         </div>
 
         <hr className='my-3 md:my-6 border-slate-300 sm:mx-auto lg:my-8' />
@@ -113,5 +115,25 @@ const Partners = () => {
         and UIDP/00714/2020
       </span>
     </>
+  );
+};
+
+const FundedByEU = () => {
+  return (
+    <div className='space-y-2'>
+      <img
+        src={new URL('/images/funded_by_eu.png', import.meta.url).href}
+        alt='FCT Logo'
+        loading='lazy'
+        className='object-contain w-56 mx-auto md:mx-0'
+        width={224}
+        height={60}
+      />
+
+      <span className='block text-left text-slate-500 font-medium text-xs max-w-96'>
+        Project Nr: 101175174 ERASMUS-JMO-2024-HEI-TCH-RSCH / Grant Agreement
+        Ref. Ares (2024) 6118500 - 29/08/2024
+      </span>
+    </div>
   );
 };

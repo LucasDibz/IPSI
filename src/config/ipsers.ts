@@ -57,8 +57,8 @@ export type LocalIpser = {
 };
 
 export const SINPL_ROLES = new Map([
-  ['Giulia Priora', 'Project coordinator'],
-  ['Amanda Novaes', 'Coordination assistant'],
+  ['Giulia Priora', 'NOVA School of Law'],
+  ['Amanda Novaes', 'NOVA School of Law'],
   ['Luc Barbero', 'UCLouvain'],
   ['Pedro Batista', 'Max Planck Institute for Innovation and Competition'],
   ['Péter Mezei', 'University of Szeged'],
@@ -67,13 +67,37 @@ export const SINPL_ROLES = new Map([
 ]);
 
 export const ipsers: Ipsers = {
-  todo: {
-    title: 'ToDo',
+  sinpl: {
+    title: 'SINPL-EU',
     members: [
-      { name: 'Luc Barbero', imgSrc: '', url: '' },
-      { name: 'Pedro Batista', imgSrc: '', url: '' },
-      { name: 'Péter Mezei', imgSrc: '', url: '' },
-      { name: 'Vicente Beviá', imgSrc: '', url: '' },
+      {
+        name: 'Luc Barbero',
+        imgSrc: new URL('/images/members/luc_barbero.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/lucdesaunettes',
+        hidden: true,
+      },
+      {
+        name: 'Pedro Batista',
+        imgSrc: new URL('/images/members/pedro_batista.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/pedro-henrique-d-batista-4171a3154',
+        hidden: true,
+      },
+      {
+        name: 'Péter Mezei',
+        imgSrc: new URL('/images/members/peter_mezei.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/peter-mezei-8b36641a',
+        hidden: true,
+      },
+      {
+        name: 'Vicente Beviá',
+        imgSrc: new URL('/images/members/vicente_bevia.jpg', import.meta.url)
+          .href,
+        url: 'https://www.linkedin.com/in/vicente-gimeno-bevi%C3%A1-259634135',
+        hidden: true,
+      },
     ],
   },
   coordination: {
@@ -359,7 +383,7 @@ export const ipsers: Ipsers = {
         name: 'Pilar Montero',
         imgSrc: new URL('/images/members/pilar_montero.jpg', import.meta.url)
           .href,
-        url: 'https://cvnet.cpd.ua.es/curriculum-breve/es/montero-garcia-noblejas-maria-pilar/3605',
+        url: 'https://www.linkedin.com/in/pilar-montero-771b06210',
       },
     ],
   },
