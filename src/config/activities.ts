@@ -31,7 +31,7 @@ export const activities = [
       'NOVA IPSI events and publications represent our academic output as contributors to the progressing legal scholarship on IP Law and sustainability. This includes scientific publications, expert legal opinions, our Annual Lecture Series, and academic conferences.',
     links: [
       { title: 'events', to: '/events' },
-      { title: 'scientific outputs', to: '/scientific-outputs' },
+      { title: 'scientific publications', to: '/scientific-publications' },
     ],
   },
 ];

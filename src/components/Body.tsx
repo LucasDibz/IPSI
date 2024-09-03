@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { type LinkProps, Link as _Link } from 'react-router-dom';
+import { Link as _Link, type LinkProps } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
 import type { SiteVariants } from '../@types/variants';
 
 // #F9EBD1
@@ -35,9 +36,10 @@ export function Body({ children, variant = 'ipsi' }: Props) {
 function Section({ children, className }: Props & { className?: string }) {
   return (
     <section
-      className={`z-10 grid gap-6 max-w-2xl xl:max-w-4xl mt-10 md:mt-0 ${
-        className ? className : ''
-      }`}
+      className={twMerge(
+        'z-10 grid gap-6 max-w-2xl xl:max-w-4xl mt-10 md:mt-0',
+        className,
+      )}
     >
       {children}
     </section>

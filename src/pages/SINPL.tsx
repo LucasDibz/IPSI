@@ -26,13 +26,13 @@ export function SINPL() {
     <>
       <Body variant='sinpl'>
         <Body.Section>
-          <Card className='bg-white rounded-[4rem]'>
+          <Card className='bg-white rounded-[3rem] max-w-full'>
             <Card.Header>
               <Card.Title className='text-heading'>
                 The Jean Monnet Module on Sustainability through Intellectual
                 Property Law in EU (SINPLE-EU)
               </Card.Title>
-              <Card.Subtitle className='text-sm italic'>
+              <Card.Subtitle className='text-xs italic'>
                 from September 2024 to September 2027
               </Card.Subtitle>
             </Card.Header>
@@ -76,13 +76,13 @@ export function SINPL() {
                 player regulating IP law for a sustainable world.
               </p>
 
-              <span>
+              <span className='text-sm'>
                 More information at:
                 <a
                   href='https://novaipsi.novalaw.unl.pt'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='pl-1 font-semibold text-heading text-sm'
+                  className='pl-1 font-semibold text-heading'
                 >
                   https://novaipsi.novalaw.unl.pt
                 </a>
@@ -90,7 +90,7 @@ export function SINPL() {
             </Card.Content>
           </Card>
 
-          <Card className='bg-white rounded-[4rem]'>
+          <Card className='bg-white rounded-[3rem] max-w-full'>
             <Card.Header>
               <Card.Title className='text-heading'>Project outputs</Card.Title>
             </Card.Header>
@@ -120,7 +120,7 @@ export function SINPL() {
             </Card.Content>
           </Card>
 
-          <Card className='bg-white rounded-[4rem] lg:absolute right-0 2xl:right-8 bottom-0'>
+          <Card className='bg-white rounded-[3rem] lg:absolute right-0 2xl:right-8 bottom-0'>
             <Card.Header>
               <Card.Title className='text-heading'>Coordinators</Card.Title>
             </Card.Header>
@@ -135,7 +135,7 @@ export function SINPL() {
             </Card.Content>
           </Card>
 
-          <Card className='bg-white rounded-[4rem] text-center'>
+          <Card className='bg-white rounded-[3rem] max-w-full text-center'>
             <span className='block font-semibold text-lg'>Stay tuned!</span>
 
             <span className='text-sm'>

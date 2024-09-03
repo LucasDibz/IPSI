@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
         element: <Activities />,
       },
       {
-        path: 'scientific-outputs',
+        path: 'scientific-publications',
         element: <Outputs />,
       },
       {

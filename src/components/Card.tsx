@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link as _Link } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
 
 type Props = {
   children: ReactNode;
@@ -7,9 +8,10 @@ type Props = {
 export function Card({ children, className }: Props & { className?: string }) {
   return (
     <article
-      className={`p-6 border bg-background border-slate-200 rounded-lg shadow flex flex-col gap-3 ${
-        className ? className : 'max-w-lg'
-      }`}
+      className={twMerge(
+        'p-6 border bg-background border-slate-200 rounded-lg shadow flex flex-col gap-3 max-w-lg',
+        className,
+      )}
     >
       {children}
     </article>
@@ -24,9 +26,10 @@ Card.Header = Header;
 function Title({ children, className }: Props & { className?: string }) {
   return (
     <h3
-      className={`font-bold tracking-tight text-2xl ${
-        className ? className : 'text-slate-600'
-      }`}
+      className={twMerge(
+        'font-bold tracking-tight text-2xl text-slate-600',
+        className,
+      )}
     >
       {children}
     </h3>
@@ -37,9 +40,10 @@ Card.Title = Title;
 function Subtitle({ children, className }: Props & { className?: string }) {
   return (
     <h6
-      className={`font-semibold tracking-tight text-end text-heading ${
-        className ? className : 'md:text-lg'
-      }`}
+      className={twMerge(
+        'font-semibold tracking-tight text-end text-heading md:text-lg',
+        className,
+      )}
     >
       {children}
     </h6>
@@ -50,9 +54,10 @@ Card.Subtitle = Subtitle;
 function Content({ children, className }: Props & { className?: string }) {
   return (
     <div
-      className={`font-normal text-slate-800 py-4 border-t border-t-slate-400 ${
-        className ? className : ''
-      }`}
+      className={twMerge(
+        'font-normal text-slate-800 py-4 border-t border-t-slate-400',
+        className,
+      )}
     >
       {children}
     </div>

@@ -36,7 +36,7 @@ export function Outputs() {
 
   return (
     <Body>
-      <Body.PageTitle>Scientific Outputs</Body.PageTitle>
+      <Body.PageTitle>Scientific Publications</Body.PageTitle>
 
       <Body.Section>
         <Card className='max-w-2xl mx-auto'>
