@@ -312,7 +312,7 @@ export const events: Event[] = [
         schedule: [
           {
             event: 'Lecture: «Understanding Patents»',
-            guests: ['Pedro Batista'],
+            guests: ['Pedro Henrique D. Batista'],
           },
           {
             event: 'Lecture: «Applying for a Patent»',

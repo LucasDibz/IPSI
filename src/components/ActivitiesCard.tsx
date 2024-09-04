@@ -22,18 +22,20 @@ export const ActivitiesCard = ({
 
   return activities.map((activity) => (
     <Card key={activity.id}>
-      <Card.Header>
+      <Card.Header className='min-h-24'>
         <Card.Title>{activity.data.title[0].text}</Card.Title>
-        <Card.Subtitle>{activity.data.subtitle[0].text}</Card.Subtitle>
+        <Card.Subtitle className='text-md'>
+          {activity.data.subtitle?.[0]?.text}
+        </Card.Subtitle>
       </Card.Header>
-      <Card.Content>
+      <Card.Content className='text-justify'>
         <p
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: activity.data.content[0].text }}
         />
       </Card.Content>
       {activity.data.links && activity.data.links.length > 0 && (
-        <div className='mt-auto ml-auto text-end italic'>
+        <div className='mt-auto ml-auto text-end italic text-sm'>
           <span>Discover more at</span>
           {activity.data.links.map((link, index) => (
             <Fragment key={link.link.url}>

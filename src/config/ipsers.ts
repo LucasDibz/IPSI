@@ -37,10 +37,10 @@ export type Author =
   | 'Rúben Ferreira'
   | 'Teresa Brito e Faro'
   | 'Diana Pryshchepova'
-  | 'Luc Barbero'
-  | 'Pedro Batista'
+  | 'Luc Desaunettes-Barbero'
+  | 'Pedro Henrique D. Batista'
   | 'Péter Mezei'
-  | 'Vicente Beviá';
+  | 'Vicente Gimeno Beviá';
 
 type Ipsers = {
   [key: string]: {
@@ -59,11 +59,14 @@ export type LocalIpser = {
 export const SINPL_ROLES = new Map([
   ['Giulia Priora', 'NOVA School of Law'],
   ['Amanda Novaes', 'NOVA School of Law'],
-  ['Luc Barbero', 'UCLouvain'],
-  ['Pedro Batista', 'Max Planck Institute for Innovation and Competition'],
+  ['Luc Desaunettes-Barbero', 'UCLouvain'],
+  [
+    'Pedro Henrique D. Batista',
+    'Max Planck Institute for Innovation and Competition',
+  ],
   ['Péter Mezei', 'University of Szeged'],
   ['Pilar Montero', 'University of Alicante'],
-  ['Vicente Beviá', 'University of Alicante'],
+  ['Vicente Gimeno Beviá', 'University of Alicante'],
 ]);
 
 export const ipsers: Ipsers = {
@@ -71,14 +74,14 @@ export const ipsers: Ipsers = {
     title: 'SINPL-EU',
     members: [
       {
-        name: 'Luc Barbero',
+        name: 'Luc Desaunettes-Barbero',
         imgSrc: new URL('/images/members/luc_barbero.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/lucdesaunettes',
         hidden: true,
       },
       {
-        name: 'Pedro Batista',
+        name: 'Pedro Henrique D. Batista',
         imgSrc: new URL('/images/members/pedro_batista.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/pedro-henrique-d-batista-4171a3154',
@@ -92,7 +95,7 @@ export const ipsers: Ipsers = {
         hidden: true,
       },
       {
-        name: 'Vicente Beviá',
+        name: 'Vicente Gimeno Beviá',
         imgSrc: new URL('/images/members/vicente_bevia.jpg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/vicente-gimeno-bevi%C3%A1-259634135',

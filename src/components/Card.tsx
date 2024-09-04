@@ -18,8 +18,17 @@ export function Card({ children, className }: Props & { className?: string }) {
   );
 }
 
-function Header({ children }: Props) {
-  return <div className='flex flex-col justify-around'>{children}</div>;
+function Header({ children, className }: Props & { className?: string }) {
+  return (
+    <div
+      className={twMerge(
+        'flex flex-col justify-around gap-4 md:gap-1',
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
 }
 Card.Header = Header;
 
@@ -41,7 +50,7 @@ function Subtitle({ children, className }: Props & { className?: string }) {
   return (
     <h6
       className={twMerge(
-        'font-semibold tracking-tight text-end text-heading md:text-lg',
+        'font-semibold tracking-tight text-end text-heading',
         className,
       )}
     >
