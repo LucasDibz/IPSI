@@ -23,7 +23,7 @@ export function Publication({ output }: { output: Output['data'] }) {
             : ''
         }`}
       >
-        <div className='flex flex-shrink-0 w-fit -space-x-4 rtl:space-x-reverse sm:pr-3'>
+        <div className='flex flex-shrink-0 justify-center w-fit -space-x-4 rtl:space-x-reverse sm:pr-3 md:min-w-32'>
           {output.authors?.map(({ author }, index) => (
             <a
               key={author.data.name}

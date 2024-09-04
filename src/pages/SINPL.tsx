@@ -3,8 +3,8 @@ import { Body, Card } from '../components';
 import { Authors } from '../components/Ipsers';
 import { type Author, ipsers } from '../config/ipsers';
 
-const SINPL_COORDINATORS: Array<Author> = ['Giulia Priora', 'Amanda Novaes'];
 const SINPL_MEMBERS: Array<Author> = [
+  'Amanda Novaes',
   'Luc Desaunettes-Barbero',
   'Pedro Henrique D. Batista',
   'Péter Mezei',
@@ -12,9 +12,7 @@ const SINPL_MEMBERS: Array<Author> = [
   'Vicente Gimeno Beviá',
 ];
 
-const coordinators = Object.values(ipsers).flatMap(({ members }) =>
-  members.filter((member) => SINPL_COORDINATORS.includes(member.name)),
-);
+const coordinators = ipsers.coordination.members;
 const members = Object.values(ipsers)
   .flatMap(({ members }) =>
     members.filter((member) => SINPL_MEMBERS.includes(member.name)),
@@ -92,7 +90,7 @@ export function SINPL() {
 
           <Card className='bg-white rounded-[3rem] lg:absolute right-0 md:-right-12 2xl:right-2 bottom-0 max-w-full'>
             <Card.Header>
-              <Card.Title className='text-heading'>Coordinators</Card.Title>
+              <Card.Title className='text-heading'>Coordinator</Card.Title>
             </Card.Header>
             <Card.Content className='py-2'>
               <Authors authors={coordinators} />

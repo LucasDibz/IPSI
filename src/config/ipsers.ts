@@ -108,7 +108,7 @@ export const ipsers: Ipsers = {
     members: [
       {
         name: 'Giulia Priora',
-        imgSrc: new URL('/images/members/giulia_priora.jpg', import.meta.url)
+        imgSrc: new URL('/images/members/giulia_priora.jpeg', import.meta.url)
           .href,
         url: 'https://novalaw.unl.pt/giulia-priora',
       },
@@ -139,7 +139,7 @@ export const ipsers: Ipsers = {
       },
       {
         name: 'Amanda Novaes',
-        imgSrc: new URL('/images/members/amanda_novaes.jpg', import.meta.url)
+        imgSrc: new URL('/images/members/amanda_novaes.jpeg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/amanda-costa-novaes-75bab6191',
       },

@@ -38,16 +38,19 @@ export function Home() {
       <Body.Section>
         <Body.H1>
           <strong className='block pr-1'>NOVA IPSI</strong>
-          Knowledge Centre on Intellectual Property and Sustainable Innovation
+          <span className='block text-left text-balance'>
+            Knowledge Centre on Intellectual Property
+          </span>
+          <span>and Sustainable Innovation</span>
         </Body.H1>
 
         <p>
           Founded in September 2022 at NOVA School of Law in Lisbon, NOVA IPSI
           is a Knowledge Centre dedicated to academic research on Intellectual
-          Property Law in a society seeking Sustainability.
+          Property Law in a society seeking Sustainability
         </p>
 
-        <Body.Link to={'about-us'}>Learn more about us</Body.Link>
+        <Body.Link to='about-us'>Learn more about us</Body.Link>
       </Body.Section>
 
       {error && <UIError error={error} />}

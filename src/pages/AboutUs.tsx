@@ -32,11 +32,7 @@ export function AboutUs() {
 
   return (
     <Body>
-      <div className='z-10 max-w-xl xl:max-w-3xl'>
-        <h2 className='text-xl leading-5 text-red-600 font-semibold'>
-          About us
-        </h2>
-      </div>
+      <Body.PageTitle>About us</Body.PageTitle>
 
       <Body.Section>
         <Body.Article>

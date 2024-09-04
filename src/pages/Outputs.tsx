@@ -30,9 +30,6 @@ export function Outputs() {
   const loading = state === 'loading';
 
   const articles = outputs?.filter((output) => output.data.type === 'article');
-  const conferences = outputs?.filter(
-    (output) => output.data.type === 'conference',
-  );
 
   return (
     <Body>
@@ -84,13 +81,6 @@ export function Outputs() {
         title='Selected scientific articles'
         loading={loading}
         outputs={articles}
-        error={error}
-      />
-
-      <OutputsCard
-        title='Selected conference participation'
-        loading={loading}
-        outputs={conferences}
         error={error}
       />
     </Body>
