@@ -8,10 +8,7 @@ export function Outputs() {
     {
       graphQuery: `{
         outputs {
-          type
-          title
-          subtitle
-          link
+          ...outputsFields
 
           authors {
             author {
@@ -29,7 +26,9 @@ export function Outputs() {
 
   const loading = state === 'loading';
 
-  const articles = outputs?.filter((output) => output.data.type === 'article');
+  const articles = outputs
+    ?.filter((output) => output.data.type === 'article')
+    .sort((a, b) => (new Date(a.data.date) < new Date(b.data.date) ? 1 : -1));
 
   return (
     <Body>
