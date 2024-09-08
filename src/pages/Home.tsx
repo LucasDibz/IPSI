@@ -34,8 +34,8 @@ export function Home() {
     );
 
   return (
-    <Body>
-      <Body.Section>
+    <Body className='pt-0'>
+      <Body.Section className='mt-5'>
         <Body.H1>
           <strong className='block pr-1'>NOVA IPSI</strong>
         </Body.H1>
