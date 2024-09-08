@@ -80,8 +80,12 @@ function H1({ children }: Props) {
 }
 Body.H1 = H1;
 
-function H2({ children }: Props) {
-  return <h2 className='text-lg leading-5 font-semibold'>{children}</h2>;
+function H2({ children, className }: Props & { className?: string }) {
+  return (
+    <h2 className={twMerge('text-lg leading-5 font-semibold', className)}>
+      {children}
+    </h2>
+  );
 }
 Body.H2 = H2;
 

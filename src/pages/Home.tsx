@@ -38,11 +38,11 @@ export function Home() {
       <Body.Section>
         <Body.H1>
           <strong className='block pr-1'>NOVA IPSI</strong>
-          <span className='block text-left text-balance'>
-            Knowledge Centre on Intellectual Property
-          </span>
-          <span>and Sustainable Innovation</span>
         </Body.H1>
+        <Body.H2 className='text-xl xl:text-3xl text-slate-600'>
+          <span className='block pr-1'>Knowledge Centre on</span>
+          Intellectual Property and Sustainable Innovation
+        </Body.H2>
 
         <p>
           Founded in September 2022 at NOVA School of Law in Lisbon, NOVA IPSI

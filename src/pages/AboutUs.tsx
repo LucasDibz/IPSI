@@ -64,7 +64,6 @@ export function AboutUs() {
             <strong className='px-1'>
               Intellectual Property Law in a society seeking Sustainability.
             </strong>
-            Intellectual Property Law in a society seeking Sustainability
           </p>
 
           <Body.List>
