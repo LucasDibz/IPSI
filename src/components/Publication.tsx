@@ -1,6 +1,5 @@
 import type { Output } from '../@types';
 
-//@ts-expect-error: it exists...
 const formatter = new Intl.ListFormat('en', {
   style: 'long',
   type: 'conjunction',
@@ -58,11 +57,13 @@ export function Publication({ output }: { output: Output['data'] }) {
               </span>
             )}
           </div>
-          <span className=' font-semibold text-slate-600'>
-            {formatter.format(
-              output.authors?.map(({ author }) => author.data.name),
-            )}
-          </span>
+          {output.authors && (
+            <span className=' font-semibold text-slate-600'>
+              {formatter.format(
+                output.authors.map(({ author }) => author.data.name),
+              )}
+            </span>
+          )}
         </Tag>
       </div>
     </li>
