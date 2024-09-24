@@ -73,7 +73,7 @@ const VerticalEvent = (props: EventProps) => {
       <img
         src={event.data.image.url}
         alt={event.data.image.alt}
-        className='object-cover h-48 w-full rounded-t-lg'
+        className='object-cover min-h-48 w-full rounded-t-lg'
         loading='lazy'
         width={320}
         height={192}

@@ -32,12 +32,20 @@ export function Events() {
   const loading = state === 'loading';
 
   const upcomingEvents = events
-    ?.filter(({ data }) => new Date(data?.['start-date']) > new Date())
+    ?.filter(
+      ({ data }) =>
+        (new Date(data?.['end-date']) || new Date(data?.['start-date'])) >
+        new Date(),
+    )
     .sort((a, b) =>
       new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
     );
   const pastEvents = events
-    ?.filter(({ data }) => new Date(data?.['start-date']) < new Date())
+    ?.filter(
+      ({ data }) =>
+        (new Date(data?.['end-date']) || new Date(data?.['start-date'])) <
+        new Date(),
+    )
     .sort((a, b) =>
       new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
     );
