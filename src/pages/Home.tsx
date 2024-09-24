@@ -27,15 +27,25 @@ export function Home() {
   );
   const loading = state === 'loading';
 
-  const upcomingEvents = events
-    ?.filter(
-      ({ data }) =>
-        (new Date(data?.['end-date']) || new Date(data?.['start-date'])) >
-        new Date(),
-    )
-    .sort((a, b) =>
-      new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
-    );
+  const sortedEvents = events?.sort((a, b) =>
+    new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
+  );
+
+  const upcomingEvents = sortedEvents?.filter(
+    ({ data }) =>
+      (new Date(data?.['end-date']) || new Date(data?.['start-date'])) >
+      new Date(),
+  );
+
+  let eventsLabel = 'Upcoming events';
+
+  if (upcomingEvents?.length === 0) {
+    const latestEvent = sortedEvents?.at(0);
+    if (latestEvent) {
+      eventsLabel = 'Our latest event';
+      upcomingEvents.push(latestEvent);
+    }
+  }
 
   return (
     <Body className='pt-0'>
@@ -60,24 +70,20 @@ export function Home() {
       {error && <UIError error={error} />}
       {loading && <EventCardSkeleton />}
 
-      {upcomingEvents && upcomingEvents?.length > 0 && (
-        <>
-          <Body.H1>Upcoming events</Body.H1>
-          <Body.Article>
-            {upcomingEvents.map((event) => (
-              <EventCard
-                key={event.uid}
-                event={event}
-                error={error}
-                loading={loading}
-                direction='horizontal'
-              />
-            ))}
-          </Body.Article>
-        </>
-      )}
+      <Body.H1>{eventsLabel}</Body.H1>
+      <Body.Article>
+        {upcomingEvents?.map((event) => (
+          <EventCard
+            key={event.uid}
+            event={event}
+            error={error}
+            loading={loading}
+            direction='horizontal'
+          />
+        ))}
+      </Body.Article>
 
-      <Body.H1>Our latest scientific output</Body.H1>
+      <Body.H1>Our latest scientific publication</Body.H1>
       <Body.Article>
         <div className='flex gap-3'>
           <BookText size={50} color='gray' />
