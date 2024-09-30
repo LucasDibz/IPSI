@@ -2,10 +2,10 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Layout } from '../Layout';
 import {
   AboutUs,
-  Activities,
+  Conferences,
   Contacts,
+  Courses,
   ErrorPage,
-  Events,
   Home,
   Outputs,
   SINPL,
@@ -26,16 +26,16 @@ export const router = createBrowserRouter([
         element: <AboutUs />,
       },
       {
-        path: 'events',
-        element: <Events />,
-      },
-      {
-        path: 'activities',
-        element: <Activities />,
-      },
-      {
         path: 'scientific-publications',
         element: <Outputs />,
+      },
+      {
+        path: 'conferences',
+        element: <Conferences />,
+      },
+      {
+        path: 'courses',
+        element: <Courses />,
       },
       {
         path: 'contacts',

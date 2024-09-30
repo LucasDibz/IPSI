@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
-import type { Activity } from '../@types';
-import { Card } from './Card';
-import { EventCardSkeleton } from './EventCard';
-import { UIError } from './UIError';
+import type { Activity } from '../../@types';
+import { Card } from '../Card';
+import { EventCardSkeleton } from '../EventCard';
+import { UIError } from '../UIError';
 
 type ActivitiesCardProps = {
   activities: Activity[] | undefined;
@@ -28,9 +28,9 @@ export const ActivitiesCard = ({
           {activity.data.subtitle?.[0]?.text}
         </Card.Subtitle>
       </Card.Header>
-      <Card.Content className='text-justify'>
+      <Card.Content className='text-center'>
         <p
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Safe
           dangerouslySetInnerHTML={{ __html: activity.data.content[0].text }}
         />
       </Card.Content>

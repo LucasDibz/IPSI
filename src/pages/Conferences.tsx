@@ -1,14 +1,8 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import type { Event } from '../@types';
-import {
-  Body,
-  EventCard,
-  EventCardSkeleton,
-  EventDialog,
-  UIError,
-} from '../components';
+import { Body, EventCard, EventCardSkeleton, UIError } from '../components';
 
-export function Events() {
+export function Conferences() {
   const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
     'event',
     {
@@ -31,7 +25,11 @@ export function Events() {
   );
   const loading = state === 'loading';
 
-  const upcomingEvents = events
+  const conferences = events?.filter(
+    (event) => event.data.type === 'conference',
+  );
+
+  const upcomingConferences = conferences
     ?.filter(
       ({ data }) =>
         (new Date(data?.['end-date']) || new Date(data?.['start-date'])) >
@@ -40,7 +38,7 @@ export function Events() {
     .sort((a, b) =>
       new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
     );
-  const pastEvents = events
+  const pastConferences = conferences
     ?.filter(
       ({ data }) =>
         (new Date(data?.['end-date']) || new Date(data?.['start-date'])) <
@@ -57,9 +55,8 @@ export function Events() {
 
   return (
     <>
-      <EventDialog />
       <Body>
-        <Body.PageTitle>Events</Body.PageTitle>
+        <Body.PageTitle>Conferences</Body.PageTitle>
 
         {loading && (
           <div className='flex gap-8'>
@@ -69,20 +66,24 @@ export function Events() {
         )}
         {error && <UIError error={error} />}
 
-        {upcomingEvents && upcomingEvents.length > 0 && (
+        {upcomingConferences && upcomingConferences.length > 0 && (
           <>
-            <Body.H1>Upcoming Events</Body.H1>
+            <Body.H1>Upcoming Conferences</Body.H1>
             <Body.Section className='grid md:grid-cols-2 xl:grid-cols-3 gap-8'>
-              {upcomingEvents.map((event) => (
-                <EventCard {...eventProps} key={event.uid} event={event} />
+              {upcomingConferences.map((conference) => (
+                <EventCard
+                  {...eventProps}
+                  key={conference.uid}
+                  event={conference}
+                />
               ))}
             </Body.Section>
           </>
         )}
 
-        <Body.H1>Past Events</Body.H1>
+        <Body.H1>Past Conferences</Body.H1>
         <Body.Section className='grid md:grid-cols-2 xl:grid-cols-3 gap-8'>
-          {pastEvents?.map((event) => (
+          {pastConferences?.map((event) => (
             <EventCard {...eventProps} key={event.uid} event={event} />
           ))}
         </Body.Section>

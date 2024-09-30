@@ -1,7 +1,7 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
-import type { Activity } from '../@types';
-import { Body } from '../components';
-import { ActivitiesCard } from '../components/ActivitiesCard';
+import { Body } from '..';
+import type { Activity } from '../../@types';
+import { ActivitiesCard } from './ActivitiesCard';
 
 export function Activities() {
   const [activities, { state, error }] =
@@ -9,7 +9,7 @@ export function Activities() {
   const loading = state === 'loading';
 
   return (
-    <Body>
+    <section className='relative container grid gap-8 justify-center md:justify-normal'>
       <Body.PageTitle>Activities</Body.PageTitle>
 
       <Body.Section className='gap-3 md:grid-cols-2'>
@@ -19,6 +19,6 @@ export function Activities() {
           error={error}
         />
       </Body.Section>
-    </Body>
+    </section>
   );
 }

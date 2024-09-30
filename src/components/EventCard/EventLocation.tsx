@@ -9,7 +9,6 @@ type EventLocationProps = {
 };
 export const EventLocation = (props: EventLocationProps) => {
   const { text, location } = props;
-  const Element = location ? 'a' : 'div';
   const elementProps = location
     ? {
         href: `https://maps.google.com/?q=${location.latitude},${location.longitude}`,
@@ -19,7 +18,7 @@ export const EventLocation = (props: EventLocationProps) => {
     : {};
 
   return (
-    <Element
+    <div
       className={`flex gap-1 ${location ? 'hover:cursor-pointer' : ''}`}
       {...elementProps}
     >
@@ -27,6 +26,6 @@ export const EventLocation = (props: EventLocationProps) => {
       <span className='truncate max-w-56' title={text}>
         {text}
       </span>
-    </Element>
+    </div>
   );
 };

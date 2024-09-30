@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
 import { Body, Card } from '../components';
-import { Authors } from '../components/Ipsers';
+import { Authors } from '../components/AboutUs';
 import { type Author, ipsers } from '../config/ipsers';
 
 const SINPL_MEMBERS: Array<Author> = [

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { EventDate, EventLocation, EventSpeakers, UIError } from '..';
 import type { Event } from '../../@types';
 
@@ -69,7 +68,12 @@ const VerticalEvent = (props: EventProps) => {
   const { event } = props;
 
   return (
-    <div className='flex flex-col max-w-xs border border-slate-200 rounded-lg shadow pb-2'>
+    <a
+      href={event.data.link.url}
+      target={event.data.link.target}
+      rel='noreferrer'
+      className='flex flex-col max-w-xs border border-slate-200 rounded-lg shadow pb-2 hover:scale-105 hover:shadow-lg transition'
+    >
       <img
         src={event.data.image.url}
         alt={event.data.image.alt}
@@ -102,18 +106,9 @@ const VerticalEvent = (props: EventProps) => {
           />
         </div>
 
-        <div className='flex items-center justify-between'>
-          <EventSpeakers speakers={event.data.speakers} />
-
-          <Link
-            to={`?event=${event.uid}`}
-            className='w-fit px-3 py-2 font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
-          >
-            Read more
-          </Link>
-        </div>
+        <EventSpeakers speakers={event.data.speakers} />
       </div>
-    </div>
+    </a>
   );
 };
 

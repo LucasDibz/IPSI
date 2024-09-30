@@ -1,9 +1,9 @@
 import { UserCircle2 } from 'lucide-react';
-import type { Author } from '../@types';
-import { type LocalIpser, SINPL_ROLES } from '../config/ipsers';
-import { Body } from './Body';
-import { Spinner } from './Spinner';
-import { UIError } from './UIError';
+import type { Author } from '../../@types';
+import { type LocalIpser, SINPL_ROLES } from '../../config/ipsers';
+import { Body } from '../Body';
+import { Spinner } from '../Spinner';
+import { UIError } from '../UIError';
 
 type IpsersProps = {
   title: string;
@@ -11,7 +11,7 @@ type IpsersProps = {
   loading: boolean;
   error?: Error;
 };
-export const Ipsers = ({ title, ipsers, error, loading }: IpsersProps) => {
+export const IpsersHeads = ({ title, ipsers, error, loading }: IpsersProps) => {
   if (loading || !ipsers) return <Spinner />;
 
   if (error) {

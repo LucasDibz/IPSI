@@ -1,3 +1,5 @@
+export * from './AboutUs';
+export * from './Activities';
 export * from './Body';
 export * from './Card';
 export * from './Dialog';
