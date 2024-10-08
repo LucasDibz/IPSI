@@ -32,8 +32,7 @@ export function Conferences() {
   const upcomingConferences = conferences
     ?.filter(
       ({ data }) =>
-        (new Date(data?.['end-date']) || new Date(data?.['start-date'])) >
-        new Date(),
+        new Date(data?.['end-date'] || data?.['start-date']) > new Date(),
     )
     .sort((a, b) =>
       new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
@@ -41,8 +40,7 @@ export function Conferences() {
   const pastConferences = conferences
     ?.filter(
       ({ data }) =>
-        (new Date(data?.['end-date']) || new Date(data?.['start-date'])) <
-        new Date(),
+        new Date(data?.['end-date'] || data?.['start-date']) < new Date(),
     )
     .sort((a, b) =>
       new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,

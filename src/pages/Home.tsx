@@ -33,13 +33,12 @@ export function Home() {
 
   const upcomingEvents = sortedEvents?.filter(
     ({ data }) =>
-      (new Date(data?.['end-date']) || new Date(data?.['start-date'])) >
-      new Date(),
+      new Date(data?.['end-date'] || data?.['start-date']) > new Date(),
   );
 
   let eventsLabel = 'Upcoming events';
 
-  if (upcomingEvents?.length === 0) {
+  if (!loading && upcomingEvents?.length === 0) {
     const latestEvent = sortedEvents?.at(0);
     if (latestEvent) {
       eventsLabel = 'Our latest event';
