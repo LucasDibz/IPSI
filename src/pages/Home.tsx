@@ -87,11 +87,11 @@ export function Home() {
         <div className='flex gap-3'>
           <BookText size={50} color='gray' />
           <div className='flex flex-col gap-2'>
-            <Body.H2>NOVA IPSI Booklet 2023</Body.H2>
+            <Body.H2>NOVA IPSI Booklet 2024</Body.H2>
 
             <a
               download
-              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+              href={new URL('/Booklet-IPSI-2024.pdf', import.meta.url).href}
               className='text-xl text-heading underline underline-offset-4 leading-6 font-semibold w-fit hover:brightness-75 transition'
             >
               Download

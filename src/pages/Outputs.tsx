@@ -40,13 +40,13 @@ export function Outputs() {
           <Card.Content className='xl:flex gap-4'>
             <a
               download
-              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+              href={new URL('/Booklet-IPSI-2024.pdf', import.meta.url).href}
               className='min-h-[420px] md:min-h-96 md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
             >
               <img
-                src={new URL('/images/booklet.jpg', import.meta.url).href}
+                src={new URL('/images/booklet-2024.jpg', import.meta.url).href}
                 alt={'NOVA IPSI Booklet'}
-                className='object-contain w-full rounded-t-lg md:max-h-96 xl:max-h-full'
+                className='object-contain w-full h-full rounded-t-lg md:max-h-96 xl:max-h-full'
                 width={400}
                 height={555}
               />
@@ -65,7 +65,7 @@ export function Outputs() {
               <div className='h-full w-full flex items-center justify-center'>
                 <a
                   download
-                  href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+                  href={new URL('/Booklet-IPSI-2024.pdf', import.meta.url).href}
                   className='w-fit px-3 py-2 text-center text-white border border-slate-400 bg-slate-600 rounded-lg hover:brightness-90 hover:shadow transition focus:ring-4 focus:outline-none focus:ring-slate-200'
                 >
                   Download here
@@ -75,6 +75,19 @@ export function Outputs() {
           </Card.Content>
         </Card>
       </Body.Section>
+
+      <Card.Title>Previous Booklets Editions</Card.Title>
+      <ul className='max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400'>
+        <li>
+          <a
+            download
+            href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+            className='underline text-heading'
+          >
+            2023
+          </a>
+        </li>
+      </ul>
 
       <OutputsCard
         title='Selected scientific articles'
