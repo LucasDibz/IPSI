@@ -76,18 +76,20 @@ export function Outputs() {
         </Card>
       </Body.Section>
 
-      <Card.Title>Previous Booklets Editions</Card.Title>
-      <ul className='max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400'>
-        <li>
-          <a
-            download
-            href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
-            className='underline text-heading'
-          >
-            2023
-          </a>
-        </li>
-      </ul>
+      <Body.Section>
+        <Card.Title>Previous Booklets Editions</Card.Title>
+        <ul className='max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400'>
+          <li>
+            <a
+              download
+              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
+              className='underline text-heading'
+            >
+              2023
+            </a>
+          </li>
+        </ul>
+      </Body.Section>
 
       <OutputsCard
         title='Selected scientific articles'
