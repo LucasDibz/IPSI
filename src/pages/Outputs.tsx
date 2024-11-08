@@ -77,8 +77,9 @@ export function Outputs() {
       </Body.Section>
 
       <Body.Section>
-        <Card.Title>Previous Booklets Editions</Card.Title>
-        <ul className='max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400'>
+        <Body.H2>Previous Booklets Editions</Body.H2>
+
+        <Body.List>
           <li>
             <a
               download
@@ -88,7 +89,7 @@ export function Outputs() {
               2023
             </a>
           </li>
-        </ul>
+        </Body.List>
       </Body.Section>
 
       <OutputsCard
