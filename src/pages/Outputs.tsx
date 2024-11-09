@@ -43,7 +43,7 @@ export function Outputs() {
 
       <Body.Section>
         <Card className='max-w-2xl mx-auto'>
-          <Card.Title>NOVA IPSI Booklet</Card.Title>
+          <Card.Title>NOVA IPSI Booklets</Card.Title>
           <ul className='-mb-3 flex flex-wrap text-sm'>
             {years.map((year) => (
               <li key={year}>
@@ -75,12 +75,12 @@ export function Outputs() {
             <div className='flex flex-col gap-5 mt-2 xl:mt-0 justify-between text-slate-600 leading-8 text-left'>
               <p>
                 The
-                <strong className='px-1 font-bold'>NOVA IPSI Booklet</strong>
-                is a comprehensive compilation featuring our reviews of the most
-                inspiring and impactful readings, articles, court decisions,
-                reports, and events we engaged with throughout the year. The
-                booklet is available for <strong>free</strong>, and if
-                preferred, you can request a printed version from us.
+                <strong className='px-1 font-bold'>NOVA IPSI Booklets</strong>
+                are a comprehensive compilation featuring our reviews of the
+                most inspiring and impactful readings, articles, court
+                decisions, reports, and events we engaged with throughout the
+                year. The booklets are available for <strong>free</strong>, and
+                if preferred, you can request a printed version from us.
               </p>
 
               <div className='h-full w-full flex items-center justify-center'>
