@@ -46,7 +46,7 @@ export function Outputs() {
               <img
                 src={new URL('/images/booklet-2024.jpg', import.meta.url).href}
                 alt={'NOVA IPSI Booklet'}
-                className='object-contain w-full h-full rounded-t-lg md:max-h-96 xl:max-h-full'
+                className='object-contain w-full rounded-t-lg md:max-h-96 xl:max-h-full'
                 width={400}
                 height={555}
               />
