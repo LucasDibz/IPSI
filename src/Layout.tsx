@@ -8,7 +8,7 @@ type LayoutProps = {
 export function Layout({ theme = 'ipsi' }: LayoutProps) {
   const html = document.querySelector('html');
 
-  if (html?.getAttribute('data-them') !== theme) {
+  if (html?.getAttribute('data-theme') !== theme) {
     html?.setAttribute('data-theme', theme);
   }
 

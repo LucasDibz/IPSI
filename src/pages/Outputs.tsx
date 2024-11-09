@@ -1,8 +1,12 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
+import { useState } from 'react';
 import type { Output } from '../@types';
 import { Body, Card, OutputsCard } from '../components';
 
 export function Outputs() {
+  const years = [2024, 2023];
+  const [activeBookletYear, setActiveBookletYear] = useState(years.at(0));
+
   const [outputs, { state, error }] = useAllPrismicDocumentsByType<Output>(
     'outputs',
     {
@@ -30,6 +34,9 @@ export function Outputs() {
     ?.filter((output) => output.data.type === 'article')
     .sort((a, b) => (new Date(a.data.date) < new Date(b.data.date) ? 1 : -1));
 
+  const bookletSrc = `/Booklet-IPSI-${activeBookletYear}.pdf`;
+  const bookletImage = `/images/booklet-${activeBookletYear}.jpg`;
+
   return (
     <Body>
       <Body.PageTitle>Scientific Publications</Body.PageTitle>
@@ -37,14 +44,28 @@ export function Outputs() {
       <Body.Section>
         <Card className='max-w-2xl mx-auto'>
           <Card.Title>NOVA IPSI Booklet</Card.Title>
+          <ul className='-mb-3 flex flex-wrap text-sm'>
+            {years.map((year) => (
+              <li key={year}>
+                <button
+                  type='button'
+                  className='inline-block p-4 text-slate-400 rounded-t-lg hover:cursor-pointer hover:shadow-inner transition data-[active=true]:shadow-inner data-[active=true]:text-heading'
+                  data-active={year === activeBookletYear}
+                  onClick={() => setActiveBookletYear(year)}
+                >
+                  {year}
+                </button>
+              </li>
+            ))}
+          </ul>
           <Card.Content className='xl:flex gap-4'>
             <a
               download
-              href={new URL('/Booklet-IPSI-2024.pdf', import.meta.url).href}
+              href={new URL(bookletSrc, import.meta.url).href}
               className='min-h-[420px] md:min-h-96 md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
             >
               <img
-                src={new URL('/images/booklet-2024.jpg', import.meta.url).href}
+                src={new URL(bookletImage, import.meta.url).href}
                 alt={'NOVA IPSI Booklet'}
                 className='object-contain w-full rounded-t-lg md:max-h-96 xl:max-h-full'
                 width={400}
@@ -65,7 +86,7 @@ export function Outputs() {
               <div className='h-full w-full flex items-center justify-center'>
                 <a
                   download
-                  href={new URL('/Booklet-IPSI-2024.pdf', import.meta.url).href}
+                  href={new URL(bookletSrc, import.meta.url).href}
                   className='w-fit px-3 py-2 text-center text-white border border-slate-400 bg-slate-600 rounded-lg hover:brightness-90 hover:shadow transition focus:ring-4 focus:outline-none focus:ring-slate-200'
                 >
                   Download here
@@ -74,22 +95,6 @@ export function Outputs() {
             </div>
           </Card.Content>
         </Card>
-      </Body.Section>
-
-      <Body.Section>
-        <Body.H2>Previous Booklets Editions</Body.H2>
-
-        <Body.List>
-          <li>
-            <a
-              download
-              href={new URL('/Booklet-IPSI-2023.pdf', import.meta.url).href}
-              className='underline text-heading'
-            >
-              2023
-            </a>
-          </li>
-        </Body.List>
       </Body.Section>
 
       <OutputsCard
