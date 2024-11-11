@@ -73,15 +73,17 @@ export function Outputs() {
               />
             </a>
             <div className='flex flex-col gap-5 mt-2 xl:mt-0 justify-between text-slate-600 leading-8 text-left'>
-              <p>
+              <span>
                 The
                 <strong className='px-1 font-bold'>NOVA IPSI Booklets</strong>
-                are a comprehensive compilation featuring our reviews of the
-                most inspiring and impactful readings, articles, court
-                decisions, reports, and events we engaged with throughout the
-                year. The booklets are available for <strong>free</strong>, and
-                if preferred, you can request a printed version from us.
-              </p>
+                are yearly compilations of our short reviews of some of the
+                academic readings we build our research on.
+              </span>
+              <span>
+                <strong className='pr-1 font-bold'>NOVA IPSI Booklets</strong>
+                are available for free download. Print-out copies are
+                distributed at our NOVA IPSI Annual Lecture events
+              </span>
 
               <div className='h-full w-full flex items-center justify-center'>
                 <a

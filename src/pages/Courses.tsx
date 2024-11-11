@@ -52,7 +52,7 @@ export function Courses() {
   return (
     <>
       <Body>
-        <Body.PageTitle>Courses</Body.PageTitle>
+        <Body.PageTitle>Course</Body.PageTitle>
 
         {loading && (
           <div className='flex gap-8'>
@@ -64,7 +64,7 @@ export function Courses() {
 
         {upcomingCourses && upcomingCourses.length > 0 && (
           <>
-            <Body.H1>Upcoming Courses</Body.H1>
+            <Body.H1>Upcoming Editions</Body.H1>
             <Body.Section className='grid md:grid-cols-2 xl:grid-cols-3 gap-8'>
               {upcomingCourses.map((course) => (
                 <EventCard {...courseProps} key={course.uid} event={course} />
@@ -73,7 +73,7 @@ export function Courses() {
           </>
         )}
 
-        <Body.H1>Past Courses</Body.H1>
+        <Body.H1>Past Editions</Body.H1>
         <Body.Section className='grid md:grid-cols-2 xl:grid-cols-3 gap-8'>
           {pastCourses?.map((course) => (
             <EventCard {...courseProps} key={course.uid} event={course} />
