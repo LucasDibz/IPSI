@@ -4,7 +4,7 @@ import { Authors } from '../components/AboutUs';
 import { type Author, ipsers } from '../config/ipsers';
 
 const SINPL_MEMBERS: Array<Author> = [
-  'Amanda Novaes',
+  'Amanda Costa Novaes',
   'Luc Desaunettes-Barbero',
   'Pedro Henrique D. Batista',
   'Péter Mezei',

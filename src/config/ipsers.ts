@@ -2,7 +2,7 @@ export type Author =
   | 'Aleksandra Iugunian'
   | 'Aline Arenque'
   | 'Aline Bratti'
-  | 'Amanda Novaes'
+  | 'Amanda Costa Novaes'
   | 'Athina Sachoulidou'
   | 'Carys Craig'
   | 'Claire Bright'
@@ -58,7 +58,7 @@ export type LocalIpser = {
 
 export const SINPL_ROLES = new Map([
   ['Giulia Priora', 'NOVA School of Law'],
-  ['Amanda Novaes', 'NOVA School of Law'],
+  ['Amanda Costa Novaes', 'NOVA School of Law'],
   ['Luc Desaunettes-Barbero', 'UCLouvain'],
   [
     'Pedro Henrique D. Batista',
@@ -138,7 +138,7 @@ export const ipsers: Ipsers = {
         url: 'https://www.linkedin.com/in/aline-bratti',
       },
       {
-        name: 'Amanda Novaes',
+        name: 'Amanda Costa Novaes',
         imgSrc: new URL('/images/members/amanda_novaes.jpeg', import.meta.url)
           .href,
         url: 'https://www.linkedin.com/in/amanda-costa-novaes-75bab6191',

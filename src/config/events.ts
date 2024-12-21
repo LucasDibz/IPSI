@@ -91,7 +91,7 @@ export const events: Event[] = [
           {
             hour: '15:00 - 15:30',
             event: 'Class discussion: Main applications of IP law',
-            authors: ['Monyca Motta', 'Amanda Novaes'],
+            authors: ['Monyca Motta', 'Amanda Costa Novaes'],
           },
           {
             hour: '15:45 - 17:00',
@@ -117,7 +117,7 @@ export const events: Event[] = [
           {
             hour: '15:00 - 15:30',
             event: 'Case study: Trademark infringements',
-            authors: ['Monyca Motta', 'Amanda Novaes'],
+            authors: ['Monyca Motta', 'Amanda Costa Novaes'],
           },
           {
             hour: '15:45 - 17:00',
@@ -148,7 +148,7 @@ export const events: Event[] = [
           {
             hour: '15:00 - 15:30',
             event: 'Case study: Design infringements',
-            authors: ['Oumaima Derfoufi', 'Amanda Novaes'],
+            authors: ['Oumaima Derfoufi', 'Amanda Costa Novaes'],
           },
           {
             hour: '15:45 - 17:00',
@@ -372,7 +372,7 @@ export const events: Event[] = [
           },
           {
             event: 'Lecture: «Morality in IP industries»',
-            authors: ['Amanda Novaes'],
+            authors: ['Amanda Costa Novaes'],
           },
         ],
       },
