@@ -13,8 +13,8 @@ export function Header() {
       <nav className='hidden md:flex shadow w-full items-center justify-between py-5 px-16 gap-7 border-b border-b-slate-400'>
         <IPSILogo />
 
-        {navigation.map((item) => (
-          <div key={item.href} className='h-20 flex items-center'>
+        <div className='flex gap-x-7 flex-wrap justify-center'>
+          {navigation.map((item) => (
             <NavLink
               key={item.href}
               to={`/${item.href}`}
@@ -26,8 +26,8 @@ export function Header() {
             >
               {item.label}
             </NavLink>
-          </div>
-        ))}
+          ))}
+        </div>
       </nav>
 
       {/* Mobile */}

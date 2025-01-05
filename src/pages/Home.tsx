@@ -57,11 +57,40 @@ export function Home() {
           Intellectual Property and Sustainable Innovation
         </Body.H2>
 
-        <p>
-          Founded in September 2022 at NOVA School of Law in Lisbon, NOVA IPSI
-          is a Knowledge Centre dedicated to academic research on Intellectual
-          Property Law in a society seeking Sustainability
-        </p>
+        <section className='space-y-2'>
+          <p>
+            Launched in September 2022, NOVA IPSI is the Knowledge Centre at
+            NOVA School of Law in Lisbon dedicated to the study and research on{' '}
+            <strong>Intellectual Property and Sustainability.</strong>
+          </p>
+
+          <p className='pt-4'>
+            The Centre serves as an academic hub focused on the foundations,
+            evolution, and impact of intellectual property law in its interplay
+            with sustainability theories and practices. <br />
+          </p>
+          <p>
+            The purpose of NOVA IPSI is to
+            <strong className='px-1'>
+              advance academic legal research and turn it useful.
+            </strong>
+            We pursue it by way of
+            <Body.List className='pl-3'>
+              <li className='mt-2'>
+                equipping early-career researchers with quality research skill
+                set and training,
+              </li>
+              <li>
+                supporting advanced researchers in translating their work into
+                practice and meaningful impact in the legislative, judicial,
+                policy, and public life of communities,
+              </li>
+              <li>
+                fostering collaborations between academia and key stakeholders.
+              </li>
+            </Body.List>
+          </p>
+        </section>
 
         <Body.Link to='about-us'>Learn more about us</Body.Link>
       </Body.Section>

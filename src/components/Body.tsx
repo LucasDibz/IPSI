@@ -39,7 +39,7 @@ export function Body({ children, className, variant = 'ipsi' }: Props) {
   );
 }
 
-function Section({ children, className }: Props & { className?: string }) {
+function Section({ children, className }: Props) {
   return (
     <section
       className={twMerge('z-10 grid gap-6 max-w-2xl xl:max-w-4xl', className)}
@@ -83,7 +83,7 @@ function H1({ children }: Props) {
 }
 Body.H1 = H1;
 
-function H2({ children, className }: Props & { className?: string }) {
+function H2({ children, className }: Props) {
   return (
     <h2 className={twMerge('text-lg leading-5 font-semibold', className)}>
       {children}
@@ -92,7 +92,11 @@ function H2({ children, className }: Props & { className?: string }) {
 }
 Body.H2 = H2;
 
-function List({ children }: Props) {
-  return <ul className='list-disc list-inside grid gap-3'>{children}</ul>;
+function List({ children, className }: Props) {
+  return (
+    <ul className={twMerge('list-disc list-inside grid gap-3', className)}>
+      {children}
+    </ul>
+  );
 }
 Body.List = List;
