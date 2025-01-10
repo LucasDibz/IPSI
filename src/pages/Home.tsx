@@ -39,7 +39,7 @@ export function Home() {
   let eventsLabel = 'Upcoming events';
 
   if (!loading && upcomingEvents?.length === 0) {
-    const latestEvent = sortedEvents?.at(0);
+    const latestEvent = sortedEvents?.[0];
     if (latestEvent) {
       eventsLabel = 'Our latest event';
       upcomingEvents.push(latestEvent);
