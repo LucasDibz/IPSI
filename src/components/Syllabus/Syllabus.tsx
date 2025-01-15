@@ -2,19 +2,26 @@ import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
+import { useSearchParams } from 'react-router-dom';
 import { Dialog } from '../Dialog';
 import { Spinner } from '../Spinner';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 export const Syllabus = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const modalQuery = searchParams.get('modal') === 'syllabus';
 
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const closeModal = () => {
-    setIsOpen(false);
+  const handleOpenModal = () => {
+    setSearchParams('modal=syllabus');
+  };
+
+  const handleCloseModal = () => {
+    setSearchParams();
   };
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
@@ -38,20 +45,23 @@ export const Syllabus = () => {
     <>
       <button
         type='button'
+        onClick={handleOpenModal}
         className='mx-auto md:mr-0 mt-2 w-fit p-3 rounded-3xl bg-blue-700 text-white font-semibold hover:scale-105 transition'
       >
         <span>See the syllabus here</span>
       </button>
 
-      <Dialog open={true} onClose={closeModal}>
-        <Document
-          file={'./SINPL-EU_syllabus_2025.pdf'}
-          loading={Spinner}
-          onLoadSuccess={onDocumentLoadSuccess}
-          className='select-none'
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
+      <Dialog open={!!modalQuery} onClose={handleCloseModal}>
+        <div className='max-w-[90%] w-full overflow-hidden'>
+          <Document
+            file={'./SINPL-EU_syllabus_2025.pdf'}
+            loading={Spinner}
+            onLoadSuccess={onDocumentLoadSuccess}
+            className='select-none'
+          >
+            <Page pageNumber={pageNumber} scale={0.6} />
+          </Document>
+        </div>
 
         <div className='flex flex-col items-center w-fit mx-auto'>
           <span className='text-xs leading-none text-slate-500 italic'>
