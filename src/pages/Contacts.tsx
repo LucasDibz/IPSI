@@ -2,7 +2,7 @@ import { Body } from '../components';
 
 export function Contacts() {
   return (
-    <Body>
+    <Body showImage>
       <Body.PageTitle>Contacts</Body.PageTitle>
 
       <Body.Section className='xl:min-h-80'>

@@ -22,7 +22,7 @@ const members = Object.values(ipsers)
 export function SINPL() {
   return (
     <>
-      <Body variant='sinpl' className='pt-32'>
+      <Body variant='sinpl' className='pt-32' showImage>
         <Body.Section>
           <Card className='bg-white rounded-[3rem] max-w-full'>
             <Card.Header>
