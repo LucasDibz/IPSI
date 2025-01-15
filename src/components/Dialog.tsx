@@ -31,7 +31,7 @@ export const Dialog = ({
   return createPortal(
     // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
     <dialog
-      className='inset-0 fixed overscroll-contain border-none rounded-l-lg data-[anchor=right]:mr-0 z-50 h-full w-full md:w-2/3 overflow-y-auto bg-slate-200 shadow backdrop:bg-slate-900/50 transition-transform [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] open:animate-slide-in animate-slide-out'
+      className='inset-0 fixed overscroll-contain border-none rounded-l-lg data-[anchor=right]:mr-0 z-50 h-full w-full md:w-2/3 overflow-y-auto bg-white shadow backdrop:bg-background backdrop:opacity-75 transition-transform [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] open:animate-slide-in animate-slide-out'
       ref={dialogRef}
       onClick={(event) => event.currentTarget === event.target && onClose()}
       onCancel={onClose}

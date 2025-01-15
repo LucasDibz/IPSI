@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react';
-import { Body, Card } from '../components';
+import { Body, Card, Syllabus } from '../components';
 import { Authors } from '../components/AboutUs';
 import { type Author, ipsers } from '../config/ipsers';
 
@@ -55,6 +55,8 @@ export function SINPL() {
                 professors advance the field through academic theories and
                 policy proposals.
               </p>
+
+              <Syllabus />
             </Card.Content>
           </Card>
 
