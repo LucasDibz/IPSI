@@ -53,24 +53,29 @@ export const Syllabus = () => {
           <Page pageNumber={pageNumber} />
         </Document>
 
-        <div>
-          <button
-            type='button'
-            disabled={pageNumber <= 1}
-            onClick={previousPage}
-          >
-            Previous
-          </button>
-          <button
-            type='button'
-            disabled={pageNumber >= numPages}
-            onClick={nextPage}
-          >
-            Next
-          </button>
-          <span>
+        <div className='flex flex-col items-center w-fit mx-auto'>
+          <span className='text-xs leading-none text-slate-500 italic'>
             Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
           </span>
+          <div className='inline-flex mt-2 xs:mt-0'>
+            <button
+              type='button'
+              disabled={pageNumber <= 1}
+              onClick={previousPage}
+              className='min-w-24 flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-blue-700 rounded-s hover:cursor-pointer hover:brightness-110 disabled:hover:brightness-100 disabled:grayscale disabled:opacity-35'
+            >
+              Previous
+            </button>
+
+            <button
+              type='button'
+              disabled={pageNumber >= numPages}
+              onClick={nextPage}
+              className='min-w-24 flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-blue-700 border-0 border-s border-slate-800 rounded-e hover:cursor-pointer hover:brightness-110 disabled:hover:brightness-100 disabled:grayscale disabled:opacity-35'
+            >
+              Next
+            </button>
+          </div>
         </div>
       </Dialog>
     </>
