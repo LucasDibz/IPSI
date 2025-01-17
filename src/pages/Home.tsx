@@ -69,7 +69,7 @@ export function Home() {
             evolution, and impact of intellectual property law in its interplay
             with sustainability theories and practices. <br />
           </p>
-          <p>
+          <div>
             The purpose of NOVA IPSI is to
             <strong className='px-1'>
               advance academic legal research and turn it useful.
@@ -89,7 +89,7 @@ export function Home() {
                 fostering collaborations between academia and key stakeholders.
               </li>
             </Body.List>
-          </p>
+          </div>
         </section>
 
         <Body.Link to='about-us'>Learn more about us</Body.Link>

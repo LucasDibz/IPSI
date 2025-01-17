@@ -15,6 +15,7 @@ export const Syllabus = () => {
 
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
+  const scale = getScale();
 
   const handleOpenModal = () => {
     setSearchParams('modal=syllabus');
@@ -59,7 +60,7 @@ export const Syllabus = () => {
             onLoadSuccess={onDocumentLoadSuccess}
             className='select-none'
           >
-            <Page pageNumber={pageNumber} scale={0.6} />
+            <Page pageNumber={pageNumber} scale={scale} />
           </Document>
         </div>
 
@@ -90,4 +91,14 @@ export const Syllabus = () => {
       </Dialog>
     </>
   );
+};
+
+const getScale = () => {
+  const width = window.innerWidth;
+
+  if (width < 600) return 0.55;
+  if (width < 768) return 1;
+  if (width < 980) return 0.8;
+
+  return 1;
 };
