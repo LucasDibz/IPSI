@@ -53,7 +53,7 @@ export const Syllabus = () => {
       </button>
 
       <Dialog open={!!modalQuery} onClose={handleCloseModal}>
-        <div className='max-w-[90%] w-full overflow-hidden'>
+        <div className='max-w-[90%] w-full overflow-hidden self-center'>
           <Document
             file={'./SINPL-EU_syllabus_2025.pdf'}
             loading={Spinner}
@@ -64,7 +64,7 @@ export const Syllabus = () => {
           </Document>
         </div>
 
-        <div className='flex flex-col items-center w-fit mx-auto'>
+        <div className='flex flex-col items-center w-fit mx-auto mb-20'>
           <span className='text-xs leading-none text-slate-500 italic'>
             Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
           </span>
@@ -100,5 +100,5 @@ const getScale = () => {
   if (width < 768) return 1;
   if (width < 980) return 0.8;
 
-  return 1;
+  return 1.2;
 };

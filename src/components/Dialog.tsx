@@ -31,7 +31,7 @@ export const Dialog = ({
   return createPortal(
     // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
     <dialog
-      className='inset-0 fixed overscroll-contain border-none rounded-l-lg data-[anchor=right]:mr-0 z-50 h-full max-w-full w-full mt-0 md:mt-auto md:w-2/3 overflow-y-auto bg-white shadow backdrop:bg-background backdrop:opacity-75 transition-transform [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] open:animate-slide-in animate-slide-out'
+      className='inset-0 fixed overscroll-contain border-none rounded-l-lg data-[anchor=right]:mr-0 z-50 h-full max-w-full w-full mt-0 md:mt-auto md:w-7/12 overflow-y-auto bg-white shadow backdrop:bg-background backdrop:opacity-75 transition-transform [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] open:animate-slide-in animate-slide-out'
       ref={dialogRef}
       onClick={(event) => event.currentTarget === event.target && onClose()}
       onCancel={onClose}
@@ -45,7 +45,7 @@ export const Dialog = ({
         <XCircle className='bg-slate-200 rounded-full flex-shrink-0' />
       </button>
 
-      <div className='flex flex-col gap-5 p-2 md:p-8'>{children}</div>
+      <div className='flex flex-col gap-5'>{children}</div>
     </dialog>,
     document.body,
   );
