@@ -4,7 +4,7 @@ import type { Output } from '../@types';
 import { Body, Card, OutputsCard } from '../components';
 
 export function Outputs() {
-  const years = [2024, 2023];
+  const years = [2025, 2024, 2023];
   const [activeBookletYear, setActiveBookletYear] = useState(years.at(0));
 
   const [outputs, { state, error }] = useAllPrismicDocumentsByType<Output>(
@@ -34,7 +34,7 @@ export function Outputs() {
     ?.filter((output) => output.data.type === 'article')
     .sort((a, b) => (new Date(a.data.date) < new Date(b.data.date) ? 1 : -1));
 
-  const bookletSrc = `/Booklet-IPSI-${activeBookletYear}.pdf`;
+  const bookletSrc = `/NOVA-IPSI-Booklet-${activeBookletYear}.pdf`;
   const bookletImage = `/images/booklet-${activeBookletYear}.jpg`;
 
   return (
