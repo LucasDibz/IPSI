@@ -27,6 +27,9 @@ type PrismicOutput = {
       };
     };
   }[];
+  external_authors?: {
+    text: string;
+  }[];
 };
 
 export type Output = PrismicDocument & { data: PrismicOutput };

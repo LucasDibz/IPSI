@@ -58,10 +58,14 @@ export function Publication({ output }: { output: Output['data'] }) {
             )}
           </div>
           {output.authors && (
-            <span className=' font-semibold text-slate-600'>
+            <span className='font-semibold text-slate-600'>
               {formatter.format(
                 output.authors.map(({ author }) => author.data.name),
               )}
+              {output.external_authors &&
+                output.external_authors?.length > 0 && (
+                  <>, {output.external_authors[0].text}</>
+                )}
             </span>
           )}
         </Tag>
