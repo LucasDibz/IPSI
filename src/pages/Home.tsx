@@ -1,50 +1,47 @@
-import { useAllPrismicDocumentsByType } from '@prismicio/react';
-import type { Event } from '../@types';
-import { Body, UIError } from '../components';
-import { EventCardSkeleton } from '../components/EventCard';
+import { Body } from '../components';
 import { AboutUs } from './AboutUs';
 
 export function Home() {
-  const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
-    'event',
-    {
-      graphQuery: `{
-        event {
-          ...eventFields
+  // const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
+  //   'event',
+  //   {
+  //     graphQuery: `{
+  //       event {
+  //         ...eventFields
 
-          speakers {
-            speaker {
-              ...on ipsers {
-                name
-                image
-                url
-              }
-            }
-          }
-        }
-      }`,
-    },
-  );
-  const loading = state === 'loading';
+  //         speakers {
+  //           speaker {
+  //             ...on ipsers {
+  //               name
+  //               image
+  //               url
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }`,
+  //   },
+  // );
+  // const loading = state === 'loading';
 
-  const sortedEvents = events?.sort((a, b) =>
-    new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
-  );
+  // const sortedEvents = events?.sort((a, b) =>
+  //   new Date(a.data['start-date']) < new Date(b.data['start-date']) ? 1 : -1,
+  // );
 
-  const upcomingEvents = sortedEvents?.filter(
-    ({ data }) =>
-      new Date(data?.['end-date'] || data?.['start-date']) > new Date(),
-  );
+  // const upcomingEvents = sortedEvents?.filter(
+  //   ({ data }) =>
+  //     new Date(data?.['end-date'] || data?.['start-date']) > new Date(),
+  // );
 
-  let eventsLabel = 'Upcoming events';
+  // let eventsLabel = 'Upcoming events';
 
-  if (!loading && upcomingEvents?.length === 0) {
-    const latestEvent = sortedEvents?.[0];
-    if (latestEvent) {
-      eventsLabel = 'Our latest event';
-      upcomingEvents.push(latestEvent);
-    }
-  }
+  // if (!loading && upcomingEvents?.length === 0) {
+  //   const latestEvent = sortedEvents?.[0];
+  //   if (latestEvent) {
+  //     eventsLabel = 'Our latest event';
+  //     upcomingEvents.push(latestEvent);
+  //   }
+  // }
 
   return (
     <Body className='pt-0' showImage>
@@ -98,8 +95,8 @@ export function Home() {
         </section>
       </Body.Section>
 
-      {error && <UIError error={error} />}
-      {loading && <EventCardSkeleton />}
+      {/* {error && <UIError error={error} />} */}
+      {/* {loading && <EventCardSkeleton />} */}
 
       {/* <Body.H1>{eventsLabel}</Body.H1>
       <Body.Article>
