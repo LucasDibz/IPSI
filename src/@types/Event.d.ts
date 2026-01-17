@@ -10,6 +10,10 @@ type PrismicEvent = {
         text: string;
       },
     ];
+    video: {
+      url: string;
+      target: string;
+    };
     link: {
       url: string;
       target: string;

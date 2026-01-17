@@ -13,7 +13,7 @@
   "dependencies": {
     "@prismicio/client": "^7.8.0",
     "@prismicio/react": "^2.8.0",
-    "lucide-react": "^0.311.0",
+    "lucide-react": "^0.562.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pdf": "^9.2.1",
