@@ -3,7 +3,7 @@ import { AboutUs as AboutUsInfo, Ipsers } from '../components/AboutUs';
 
 export function AboutUs() {
   return (
-    <Body>
+    <Body className='pt-0'>
       <AboutUsInfo />
       <Activities />
       <Ipsers />

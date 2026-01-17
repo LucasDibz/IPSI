@@ -100,7 +100,7 @@ export function Outputs() {
       </Body.Section>
 
       <OutputsCard
-        title='Selected scientific articles'
+        title='Selected scientific contributions'
         loading={loading}
         outputs={articles}
         error={error}

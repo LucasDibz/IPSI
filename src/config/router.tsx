@@ -1,7 +1,6 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Layout } from '../Layout';
 import {
-  AboutUs,
   Conferences,
   Contacts,
   Courses,
@@ -20,10 +19,6 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: 'about-us',
-        element: <AboutUs />,
       },
       {
         path: 'scientific-publications',

@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Youtube } from 'lucide-react';
 
 export const socials = [
   {
@@ -8,13 +8,13 @@ export const socials = [
     color: 'darkgrey',
     fill: 'dimgrey',
   },
-  {
-    title: 'Twitter/X',
-    Icon: Twitter,
-    href: 'https://twitter.com/nova_ipsi',
-    color: 'deepskyblue',
-    fill: 'dodgerblue',
-  },
+  // {
+  //   title: 'Twitter/X',
+  //   Icon: Twitter,
+  //   href: 'https://twitter.com/nova_ipsi',
+  //   color: 'deepskyblue',
+  //   fill: 'dodgerblue',
+  // },
   {
     title: 'Instagram',
     Icon: Instagram,

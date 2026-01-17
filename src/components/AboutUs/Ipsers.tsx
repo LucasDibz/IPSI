@@ -31,14 +31,10 @@ export const Ipsers = () => {
 
   return (
     <section className='z-10 grid gap-6 max-w-2xl xl:max-w-4xl'>
+      <IpsersHeads {...ipsersProps} title='Coordinator' ipsers={coordinators} />
       <IpsersHeads
         {...ipsersProps}
-        title='Coordination'
-        ipsers={coordinators}
-      />
-      <IpsersHeads
-        {...ipsersProps}
-        title='NOVA IPSI Researchers'
+        title='Researchers'
         ipsers={investigators}
       />
       <IpsersHeads {...ipsersProps} title='Faculty members' ipsers={teams} />

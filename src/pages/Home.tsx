@@ -1,8 +1,8 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
-import { BookText } from 'lucide-react';
 import type { Event } from '../@types';
 import { Body, UIError } from '../components';
-import { EventCard, EventCardSkeleton } from '../components/EventCard';
+import { EventCardSkeleton } from '../components/EventCard';
+import { AboutUs } from './AboutUs';
 
 export function Home() {
   const [events, { state, error }] = useAllPrismicDocumentsByType<Event>(
@@ -60,45 +60,48 @@ export function Home() {
         <section className='space-y-2'>
           <p>
             Launched in September 2022, NOVA IPSI is the Knowledge Centre at
-            NOVA School of Law in Lisbon dedicated to the study and research on{' '}
-            <strong>Intellectual Property and Sustainability.</strong>
+            NOVA School of Law in Lisbon dedicated to the{' '}
+            <strong>
+              study and scientific research on Intellectual Property Law and
+              Sustainable Innovation.
+            </strong>
           </p>
 
           <p className='pt-4'>
-            The Centre serves as an academic hub focused on the foundations,
-            evolution, and impact of intellectual property law in its interplay
-            with sustainability theories and practices. <br />
+            The Centre serves and has rapidly grown, across Europe and beyond,
+            as a <strong>place</strong> where law students and legal researchers
+            focus and work together on the foundations, evolution, and impact of
+            Intellectual Property (IP) in its interplay with Sustainability
+            settings, practices, policies, and theory.
           </p>
           <div>
             The purpose of NOVA IPSI is to
             <strong className='px-1'>
-              advance academic legal research and turn it useful.
+              cultivate academic legal research and turn it useful.
             </strong>
-            We pursue it by way of
+            We do so by way of
             <Body.List className='pl-3'>
               <li className='mt-2'>
-                equipping early-career researchers with quality research skill
-                set and training,
+                equipping early-career researchers with quality research
+                skillset and training
               </li>
               <li>
                 supporting advanced researchers in translating their work into
                 practice and meaningful impact in the legislative, judicial,
-                policy, and public life of communities,
+                policy, and public life of communities
               </li>
               <li>
-                fostering collaborations between academia and key stakeholders.
+                fostering collaborations between academia and key stakeholders
               </li>
             </Body.List>
           </div>
         </section>
-
-        <Body.Link to='about-us'>Learn more about us</Body.Link>
       </Body.Section>
 
       {error && <UIError error={error} />}
       {loading && <EventCardSkeleton />}
 
-      <Body.H1>{eventsLabel}</Body.H1>
+      {/* <Body.H1>{eventsLabel}</Body.H1>
       <Body.Article>
         {upcomingEvents?.map((event) => (
           <EventCard
@@ -127,7 +130,11 @@ export function Home() {
             </a>
           </div>
         </div>
-      </Body.Article>
+      </Body.Article> */}
+
+      <Body.Section>
+        <AboutUs />
+      </Body.Section>
     </Body>
   );
 }
