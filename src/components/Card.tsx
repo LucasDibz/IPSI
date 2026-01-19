@@ -85,7 +85,7 @@ function Link({
         href={to}
         target='_blank'
         rel='noopener noreferrer'
-        className='relative inline-flex px-1 items-center text-heading after:bg-rose-300 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
+        className='relative inline-flex px-1 items-center text-heading after:bg-rose-700 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
       >
         {children}
       </a>
@@ -95,7 +95,7 @@ function Link({
   return (
     <_Link
       to={to}
-      className='relative inline-flex px-1 items-center text-heading after:bg-rose-300 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
+      className='relative inline-flex px-1 items-center text-heading after:bg-rose-700 after:absolute after:h-[1px] after:mt-[1px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300'
     >
       {children}
     </_Link>
