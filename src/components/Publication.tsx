@@ -34,7 +34,7 @@ export function Publication({ output }: { output: Output['data'] }) {
             >
               <img
                 src={author.data.image.url}
-                alt={author.data.image.alt}
+                alt={author.data.name}
                 className={
                   'w-12 h-12 border-2 border-slate-300 rounded-full shadow hover:scale-125 transition'
                 }

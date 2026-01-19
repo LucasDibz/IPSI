@@ -77,32 +77,38 @@ const Partners = () => {
   return (
     <>
       <ul className='pt-6 pb-3 flex flex-wrap-reverse items-center justify-center md:flex-row gap-2 md:gap-8'>
-        <img
-          src={new URL('/images/FCT_logo.svg', import.meta.url).href}
-          alt='FCT Logo'
-          loading='lazy'
-          className='object-contain w-24 md:w-36'
-          width={144}
-          height={46}
-        />
+        <li>
+          <img
+            src={new URL('/images/FCT_logo.svg', import.meta.url).href}
+            alt='FCT Logo'
+            loading='lazy'
+            className='object-contain w-24 md:w-36'
+            width={144}
+            height={46}
+          />
+        </li>
 
-        <img
-          src={new URL('/images/CEDIS_logo.png', import.meta.url).href}
-          alt='CEDIS Logo'
-          loading='lazy'
-          className='object-contain w-36 md:w-56'
-          width={224}
-          height={56}
-        />
+        <li>
+          <img
+            src={new URL('/images/CEDIS_logo.png', import.meta.url).href}
+            alt='CEDIS Logo'
+            loading='lazy'
+            className='object-contain w-36 md:w-56'
+            width={224}
+            height={56}
+          />
+        </li>
 
-        <img
-          src={new URL('/images/portuguese_republic.svg', import.meta.url).href}
-          alt='Portuguese Republic logo'
-          loading='lazy'
-          className='object-contain w-44 md:w-36'
-          width={144}
-          height={67}
-        />
+        <li>
+          <img
+            src={new URL('/images/portuguese_republic.svg', import.meta.url).href}
+            alt='Portuguese Republic logo'
+            loading='lazy'
+            className='object-contain w-44 md:w-36'
+            width={144}
+            height={67}
+          />
+        </li>
       </ul>
 
       <span className='block text-justify text-slate-500 font-medium text-xs'>

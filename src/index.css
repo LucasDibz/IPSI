@@ -10,12 +10,12 @@ body {
 
 @layer base {
   html[data-theme='ipsi'] {
-    --color-background: #FFFF;
-    --color-heading: #f43f5e;
+    --color-background: #ffff;
+    --color-heading: #ad005a;
   }
 
   html[data-theme='sinpl'] {
-    --color-background: #C4D7F0;
-    --color-heading: #343BD4
+    --color-background: #c4d7f0;
+    --color-heading: #343bd4;
   }
 }

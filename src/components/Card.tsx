@@ -48,14 +48,14 @@ Card.Title = Title;
 
 function Subtitle({ children, className }: Props & { className?: string }) {
   return (
-    <h6
+    <h4
       className={twMerge(
         'font-semibold tracking-tight text-end text-heading',
         className,
       )}
     >
       {children}
-    </h6>
+    </h4>
   );
 }
 Card.Subtitle = Subtitle;

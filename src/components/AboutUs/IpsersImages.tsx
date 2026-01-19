@@ -36,7 +36,7 @@ export const IpsersHeads = ({ title, ipsers, error, loading }: IpsersProps) => {
             >
               <img
                 src={author.data.image.url}
-                alt={author.data.image.alt}
+                alt={author.data.name}
                 loading='lazy'
                 className='object-cover rounded-full h-32 w-32 border border-slate-400 shadow group-hover:shadow-lg group-hover:scale-105 transition'
                 width={128}
