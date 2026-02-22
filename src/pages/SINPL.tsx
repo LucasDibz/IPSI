@@ -1,7 +1,19 @@
 import { Check } from 'lucide-react';
+import { useState } from 'react';
 import { Body, Card } from '../components';
 import { Authors } from '../components/AboutUs';
 import { type Author, ipsers } from '../config/ipsers';
+import { SinplProjectCard } from './SinplProjectCard';
+
+const projects = [
+  {
+    label: 'Project Year 1',
+    imageSrc: './images/sinpl-eu-project-1.jpeg',
+    pdfFile: './Course syllabus year1.pdf',
+  },
+  { label: 'Project Year 2', pdfFile: './Course syllabus year2.pdf' },
+  { label: 'Project Year 3' },
+];
 
 const SINPL_MEMBERS: Array<Author> = [
   'Amanda Costa Novaes',
@@ -20,6 +32,9 @@ const members = Object.values(ipsers)
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export function SINPL() {
+  const [activeProject, setActiveProject] = useState(0);
+  const project = projects[activeProject];
+
   return (
     <>
       <Body variant='sinpl' className='pt-32' showImage>
@@ -37,25 +52,11 @@ export function SINPL() {
             </Card.Header>
             <Card.Content className='md:text-justify flex flex-col gap-2 leading-relaxed'>
               <p>
-                <b className='pr-1'>SINPL-EU</b>
-                is a course that combines EU Intellectual Property (IP) Law with
-                Sustainability, addressing the growing need to integrate these
-                areas as the EU is expanding its harmonization of IP rules and
-                modernizing them to promote sustainable goals. While IP law is
-                becoming essential in EU law curricula, there is a lack of focus
-                on its connection with Sustainability, which is crucial for
-                driving innovation across industries.
+                At the NOVA School of Law the focus on Intellectual Property and
+                Sustainability has been growing through our research interests
+                and activities at NOVA IPSI and, since 2024, also thanks to the
+                <b className='pl-1'>SINPL-EU project</b>
               </p>
-              <p>
-                <b className='pr-1'>SINPL-EU</b>fills this gap by offering
-                students a comprehensive learning experience in IP law,
-                emphasizing its role in promoting sustainable innovation in the
-                EU. The course covers key IP areas like Patents, Trademarks,
-                Copyright, Designs, and Trade Secrets, helping students and
-                professors advance the field through academic theories and
-                policy proposals.
-              </p>
-
             </Card.Content>
           </Card>
 
@@ -101,6 +102,30 @@ export function SINPL() {
             </Card.Header>
             <Card.Content className='py-2'>
               <Authors authors={members} />
+            </Card.Content>
+          </Card>
+
+          <Card className='bg-white rounded-[3rem] max-w-full'>
+            <ul className='-mb-3 flex flex-wrap text-sm'>
+              {projects.map((p, i) => (
+                <li key={p.label}>
+                  <button
+                    type='button'
+                    className='inline-block p-4 text-lg font-bold text-slate-400 rounded-t-lg hover:cursor-pointer hover:shadow-inner transition data-[active=true]:shadow-inner data-[active=true]:text-heading'
+                    data-active={i === activeProject}
+                    onClick={() => setActiveProject(i)}
+                  >
+                    {p.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <Card.Content>
+              <SinplProjectCard
+                key={activeProject}
+                imageSrc={project.imageSrc}
+                pdfFile={project.pdfFile}
+              />
             </Card.Content>
           </Card>
 
