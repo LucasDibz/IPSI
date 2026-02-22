@@ -59,7 +59,7 @@ export type LocalIpser = {
 export const SINPL_ROLES = new Map([
   ['Giulia Priora', 'NOVA School of Law'],
   ['Amanda Costa Novaes', 'NOVA School of Law'],
-  ['Luc Desaunettes-Barbero', 'UCLouvain'],
+  ['Luc Desaunettes-Barbero', 'University of Namur'],
   [
     'Pedro Henrique D. Batista',
     'Max Planck Institute for Innovation and Competition',

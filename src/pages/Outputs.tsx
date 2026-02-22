@@ -62,7 +62,7 @@ export function Outputs() {
             <a
               download
               href={new URL(bookletSrc, import.meta.url).href}
-              className='min-h-[420px] md:min-h-96 md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg hover:scale-105 transition'
+              className='min-h-[420px] md:min-h-96 md:min-w-96 md:rounded-none md:rounded-s-lg shadow hover:shadow-lg transition'
             >
               <img
                 src={new URL(bookletImage, import.meta.url).href}

@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react';
-import { Body, Card, Syllabus } from '../components';
+import { Body, Card } from '../components';
 import { Authors } from '../components/AboutUs';
 import { type Author, ipsers } from '../config/ipsers';
 
@@ -56,7 +56,6 @@ export function SINPL() {
                 policy proposals.
               </p>
 
-              <Syllabus />
             </Card.Content>
           </Card>
 
