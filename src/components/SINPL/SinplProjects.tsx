@@ -10,6 +10,7 @@ const projects = [
     title: 'Project Year 2',
     label: 'Midterm seminar "Pathways of IP law teaching"',
     pdfFile: './Course syllabus year2.pdf',
+    downloadFile: './EU IP LAW DECK 2026 short version.pdf',
   },
   {
     title: 'Project Year 3',

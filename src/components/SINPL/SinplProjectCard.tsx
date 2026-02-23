@@ -11,12 +11,13 @@ type Project = {
   label?: string;
   imageSrc?: string;
   pdfFile?: string;
+  downloadFile?: string;
 };
 
 type Props = { project: Project };
 
 export function SinplProjectCard({
-  project: { label, title, imageSrc, pdfFile },
+  project: { label, title, imageSrc, pdfFile, downloadFile },
 }: Props) {
   const [open, setOpen] = useState(false);
   const [numPages, setNumPages] = useState(0);
@@ -78,6 +79,18 @@ export function SinplProjectCard({
             </div>
           )}
         </div>
+
+        {downloadFile && (
+          <div className='mt-4 flex justify-center'>
+            <a
+              href={downloadFile}
+              download
+              className='w-fit px-3 py-2 text-center text-white border border-slate-400 bg-heading rounded-full hover:brightness-90'
+            >
+              Download: {downloadFile.split('/').pop()}
+            </a>
+          </div>
+        )}
 
         {pdfFile && (
           <Dialog open={open} onClose={() => setOpen(false)}>
