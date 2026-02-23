@@ -9,5 +9,5 @@ export * from './Header';
 export * from './OutputsCard';
 export * from './Publication';
 export * from './Spinner';
-export * from './Syllabus';
 export * from './UIError';
+

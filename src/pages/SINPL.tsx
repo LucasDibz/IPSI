@@ -1,19 +1,8 @@
 import { Check } from 'lucide-react';
-import { useState } from 'react';
 import { Body, Card } from '../components';
 import { Authors } from '../components/AboutUs';
+import { SinplProjects } from '../components/SINPL';
 import { type Author, ipsers } from '../config/ipsers';
-import { SinplProjectCard } from './SinplProjectCard';
-
-const projects = [
-  {
-    label: 'Project Year 1',
-    imageSrc: './images/sinpl-eu-project-1.jpeg',
-    pdfFile: './Course syllabus year1.pdf',
-  },
-  { label: 'Project Year 2', pdfFile: './Course syllabus year2.pdf' },
-  { label: 'Project Year 3' },
-];
 
 const SINPL_MEMBERS: Array<Author> = [
   'Amanda Costa Novaes',
@@ -32,9 +21,6 @@ const members = Object.values(ipsers)
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export function SINPL() {
-  const [activeProject, setActiveProject] = useState(0);
-  const project = projects[activeProject];
-
   return (
     <>
       <Body variant='sinpl' className='pt-32' showImage>
@@ -105,29 +91,7 @@ export function SINPL() {
             </Card.Content>
           </Card>
 
-          <Card className='bg-white rounded-[3rem] max-w-full'>
-            <ul className='-mb-3 flex flex-wrap text-sm'>
-              {projects.map((p, i) => (
-                <li key={p.label}>
-                  <button
-                    type='button'
-                    className='inline-block p-4 text-lg font-bold text-slate-400 rounded-t-lg hover:cursor-pointer hover:shadow-inner transition data-[active=true]:shadow-inner data-[active=true]:text-heading'
-                    data-active={i === activeProject}
-                    onClick={() => setActiveProject(i)}
-                  >
-                    {p.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <Card.Content>
-              <SinplProjectCard
-                key={activeProject}
-                imageSrc={project.imageSrc}
-                pdfFile={project.pdfFile}
-              />
-            </Card.Content>
-          </Card>
+          <SinplProjects />
 
           <Card className='bg-white rounded-[3rem] max-w-full text-center'>
             <span className='block font-semibold text-lg'>Stay tuned!</span>
