@@ -3,8 +3,8 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import { useSearchParams } from 'react-router-dom';
-import { Dialog } from '../Dialog';
-import { Spinner } from '../Spinner';
+import { Dialog } from '../../Dialog';
+import { Spinner } from '../../Spinner';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
