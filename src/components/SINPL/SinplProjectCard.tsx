@@ -41,7 +41,7 @@ export function SinplProjectCard({
       </Card.Title>
       <Card.Content>
         <p className='font-semibold text-heading mb-2'>{label}</p>
-        <div className='md:flex-row flex-col flex items-center justify-center gap-6'>
+        <div className='md:flex-row flex-col flex justify-center gap-6'>
           <div className='md:w-1/2 flex mt-2 md:mt-0 justify-center items-center overflow-hidden'>
             {pdfFile ? (
               <button
@@ -78,20 +78,37 @@ export function SinplProjectCard({
               />
             </div>
           )}
-        </div>
 
-        {download && (
-          <div className='mt-4 flex flex-col items-center gap-2'>
-            <p className='font-semibold text-heading'>{download.title}</p>
-            <a
-              href={download.file}
-              download
-              className='w-fit px-3 py-2 text-center text-white border border-slate-400 bg-heading rounded-full hover:brightness-90'
-            >
-              Download here
-            </a>
-          </div>
-        )}
+          {download && (
+            <div className='md:w-1/2 flex flex-col mt-2 md:mt-0 justify-center items-center gap-2 overflow-hidden'>
+              <a
+                href={download.file}
+                download
+                className='group relative w-full h-full overflow-hidden rounded-lg shadow hover:shadow-lg transition cursor-pointer border border-slate-200'
+              >
+                <Document
+                  file={download.file}
+                  loading={
+                    <div className='w-48 h-64 flex items-center justify-center'>
+                      <Spinner />
+                    </div>
+                  }
+                  className='flex items-center justify-center h-full'
+                >
+                  <Page pageNumber={1} scale={0.4} />
+                </Document>
+                <div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition' />
+              </a>
+              <a
+                href={download.file}
+                download
+                className='w-fit px-3 py-2 text-center text-white border border-slate-400 bg-heading rounded-lg hover:brightness-90'
+              >
+                Download here the <br /> {download.title}
+              </a>
+            </div>
+          )}
+        </div>
 
         {pdfFile && (
           <Dialog open={open} onClose={() => setOpen(false)}>
