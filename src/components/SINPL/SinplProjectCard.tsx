@@ -36,11 +36,10 @@ export function SinplProjectCard({
 
   return (
     <Card className='bg-white rounded-[3rem] max-w-full'>
-      <Card.Title className='text-xl font-bold text-heading mb-4'>
+      <Card.Title className='text-xl font-bold text-heading'>
         {title}
       </Card.Title>
       <Card.Content>
-        <p className='font-semibold text-heading mb-2'>{label}</p>
         <div className='md:flex-row flex-col flex justify-center gap-6'>
           <div className='md:w-1/2 flex mt-2 md:mt-0 justify-center items-center overflow-hidden'>
             {pdfFile ? (
@@ -129,6 +128,8 @@ export function SinplProjectCard({
             </div>
           </Dialog>
         )}
+
+        <p className='font-semibold text-heading mt-4 text-center'>{label}</p>
       </Card.Content>
     </Card>
   );
